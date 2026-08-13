@@ -28,8 +28,8 @@ Se o produto voltar a ter mais de uma opção (kits, variações), reveja a seç
 3. **Depoimentos**
    Os três depoimentos em `#depoimentos` são placeholders de exemplo. Substitua por depoimentos reais de clientes (com autorização deles) antes de publicar — está marcado com comentário `TESTIMONIALS (placeholders...)`.
 
-4. **Contato/CNPJ**
-   No rodapé, troque `[inserir]` pelo CNPJ real e o e-mail de contato.
+4. **CNPJ**
+   No rodapé, troque `[inserir]` pelo CNPJ real (o e-mail de contato já está preenchido: `contato@alivio.store`).
 
 ## Estrutura da página
 
