@@ -26,17 +26,18 @@ Se quiser trocar alguma, basta substituir o arquivo correspondente em `img/` man
 
 A seção `#depoimentos` usa 4 fotos reais de clientes (`img/depoimento-1.jpg` a `depoimento-4.jpg`), enviadas com autorização para uso como propaganda da loja, cada uma com a frase real que a cliente enviou.
 
-## O que fazer antes de publicar
+## Status
 
-1. **Preço**
-   O valor exibido (`R$ 149,90`) ainda é um **exemplo**. Ele precisa bater exatamente com o preço configurado no produto da Yampi — se forem diferentes, o cliente vê um valor na página e outro no checkout, o que gera desconfiança e carrinho abandonado. Edite nos dois lugares: `.price-new` na seção `Pricing` e no `.mobile-bar` (barra fixa mobile), além do preço "De R$ 249,90" riscado, se aplicável.
-
-2. **CNPJ**
-   No rodapé, troque `[inserir]` pelo CNPJ real (o e-mail de contato já está preenchido: `contato@alivio.store`).
+- ✅ Checkout Yampi conectado
+- ✅ Fotos reais do produto
+- ✅ Depoimentos com fotos e frases reais
+- ✅ E-mail de contato
+- ✅ Preço da página confirmado como igual ao do checkout Yampi
+- CNPJ: decisão do lojista de não exibir no rodapé por enquanto. Vale lembrar que a legislação de e-commerce no Brasil (Decreto 7.962/2013, que regulamenta o CDC) recomenda identificar o CNPJ (ou CPF, se pessoa física) do vendedor no site — não é bloqueante para publicar, mas é algo a reavaliar mais adiante.
 
 ## Estrutura da página
 
-Header fixo → Hero → selos de confiança → Dores (agitação) → Benefícios → Como usar → Antes/depois → Depoimentos → Garantia de 30 dias → Preços (3 planos) → FAQ → CTA final → Rodapé → barra fixa de compra no mobile.
+Header fixo → Hero → selos de confiança → Dores (agitação) → Benefícios → Como usar → Galeria de fotos → Antes/depois → Depoimentos → Garantia de 30 dias → Preço (1 unidade) → FAQ → CTA final → Rodapé → barra fixa de compra no mobile.
 
 ## Rodando localmente
 
