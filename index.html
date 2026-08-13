@@ -244,6 +244,7 @@
   /* PRICING */
   .pricing{background:#fff;}
   .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;}
+  .price-grid.single{grid-template-columns:1fr;max-width:380px;margin:0 auto;}
   .price-card{
     border:2px solid var(--border);border-radius:20px;padding:30px 26px;position:relative;
     display:flex;flex-direction:column;background:var(--paper);
@@ -643,11 +644,11 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Oferta especial</span>
-      <h2>Escolha seu kit</h2>
-      <p class="muted">Preços de exemplo — ajuste os valores conforme sua precificação real antes de publicar.</p>
+      <h2>Garanta o seu Corretor Premium</h2>
+      <p class="muted">Preço de exemplo — ajuste o valor conforme sua precificação real (ele deve ser igual ao configurado no checkout da Yampi) antes de publicar.</p>
     </div>
-    <div class="price-grid">
-      <div class="price-card">
+    <div class="price-grid single">
+      <div class="price-card featured">
         <h3>1 Unidade</h3>
         <div class="save">&nbsp;</div>
         <div class="price-old">De R$ 249,90</div>
@@ -658,38 +659,7 @@
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 30 dias</li>
         </ul>
-        <a href="#" class="btn btn-primary btn-block">Comprar agora</a>
-      </div>
-
-      <div class="price-card featured">
-        <div class="ribbon">Mais vendido</div>
-        <h3>Kit com 2 unidades</h3>
-        <div class="save">Economize R$ 100</div>
-        <div class="price-old">De R$ 499,80</div>
-        <div class="price-new"><sup>R$</sup> 249<sup>,90</sup></div>
-        <div class="price-unit">R$ 124,95 cada &nbsp;•&nbsp; em até 6x sem juros</div>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>2 Corretores Premium</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis prioritário</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 30 dias</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>1 para você, 1 de presente</li>
-        </ul>
-        <a href="#" class="btn btn-primary btn-block">Quero este kit</a>
-      </div>
-
-      <div class="price-card">
-        <h3>Kit com 3 unidades</h3>
-        <div class="save">Economize R$ 200</div>
-        <div class="price-old">De R$ 749,70</div>
-        <div class="price-new"><sup>R$</sup> 339<sup>,90</sup></div>
-        <div class="price-unit">R$ 113,30 cada &nbsp;•&nbsp; em até 6x sem juros</div>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>3 Corretores Premium</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis prioritário</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 30 dias</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Melhor custo-benefício</li>
-        </ul>
-        <a href="#" class="btn btn-primary btn-block">Quero este kit</a>
+        <a href="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1" class="btn btn-primary btn-block" target="_blank" rel="noopener">Comprar agora</a>
       </div>
     </div>
   </div>
@@ -763,7 +733,7 @@
 <!-- STICKY MOBILE BAR -->
 <div class="mobile-bar">
   <div class="price">R$ 149,90 <small>à vista no Pix</small></div>
-  <a href="#comprar" class="btn btn-primary btn-sm">Comprar agora</a>
+  <a href="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Comprar agora</a>
 </div>
 
 <script>
