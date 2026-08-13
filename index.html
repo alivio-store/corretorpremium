@@ -207,7 +207,8 @@
   }
   .compare-card.bad .tag{background:#fde8e4;color:#c0432a;}
   .compare-card.good .tag{background:#e2f7f2;color:var(--teal-dark);}
-  .compare-visual{padding:30px 20px 10px;display:flex;justify-content:center;background:var(--paper);}
+  .compare-visual{background:#0b1524;}
+  .compare-visual img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;}
   .compare-list{list-style:none;padding:18px 24px 24px;margin:0;}
   .compare-list li{display:flex;gap:8px;align-items:flex-start;font-size:.88rem;color:var(--ink);margin-bottom:10px;}
   .compare-list li svg{flex:none;margin-top:2px;}
@@ -555,11 +556,7 @@
       <div class="compare-card bad">
         <div class="tag">✕ Postura comum</div>
         <div class="compare-visual">
-          <svg width="90" height="150" viewBox="0 0 90 150">
-            <circle cx="40" cy="20" r="14" fill="#c0432a"/>
-            <path d="M40 34 Q60 55 55 90 Q52 115 40 140" stroke="#c0432a" stroke-width="10" fill="none" stroke-linecap="round"/>
-            <path d="M55 60 Q75 65 78 85" stroke="#c0432a" stroke-width="7" fill="none" stroke-linecap="round" opacity=".6"/>
-          </svg>
+          <img src="img/postura-comum.jpg" alt="Mulher com postura curvada, ombros caídos para frente">
         </div>
         <ul class="compare-list">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#c0432a" stroke-width="2.5" stroke-linecap="round"/></svg> Ombros curvados para frente</li>
@@ -570,11 +567,7 @@
       <div class="compare-card good">
         <div class="tag">✔ Com Corretor Premium</div>
         <div class="compare-visual">
-          <svg width="90" height="150" viewBox="0 0 90 150">
-            <circle cx="45" cy="18" r="14" fill="#0d8f81"/>
-            <path d="M45 32 L45 140" stroke="#0d8f81" stroke-width="10" fill="none" stroke-linecap="round"/>
-            <path d="M28 55 L62 55" stroke="#0d8f81" stroke-width="7" stroke-linecap="round"/>
-          </svg>
+          <img src="img/postura-corrigida.jpg" alt="Mulher com postura ereta, coluna e ombros alinhados">
         </div>
         <ul class="compare-list">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#0d8f81" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Coluna e ombros alinhados</li>
