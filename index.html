@@ -303,6 +303,14 @@
   .footer-links{display:flex;gap:22px;flex-wrap:wrap;}
   .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:.78rem;color:rgba(255,255,255,.45);}
 
+  /* GALLERY */
+  .gallery{background:#fff;}
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .gallery-grid img{
+    width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;
+    box-shadow:var(--shadow);border:1px solid var(--border);
+  }
+
   /* STICKY MOBILE BAR */
   .mobile-bar{
     display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
@@ -319,6 +327,7 @@
     .problem-grid{grid-template-columns:repeat(2,1fr);}
     .benefits-grid{grid-template-columns:repeat(2,1fr);}
     .how-grid{grid-template-columns:1fr;gap:40px;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
     .t-grid{grid-template-columns:1fr;}
     .price-grid{grid-template-columns:1fr;}
     .price-card.featured{transform:none;}
@@ -393,32 +402,7 @@
 
     <div class="hero-visual">
       <div class="hero-card">
-        <!-- Ilustração vetorial do produto (troque por foto real do produto quando tiver: <img src="img/produto-hero.jpg" alt="Corretor de postura Premium">) -->
-        <svg viewBox="0 0 320 380" width="300" height="356">
-          <defs>
-            <linearGradient id="strapGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#1c2c42"/>
-              <stop offset="1" stop-color="#0b1524"/>
-            </linearGradient>
-          </defs>
-          <!-- torso silhouette -->
-          <path d="M110 60 Q160 20 210 60 L225 150 Q235 230 205 300 Q160 330 115 300 Q85 230 95 150 Z" fill="#16283f" stroke="#233a58" stroke-width="2"/>
-          <!-- lumbar band -->
-          <rect x="95" y="230" width="130" height="66" rx="20" fill="url(#strapGrad)" stroke="#2c4363" stroke-width="2"/>
-          <text x="160" y="270" text-anchor="middle" fill="#14b8a6" font-size="12" font-weight="700" letter-spacing="2">PREMIUM</text>
-          <!-- crossed straps -->
-          <g stroke="#e9ecef" stroke-width="10" stroke-linecap="round" opacity="0.92">
-            <line x1="118" y1="70" x2="212" y2="235"/>
-            <line x1="202" y1="70" x2="108" y2="235"/>
-          </g>
-          <g stroke="#0b1524" stroke-width="2" stroke-linecap="round" opacity="0.5">
-            <line x1="118" y1="70" x2="212" y2="235"/>
-            <line x1="202" y1="70" x2="108" y2="235"/>
-          </g>
-          <!-- shoulder pads -->
-          <rect x="96" y="52" width="46" height="34" rx="12" fill="#1c2c42" stroke="#2c4363" stroke-width="2" transform="rotate(-18 119 69)"/>
-          <rect x="178" y="52" width="46" height="34" rx="12" fill="#1c2c42" stroke="#2c4363" stroke-width="2" transform="rotate(18 201 69)"/>
-        </svg>
+        <img src="img/produto-hero.jpg" alt="Corretor de postura Premium" width="300">
       </div>
       <div class="float-badge b1">⭐ 4.8/5 avaliação</div>
       <div class="float-badge b2">✔ Uso unissex</div>
@@ -543,6 +527,22 @@
         <h3>Sinta a diferença</h3>
         <p>Use de 30 a 60 min por dia e aumente gradualmente. Resultados perceptíveis já nos primeiros dias.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">No dia a dia</span>
+      <h2>Feito para usar sem perceber</h2>
+    </div>
+    <div class="gallery-grid">
+      <img src="img/produto-uso-1.jpg" alt="Corretor Premium sendo usado, vista de trás">
+      <img src="img/produto-uso-2.jpg" alt="Corretor Premium sendo usado no dia a dia">
+      <img src="img/produto-mulher-1.jpg" alt="Corretor Premium em uso, vista de frente">
+      <img src="img/produto-mulher-2.jpg" alt="Corretor Premium em uso, vista lateral">
     </div>
   </div>
 </section>
