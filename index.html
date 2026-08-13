@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corretor Premium — Postura Ereta, Sem Dor, Sem Esforço</title>
+<meta name="description" content="Corretor de postura ergonômico ajustável. Alivia dores nas costas e ombros, melhora a postura em poucos dias de uso. Frete grátis e garantia de 30 dias.">
+
+<!-- OPEN GRAPH (edite a URL da imagem de compartilhamento quando tiver a foto final do produto) -->
+<meta property="og:title" content="Corretor Premium — Postura Ereta, Sem Dor, Sem Esforço">
+<meta property="og:description" content="O corretor de postura que alivia dores nas costas e recupera sua confiança. Garantia de 30 dias.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧍%3C/text%3E%3C/svg%3E">
+
+<style>
+  :root{
+    --navy:#0b1524;
+    --navy-2:#101f34;
+    --ink:#152238;
+    --paper:#faf7f2;
+    --card:#ffffff;
+    --teal:#14b8a6;
+    --teal-dark:#0d8f81;
+    --gold:#ff8a3d;
+    --gold-dark:#e9711f;
+    --muted:#6b7686;
+    --border:#e8e3d9;
+    --radius:16px;
+    --shadow:0 20px 45px -20px rgba(11,21,36,.25);
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  section{padding:80px 0;}
+  h1,h2,h3{line-height:1.15;margin:0 0 .5em;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--teal-dark);background:rgba(20,184,166,.1);
+    padding:6px 14px;border-radius:99px;margin-bottom:16px;
+  }
+  .center{text-align:center;}
+  .muted{color:var(--muted);}
+
+  /* BUTTONS */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 30px;border-radius:12px;font-weight:700;font-size:1rem;
+    cursor:pointer;border:none;transition:transform .15s ease, box-shadow .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+    color:#fff;box-shadow:0 14px 30px -10px rgba(233,113,31,.55);
+  }
+  .btn-primary:hover{box-shadow:0 18px 36px -10px rgba(233,113,31,.65);}
+  .btn-ghost{
+    background:transparent;border:2px solid rgba(255,255,255,.35);color:#fff;
+  }
+  .btn-block{width:100%;}
+  .btn-sm{padding:10px 18px;font-size:.9rem;border-radius:10px;}
+
+  /* TOPBAR */
+  .topbar{
+    background:var(--navy);color:#fff;font-size:.82rem;text-align:center;
+    padding:9px 12px;letter-spacing:.02em;
+  }
+  .topbar strong{color:var(--gold);}
+
+  /* HEADER */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,21,36,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 0;
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;color:#fff;letter-spacing:.01em;
+  }
+  .logo .dot{width:10px;height:10px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(20,184,166,.25);}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{color:rgba(255,255,255,.75);font-size:.92rem;font-weight:600;transition:color .15s;}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{display:flex;align-items:center;gap:16px;}
+  .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    background:radial-gradient(120% 140% at 15% 0%, #16283f 0%, var(--navy) 55%, var(--navy-2) 100%);
+    color:#fff;position:relative;overflow:hidden;padding:72px 0 96px;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(420px 420px at 88% 18%, rgba(20,184,166,.28), transparent 70%),
+      radial-gradient(360px 360px at 100% 90%, rgba(255,138,61,.18), transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
+    position:relative;z-index:1;
+  }
+  .hero h1{font-size:clamp(2.1rem,4vw,3.1rem);font-weight:800;letter-spacing:-.01em;}
+  .hero h1 span{color:var(--teal);}
+  .hero p.lead{font-size:1.12rem;color:rgba(255,255,255,.78);max-width:520px;margin-bottom:28px;}
+  .hero-points{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+  .hero-points li{display:flex;gap:10px;align-items:flex-start;font-size:.98rem;color:rgba(255,255,255,.9);}
+  .hero-points svg{flex:none;margin-top:2px;}
+  .hero-cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:26px;}
+  .hero-price-note{font-size:.85rem;color:rgba(255,255,255,.6);}
+  .hero-trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:8px;}
+  .hero-trust div{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.7);}
+
+  /* HERO VISUAL */
+  .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;}
+  .hero-card{
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+    border-radius:28px;padding:36px;position:relative;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+  }
+  .float-badge{
+    position:absolute;background:#fff;color:var(--ink);border-radius:14px;
+    padding:10px 14px;font-size:.78rem;font-weight:700;box-shadow:var(--shadow);
+    display:flex;align-items:center;gap:8px;
+  }
+  .float-badge.b1{top:-18px;left:-22px;}
+  .float-badge.b2{bottom:-16px;right:-18px;color:#fff;background:linear-gradient(135deg,var(--teal),var(--teal-dark));}
+
+  /* TRUST STRIP */
+  .trust-strip{background:#fff;border-bottom:1px solid var(--border);}
+  .trust-strip .wrap{
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding:26px 24px;
+  }
+  .trust-item{display:flex;align-items:center;gap:10px;font-size:.88rem;font-weight:600;color:var(--ink);}
+  .trust-item svg{color:var(--teal);}
+
+  /* SECTION HEADS */
+  .section-head{max-width:640px;margin:0 auto 52px;text-align:center;}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.2rem);}
+
+  /* PROBLEM */
+  .problem{background:var(--card);}
+  .problem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .problem-card{
+    border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;
+    background:var(--paper);
+  }
+  .problem-card .icon{
+    width:46px;height:46px;border-radius:12px;background:#fff0e8;color:var(--gold-dark);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .problem-card h3{font-size:1.02rem;}
+  .problem-card p{margin:0;color:var(--muted);font-size:.9rem;}
+
+  /* BENEFITS */
+  .benefits{background:var(--navy);color:#fff;}
+  .benefits .section-head p{color:rgba(255,255,255,.65);}
+  .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .benefit-card{
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+    border-radius:var(--radius);padding:30px 26px;transition:border-color .2s, transform .2s;
+  }
+  .benefit-card:hover{border-color:rgba(20,184,166,.5);transform:translateY(-4px);}
+  .benefit-card .icon{
+    width:52px;height:52px;border-radius:14px;
+    background:linear-gradient(135deg,var(--teal),var(--teal-dark));
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:#fff;
+  }
+  .benefit-card h3{font-size:1.08rem;}
+  .benefit-card p{color:rgba(255,255,255,.6);font-size:.92rem;margin:0;}
+
+  /* HOW IT WORKS */
+  .how{background:var(--paper);}
+  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;position:relative;}
+  .how-step{text-align:center;position:relative;}
+  .how-step .num{
+    width:56px;height:56px;border-radius:50%;background:var(--card);border:2px solid var(--teal);
+    color:var(--teal-dark);font-weight:800;font-size:1.3rem;display:flex;align-items:center;justify-content:center;
+    margin:0 auto 18px;box-shadow:var(--shadow);
+  }
+  .how-step h3{font-size:1.05rem;}
+  .how-step p{color:var(--muted);font-size:.92rem;max-width:260px;margin:0 auto;}
+
+  /* COMPARISON */
+  .compare{background:#fff;}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:760px;margin:0 auto;}
+  .compare-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);}
+  .compare-card .tag{
+    text-align:center;font-weight:800;padding:14px;font-size:.95rem;letter-spacing:.02em;
+  }
+  .compare-card.bad .tag{background:#fde8e4;color:#c0432a;}
+  .compare-card.good .tag{background:#e2f7f2;color:var(--teal-dark);}
+  .compare-visual{padding:30px 20px 10px;display:flex;justify-content:center;background:var(--paper);}
+  .compare-list{list-style:none;padding:18px 24px 24px;margin:0;}
+  .compare-list li{display:flex;gap:8px;align-items:flex-start;font-size:.88rem;color:var(--ink);margin-bottom:10px;}
+  .compare-list li svg{flex:none;margin-top:2px;}
+
+  /* TESTIMONIALS -->
+       Placeholders! Troque nomes/cidades/textos abaixo por depoimentos reais
+       de clientes antes de publicar (com autorização deles). */
+  .testimonials{background:var(--navy-2);color:#fff;}
+  .testimonials .section-head p{color:rgba(255,255,255,.6);}
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .t-card{
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+    border-radius:var(--radius);padding:26px;
+  }
+  .t-stars{color:var(--gold);font-size:.95rem;margin-bottom:12px;letter-spacing:2px;}
+  .t-card p{color:rgba(255,255,255,.82);font-size:.94rem;margin:0 0 18px;}
+  .t-person{display:flex;align-items:center;gap:12px;}
+  .t-avatar{
+    width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:.9rem;color:#fff;background:linear-gradient(135deg,var(--teal),var(--gold));
+  }
+  .t-person strong{display:block;font-size:.88rem;}
+  .t-person span{display:block;font-size:.78rem;color:rgba(255,255,255,.5);}
+
+  /* GUARANTEE */
+  .guarantee{background:var(--paper);}
+  .guarantee-box{
+    max-width:900px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;
+    background:#fff;border:1px solid var(--border);border-radius:24px;padding:40px;box-shadow:var(--shadow);
+  }
+  .guarantee-box h3{font-size:1.3rem;margin-bottom:8px;}
+  .guarantee-box p{color:var(--muted);margin:0;font-size:.95rem;}
+
+  /* PRICING */
+  .pricing{background:#fff;}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;}
+  .price-card{
+    border:2px solid var(--border);border-radius:20px;padding:30px 26px;position:relative;
+    display:flex;flex-direction:column;background:var(--paper);
+  }
+  .price-card.featured{
+    border-color:var(--teal);background:#fff;box-shadow:0 25px 50px -20px rgba(20,184,166,.35);transform:scale(1.03);
+  }
+  .price-card .ribbon{
+    position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+    background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#fff;
+    font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+    padding:6px 16px;border-radius:99px;box-shadow:0 8px 18px -6px rgba(233,113,31,.6);
+  }
+  .price-card h3{font-size:1.05rem;margin-bottom:4px;}
+  .price-card .save{font-size:.82rem;color:var(--teal-dark);font-weight:700;margin-bottom:14px;}
+  .price-old{font-size:.95rem;color:var(--muted);text-decoration:line-through;}
+  .price-new{font-size:2.1rem;font-weight:800;color:var(--ink);margin:2px 0 4px;}
+  .price-new sup{font-size:1rem;font-weight:700;}
+  .price-unit{font-size:.8rem;color:var(--muted);margin-bottom:20px;}
+  .price-card ul{margin-bottom:24px;flex:1;}
+  .price-card ul li{display:flex;gap:8px;font-size:.88rem;margin-bottom:10px;align-items:flex-start;}
+  .price-card ul li svg{flex:none;margin-top:2px;color:var(--teal-dark);}
+
+  /* FAQ */
+  .faq{background:var(--paper);}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-item{
+    background:#fff;border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;
+  }
+  .faq-q{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:18px 22px;cursor:pointer;font-weight:700;font-size:.96rem;
+  }
+  .faq-q .plus{
+    flex:none;width:26px;height:26px;border-radius:50%;background:var(--paper);
+    display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--teal-dark);
+    transition:transform .2s;
+  }
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .faq-a p{margin:0;padding:0 22px 20px;color:var(--muted);font-size:.9rem;}
+
+  /* FINAL CTA */
+  .final-cta{
+    background:linear-gradient(135deg,var(--navy) 0%, var(--teal-dark) 130%);
+    color:#fff;text-align:center;padding:76px 0;
+  }
+  .final-cta h2{font-size:clamp(1.6rem,3.4vw,2.3rem);}
+  .final-cta p{color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 30px;}
+
+  /* FOOTER */
+  footer{background:var(--navy);color:rgba(255,255,255,.6);padding:48px 0 90px;font-size:.85rem;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:24px;}
+  footer a{color:rgba(255,255,255,.7);}
+  footer a:hover{color:#fff;}
+  .footer-links{display:flex;gap:22px;flex-wrap:wrap;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:.78rem;color:rgba(255,255,255,.45);}
+
+  /* STICKY MOBILE BAR */
+  .mobile-bar{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:#fff;border-top:1px solid var(--border);padding:12px 16px;
+    box-shadow:0 -10px 30px -12px rgba(0,0,0,.25);
+    align-items:center;justify-content:space-between;gap:14px;
+  }
+  .mobile-bar .price{font-weight:800;font-size:1.05rem;}
+  .mobile-bar .price small{display:block;font-weight:600;color:var(--muted);font-size:.7rem;}
+
+  @media (max-width: 980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;}
+    .problem-grid{grid-template-columns:repeat(2,1fr);}
+    .benefits-grid{grid-template-columns:repeat(2,1fr);}
+    .how-grid{grid-template-columns:1fr;gap:40px;}
+    .t-grid{grid-template-columns:1fr;}
+    .price-grid{grid-template-columns:1fr;}
+    .price-card.featured{transform:none;}
+    .guarantee-box{grid-template-columns:1fr;text-align:center;}
+    .guarantee-box svg{margin:0 auto;}
+  }
+  @media (max-width: 720px){
+    .nav-links{display:none;}
+    .nav-toggle{display:block;}
+    .compare-grid{grid-template-columns:1fr;}
+    .problem-grid{grid-template-columns:1fr;}
+    section{padding:56px 0;}
+    .mobile-bar{display:flex;}
+    body{padding-bottom:78px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">🚚 <strong>Frete grátis</strong> para todo o Brasil hoje &nbsp;•&nbsp; Garantia de 30 dias ou seu dinheiro de volta</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="logo"><span class="dot"></span> Corretor Premium</div>
+    <nav class="nav-links">
+      <a href="#beneficios">Benefícios</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#comprar" class="btn btn-primary btn-sm">Comprar agora</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">✔ Mais de 10.000 pessoas já corrigiram a postura</span>
+      <h1>Coluna ereta e <span>sem dor</span> nas costas em poucos dias de uso</h1>
+      <p class="lead">O Corretor Premium alinha ombros e coluna de forma suave, alivia a tensão muscular do dia a dia e devolve sua confiança — discreto por baixo da roupa, para homens e mulheres.</p>
+
+      <ul class="hero-points">
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#14b8a6"/><path d="M7 12.5l3 3 7-7" stroke="#0b1524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ajuste em 4 tamanhos de tiras, veste em segundos
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#14b8a6"/><path d="M7 12.5l3 3 7-7" stroke="#0b1524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Tecido respirável, confortável para o uso diário
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#14b8a6"/><path d="M7 12.5l3 3 7-7" stroke="#0b1524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Discreto: usa por baixo da camiseta sem aparecer
+        </li>
+      </ul>
+
+      <div class="hero-cta-row">
+        <a href="#comprar" class="btn btn-primary">Quero minha postura de volta →</a>
+        <a href="#como-funciona" class="btn btn-ghost">Ver como funciona</a>
+      </div>
+      <div class="hero-price-note">📦 Estoque limitado nesta oferta &nbsp;•&nbsp; Envio em até 24h úteis</div>
+
+      <div class="hero-trust">
+        <div>🔒 Compra 100% segura</div>
+        <div>↩️ 30 dias de garantia</div>
+        <div>🚚 Frete grátis</div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card">
+        <!-- Ilustração vetorial do produto (troque por foto real do produto quando tiver: <img src="img/produto-hero.jpg" alt="Corretor de postura Premium">) -->
+        <svg viewBox="0 0 320 380" width="300" height="356">
+          <defs>
+            <linearGradient id="strapGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1c2c42"/>
+              <stop offset="1" stop-color="#0b1524"/>
+            </linearGradient>
+          </defs>
+          <!-- torso silhouette -->
+          <path d="M110 60 Q160 20 210 60 L225 150 Q235 230 205 300 Q160 330 115 300 Q85 230 95 150 Z" fill="#16283f" stroke="#233a58" stroke-width="2"/>
+          <!-- lumbar band -->
+          <rect x="95" y="230" width="130" height="66" rx="20" fill="url(#strapGrad)" stroke="#2c4363" stroke-width="2"/>
+          <text x="160" y="270" text-anchor="middle" fill="#14b8a6" font-size="12" font-weight="700" letter-spacing="2">PREMIUM</text>
+          <!-- crossed straps -->
+          <g stroke="#e9ecef" stroke-width="10" stroke-linecap="round" opacity="0.92">
+            <line x1="118" y1="70" x2="212" y2="235"/>
+            <line x1="202" y1="70" x2="108" y2="235"/>
+          </g>
+          <g stroke="#0b1524" stroke-width="2" stroke-linecap="round" opacity="0.5">
+            <line x1="118" y1="70" x2="212" y2="235"/>
+            <line x1="202" y1="70" x2="108" y2="235"/>
+          </g>
+          <!-- shoulder pads -->
+          <rect x="96" y="52" width="46" height="34" rx="12" fill="#1c2c42" stroke="#2c4363" stroke-width="2" transform="rotate(-18 119 69)"/>
+          <rect x="178" y="52" width="46" height="34" rx="12" fill="#1c2c42" stroke="#2c4363" stroke-width="2" transform="rotate(18 201 69)"/>
+        </svg>
+      </div>
+      <div class="float-badge b1">⭐ 4.8/5 avaliação</div>
+      <div class="float-badge b2">✔ Uso unissex</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12l4-8h10l4 8-9 9-9-9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> Frete grátis para todo o Brasil</div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> Pagamento 100% seguro</div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1016 0 8 8 0 00-16 0z" stroke="currentColor" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Garantia de 30 dias</div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 12h4l3-8 4 16 3-8h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Entrega expressa</div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem" id="problema">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">O problema</span>
+      <h2>Você reconhece essa rotina?</h2>
+      <p class="muted">Horas sentado, celular, computador... a postura vai piorando sem você perceber — e a conta chega em forma de dor.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Dor nas costas no fim do dia</h3>
+        <p>Aquela fisgada nos ombros e na lombar depois de horas na cadeira.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M6 9c0-3 2.5-5 6-5s6 2 6 5-2.5 4-6 4-6 1-6 4 2.5 5 6 5 6-2 6-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Ombros caídos para frente</h3>
+        <p>A postura curvada vira hábito e afeta até a respiração.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M5 21c0-4 3-6 7-6s7 2 7 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Insegurança na aparência</h3>
+        <p>Postura curvada passa cansaço, idade e falta de confiança.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 8v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Corrigir sozinho não dura</h3>
+        <p>"Se lembrar de ficar ereto" funciona por 5 minutos e volta ao normal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits" id="beneficios">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="background:rgba(255,138,61,.15);color:var(--gold);">A solução</span>
+      <h2>Por que o Corretor Premium funciona</h2>
+      <p>Um lembrete físico e gentil que reeduca seus músculos a manterem a postura correta — sem esforço mental.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M4 12l4-4M4 12l4 4M20 12l-4-4M20 12l-4 4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Ajuste sob medida</h3>
+        <p>4 pontos de regulagem nas tiras e na cinta lombar — veste em segundos e se adapta ao seu corpo.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12c3-4 6-4 9 0s6 4 9 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M3 17c3-4 6-4 9 0s6 4 9 0" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".5"/></svg></div>
+        <h3>Tecido respirável</h3>
+        <p>Malha leve que não esquenta, ideal para usar o dia todo — em casa, no trabalho ou treinando.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>Discreto sob a roupa</h3>
+        <p>Design fino que não marca por baixo da camiseta — use no escritório sem ninguém perceber.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2"/></svg></div>
+        <h3>Alívio das dores</h3>
+        <p>Reduz a sobrecarga na lombar e nos ombros, aliviando a tensão acumulada do dia a dia.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 7L10 17l-5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Resultados em poucos dias</h3>
+        <p>Uso gradual: comece com 30 min/dia e sinta a diferença já na primeira semana.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>Unissex, todos os tamanhos</h3>
+        <p>Modelo ajustável que serve tanto para homens quanto para mulheres, em qualquer biotipo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="como-funciona">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Simples assim</span>
+      <h2>Como usar o Corretor Premium</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="num">1</div>
+        <h3>Vista em segundos</h3>
+        <p>Coloque como uma mochila e feche o velcro da cinta lombar.</p>
+      </div>
+      <div class="how-step">
+        <div class="num">2</div>
+        <h3>Ajuste o conforto</h3>
+        <p>Regule as tiras até sentir os ombros alinhados, sem apertar demais.</p>
+      </div>
+      <div class="how-step">
+        <div class="num">3</div>
+        <h3>Sinta a diferença</h3>
+        <p>Use de 30 a 60 min por dia e aumente gradualmente. Resultados perceptíveis já nos primeiros dias.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Antes & depois</span>
+      <h2>A diferença que o alinhamento faz</h2>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card bad">
+        <div class="tag">✕ Postura comum</div>
+        <div class="compare-visual">
+          <svg width="90" height="150" viewBox="0 0 90 150">
+            <circle cx="40" cy="20" r="14" fill="#c0432a"/>
+            <path d="M40 34 Q60 55 55 90 Q52 115 40 140" stroke="#c0432a" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <path d="M55 60 Q75 65 78 85" stroke="#c0432a" stroke-width="7" fill="none" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div>
+        <ul class="compare-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#c0432a" stroke-width="2.5" stroke-linecap="round"/></svg> Ombros curvados para frente</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#c0432a" stroke-width="2.5" stroke-linecap="round"/></svg> Sobrecarga na lombar</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#c0432a" stroke-width="2.5" stroke-linecap="round"/></svg> Cansaço e dor no fim do dia</li>
+        </ul>
+      </div>
+      <div class="compare-card good">
+        <div class="tag">✔ Com Corretor Premium</div>
+        <div class="compare-visual">
+          <svg width="90" height="150" viewBox="0 0 90 150">
+            <circle cx="45" cy="18" r="14" fill="#0d8f81"/>
+            <path d="M45 32 L45 140" stroke="#0d8f81" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <path d="M28 55 L62 55" stroke="#0d8f81" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <ul class="compare-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#0d8f81" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Coluna e ombros alinhados</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#0d8f81" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Peso distribuído corretamente</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#0d8f81" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Mais disposição e confiança</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS (placeholders — substitua por depoimentos reais de clientes) -->
+<section class="testimonials" id="depoimentos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="background:rgba(255,255,255,.1);color:#fff;">Depoimentos</span>
+      <h2>Quem usa, recomenda</h2>
+      <p>Exemplos de relato — substitua pelos depoimentos reais dos seus clientes.</p>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p>"Trabalho o dia todo no computador e sentia a lombar travar. Depois de duas semanas de uso, a diferença foi nítida."</p>
+        <div class="t-person">
+          <div class="t-avatar">R.</div>
+          <div><strong>R. — Cliente</strong><span>São Paulo, SP</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p>"É bem discreto, uso por baixo da blusa e ninguém percebe. Melhorou bastante minha postura ao longo do dia."</p>
+        <div class="t-person">
+          <div class="t-avatar">M.</div>
+          <div><strong>M. — Cliente</strong><span>Belo Horizonte, MG</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p>"Material bom, ajuste fácil. Comecei usando 30 minutos por dia como recomendado e fui aumentando aos poucos."</p>
+        <div class="t-person">
+          <div class="t-avatar">L.</div>
+          <div><strong>L. — Cliente</strong><span>Curitiba, PR</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="wrap">
+    <div class="guarantee-box">
+      <svg width="84" height="84" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" stroke="#14b8a6" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <h3>Garantia incondicional de 30 dias</h3>
+        <p>Experimente o Corretor Premium sem risco. Se não sentir diferença na sua postura ou conforto, devolvemos 100% do seu dinheiro — sem perguntas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="comprar">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Oferta especial</span>
+      <h2>Escolha seu kit</h2>
+      <p class="muted">Preços de exemplo — ajuste os valores conforme sua precificação real antes de publicar.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>1 Unidade</h3>
+        <div class="save">&nbsp;</div>
+        <div class="price-old">De R$ 249,90</div>
+        <div class="price-new"><sup>R$</sup> 149<sup>,90</sup></div>
+        <div class="price-unit">à vista no Pix ou em até 3x sem juros</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>1 Corretor Premium</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 30 dias</li>
+        </ul>
+        <a href="#" class="btn btn-primary btn-block">Comprar agora</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="ribbon">Mais vendido</div>
+        <h3>Kit com 2 unidades</h3>
+        <div class="save">Economize R$ 100</div>
+        <div class="price-old">De R$ 499,80</div>
+        <div class="price-new"><sup>R$</sup> 249<sup>,90</sup></div>
+        <div class="price-unit">R$ 124,95 cada &nbsp;•&nbsp; em até 6x sem juros</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>2 Corretores Premium</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis prioritário</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 30 dias</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>1 para você, 1 de presente</li>
+        </ul>
+        <a href="#" class="btn btn-primary btn-block">Quero este kit</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Kit com 3 unidades</h3>
+        <div class="save">Economize R$ 200</div>
+        <div class="price-old">De R$ 749,70</div>
+        <div class="price-new"><sup>R$</sup> 339<sup>,90</sup></div>
+        <div class="price-unit">R$ 113,30 cada &nbsp;•&nbsp; em até 6x sem juros</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>3 Corretores Premium</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis prioritário</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 30 dias</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Melhor custo-benefício</li>
+        </ul>
+        <a href="#" class="btn btn-primary btn-block">Quero este kit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>Perguntas que você pode ter</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Serve para o meu tamanho? <span class="plus">+</span></div>
+        <div class="faq-a"><p>Sim. O modelo é ajustável em 4 pontos (tiras e cinta lombar), servindo confortavelmente para a maioria dos biotipos, homens e mulheres.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Dá para usar por baixo da roupa? <span class="plus">+</span></div>
+        <div class="faq-a"><p>Sim, o design é fino e discreto, pensado para uso no dia a dia sem aparecer por baixo de camisetas e camisas.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Em quanto tempo eu sinto resultado? <span class="plus">+</span></div>
+        <div class="faq-a"><p>Recomendamos começar com 30 minutos por dia, aumentando gradualmente. Muitos clientes relatam sentir diferença no conforto já nos primeiros dias de uso.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">O produto substitui acompanhamento médico? <span class="plus">+</span></div>
+        <div class="faq-a"><p>Não. O Corretor Premium é um produto de conforto e apoio postural, não um dispositivo médico. Em casos de dor persistente ou condições de coluna diagnosticadas, procure orientação de um profissional de saúde antes de usar.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Como funciona a garantia? <span class="plus">+</span></div>
+        <div class="faq-a"><p>Você tem 30 dias corridos a partir do recebimento para testar. Se não gostar, devolvemos 100% do valor pago — basta entrar em contato pelo nosso suporte.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Quanto tempo leva para chegar? <span class="plus">+</span></div>
+        <div class="faq-a"><p>O pedido é despachado em até 24h úteis. O prazo de entrega varia conforme sua região e é informado no checkout antes da confirmação da compra.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Sua postura não muda sozinha. Comece hoje.</h2>
+    <p>Junte-se a milhares de pessoas que já recuperaram conforto e confiança com o Corretor Premium.</p>
+    <a href="#comprar" class="btn btn-primary">Garantir meu Corretor Premium →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="logo" style="color:#fff;"><span class="dot"></span> Corretor Premium</div>
+      <div class="footer-links">
+        <a href="#beneficios">Benefícios</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="#comprar">Comprar</a>
+      </div>
+    </div>
+    <p class="muted" style="max-width:640px;">
+      Este produto tem finalidade de conforto e apoio postural e não substitui diagnóstico, tratamento ou acompanhamento médico. Consulte um profissional de saúde em caso de dores persistentes ou condições pré-existentes da coluna.
+    </p>
+    <div class="footer-bottom">
+      © <span id="year"></span> Corretor Premium. Todos os direitos reservados. &nbsp;|&nbsp; CNPJ: [inserir] &nbsp;|&nbsp; contato@corretorpremium.com.br
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE BAR -->
+<div class="mobile-bar">
+  <div class="price">R$ 149,90 <small>à vista no Pix</small></div>
+  <a href="#comprar" class="btn btn-primary btn-sm">Comprar agora</a>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem){
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-a').style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        a.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
