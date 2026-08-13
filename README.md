@@ -24,7 +24,7 @@ Se quiser trocar alguma, basta substituir o arquivo correspondente em `img/` man
 
 ## Depoimentos
 
-A seção `#depoimentos` usa 4 fotos reais de clientes (`img/depoimento-1.jpg` a `depoimento-4.jpg`), enviadas com autorização para uso como propaganda da loja. Não há citações/textos atribuídos a essas clientes — só as fotos, para não inventar falas em nome de pessoas reais. Se depois você tiver o texto real que uma cliente escreveu (elogio, relato), me avise ou edite o `<span>` correspondente em `.t-photo` no `index.html` para incluir a citação junto da foto dela.
+A seção `#depoimentos` usa 4 fotos reais de clientes (`img/depoimento-1.jpg` a `depoimento-4.jpg`), enviadas com autorização para uso como propaganda da loja, cada uma com a frase real que a cliente enviou.
 
 ## O que fazer antes de publicar
 

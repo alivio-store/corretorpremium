@@ -218,11 +218,15 @@
   .t-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
   .t-photo{
     border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.12);
-    background:rgba(255,255,255,.05);
+    background:rgba(255,255,255,.05);display:flex;flex-direction:column;
   }
   .t-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;}
+  .t-photo p{
+    margin:0;padding:14px 14px 6px;font-size:.85rem;color:rgba(255,255,255,.88);
+    flex:1;line-height:1.45;
+  }
   .t-photo span{
-    display:block;padding:10px 12px;font-size:.78rem;color:rgba(255,255,255,.6);
+    display:block;padding:0 14px 14px;font-size:.76rem;color:rgba(255,255,255,.5);
   }
 
   /* GUARANTEE */
@@ -593,18 +597,22 @@
     <div class="t-grid">
       <div class="t-photo">
         <img src="img/depoimento-1.jpg" alt="Cliente usando o Corretor Premium">
+        <p>"Chegou rápido e é muito bom, tenho hérnia de disco, funciona para dor."</p>
         <span>Cliente Corretor Premium</span>
       </div>
       <div class="t-photo">
         <img src="img/depoimento-2.jpg" alt="Cliente usando o Corretor Premium">
+        <p>"Fácil de usar, comprei pra mim e pra minha filha."</p>
         <span>Cliente Corretor Premium</span>
       </div>
       <div class="t-photo">
         <img src="img/depoimento-3.jpg" alt="Cliente usando o Corretor Premium">
+        <p>"Tenho dor na coluna, estou usando tem 1 mês para tratamento."</p>
         <span>Cliente Corretor Premium</span>
       </div>
       <div class="t-photo">
         <img src="img/depoimento-4.jpg" alt="Cliente usando o Corretor Premium">
+        <p>"Meu fisioterapeuta indicou, vale a pena, recomendo."</p>
         <span>Cliente Corretor Premium</span>
       </div>
     </div>
