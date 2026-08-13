@@ -212,25 +212,18 @@
   .compare-list li{display:flex;gap:8px;align-items:flex-start;font-size:.88rem;color:var(--ink);margin-bottom:10px;}
   .compare-list li svg{flex:none;margin-top:2px;}
 
-  /* TESTIMONIALS -->
-       Placeholders! Troque nomes/cidades/textos abaixo por depoimentos reais
-       de clientes antes de publicar (com autorização deles). */
+  /* TESTIMONIALS — fotos reais de clientes, enviadas com autorização */
   .testimonials{background:var(--navy-2);color:#fff;}
   .testimonials .section-head p{color:rgba(255,255,255,.6);}
-  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  .t-card{
-    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
-    border-radius:var(--radius);padding:26px;
+  .t-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .t-photo{
+    border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.05);
   }
-  .t-stars{color:var(--gold);font-size:.95rem;margin-bottom:12px;letter-spacing:2px;}
-  .t-card p{color:rgba(255,255,255,.82);font-size:.94rem;margin:0 0 18px;}
-  .t-person{display:flex;align-items:center;gap:12px;}
-  .t-avatar{
-    width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    font-weight:800;font-size:.9rem;color:#fff;background:linear-gradient(135deg,var(--teal),var(--gold));
+  .t-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;}
+  .t-photo span{
+    display:block;padding:10px 12px;font-size:.78rem;color:rgba(255,255,255,.6);
   }
-  .t-person strong{display:block;font-size:.88rem;}
-  .t-person span{display:block;font-size:.78rem;color:rgba(255,255,255,.5);}
 
   /* GUARANTEE */
   .guarantee{background:var(--paper);}
@@ -328,7 +321,7 @@
     .benefits-grid{grid-template-columns:repeat(2,1fr);}
     .how-grid{grid-template-columns:1fr;gap:40px;}
     .gallery-grid{grid-template-columns:repeat(2,1fr);}
-    .t-grid{grid-template-columns:1fr;}
+    .t-grid{grid-template-columns:repeat(2,1fr);}
     .price-grid{grid-template-columns:1fr;}
     .price-card.featured{transform:none;}
     .guarantee-box{grid-template-columns:1fr;text-align:center;}
@@ -589,38 +582,30 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS (placeholders — substitua por depoimentos reais de clientes) -->
+<!-- TESTIMONIALS — fotos reais de clientes, enviadas com autorização -->
 <section class="testimonials" id="depoimentos">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow" style="background:rgba(255,255,255,.1);color:#fff;">Depoimentos</span>
       <h2>Quem usa, recomenda</h2>
-      <p>Exemplos de relato — substitua pelos depoimentos reais dos seus clientes.</p>
+      <p>Fotos enviadas por clientes reais, com autorização para uso na loja.</p>
     </div>
     <div class="t-grid">
-      <div class="t-card">
-        <div class="t-stars">★★★★★</div>
-        <p>"Trabalho o dia todo no computador e sentia a lombar travar. Depois de duas semanas de uso, a diferença foi nítida."</p>
-        <div class="t-person">
-          <div class="t-avatar">R.</div>
-          <div><strong>R. — Cliente</strong><span>São Paulo, SP</span></div>
-        </div>
+      <div class="t-photo">
+        <img src="img/depoimento-1.jpg" alt="Cliente usando o Corretor Premium">
+        <span>Cliente Corretor Premium</span>
       </div>
-      <div class="t-card">
-        <div class="t-stars">★★★★★</div>
-        <p>"É bem discreto, uso por baixo da blusa e ninguém percebe. Melhorou bastante minha postura ao longo do dia."</p>
-        <div class="t-person">
-          <div class="t-avatar">M.</div>
-          <div><strong>M. — Cliente</strong><span>Belo Horizonte, MG</span></div>
-        </div>
+      <div class="t-photo">
+        <img src="img/depoimento-2.jpg" alt="Cliente usando o Corretor Premium">
+        <span>Cliente Corretor Premium</span>
       </div>
-      <div class="t-card">
-        <div class="t-stars">★★★★★</div>
-        <p>"Material bom, ajuste fácil. Comecei usando 30 minutos por dia como recomendado e fui aumentando aos poucos."</p>
-        <div class="t-person">
-          <div class="t-avatar">L.</div>
-          <div><strong>L. — Cliente</strong><span>Curitiba, PR</span></div>
-        </div>
+      <div class="t-photo">
+        <img src="img/depoimento-3.jpg" alt="Cliente usando o Corretor Premium">
+        <span>Cliente Corretor Premium</span>
+      </div>
+      <div class="t-photo">
+        <img src="img/depoimento-4.jpg" alt="Cliente usando o Corretor Premium">
+        <span>Cliente Corretor Premium</span>
       </div>
     </div>
   </div>

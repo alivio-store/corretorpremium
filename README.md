@@ -22,15 +22,16 @@ As fotos reais já estão na pasta `img/` e em uso no hero e numa galeria ("No d
 
 Se quiser trocar alguma, basta substituir o arquivo correspondente em `img/` mantendo o mesmo nome (ou trocar o `src` no `index.html`).
 
+## Depoimentos
+
+A seção `#depoimentos` usa 4 fotos reais de clientes (`img/depoimento-1.jpg` a `depoimento-4.jpg`), enviadas com autorização para uso como propaganda da loja. Não há citações/textos atribuídos a essas clientes — só as fotos, para não inventar falas em nome de pessoas reais. Se depois você tiver o texto real que uma cliente escreveu (elogio, relato), me avise ou edite o `<span>` correspondente em `.t-photo` no `index.html` para incluir a citação junto da foto dela.
+
 ## O que fazer antes de publicar
 
 1. **Preço**
    O valor exibido (`R$ 149,90`) ainda é um **exemplo**. Ele precisa bater exatamente com o preço configurado no produto da Yampi — se forem diferentes, o cliente vê um valor na página e outro no checkout, o que gera desconfiança e carrinho abandonado. Edite nos dois lugares: `.price-new` na seção `Pricing` e no `.mobile-bar` (barra fixa mobile), além do preço "De R$ 249,90" riscado, se aplicável.
 
-2. **Depoimentos**
-   Os três depoimentos em `#depoimentos` são placeholders de exemplo. Substitua por depoimentos reais de clientes (com autorização deles) antes de publicar — está marcado com comentário `TESTIMONIALS (placeholders...)`.
-
-3. **CNPJ**
+2. **CNPJ**
    No rodapé, troque `[inserir]` pelo CNPJ real (o e-mail de contato já está preenchido: `contato@alivio.store`).
 
 ## Estrutura da página
