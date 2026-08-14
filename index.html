@@ -233,6 +233,10 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 
   /* REVIEWS — avaliações reais de clientes, enviadas com autorização */
   .reviews{background:var(--card);border-top:1px solid var(--border);}
+  .rating-summary{display:flex;align-items:center;justify-content:center;gap:10px;margin:6px 0 12px;}
+  .rating-number{font-size:1.8rem;font-weight:800;color:var(--ink);}
+  .rating-number small{font-size:1rem;font-weight:700;color:var(--muted);}
+  .rating-stars{color:var(--gold);font-size:1.15rem;letter-spacing:2px;}
   .reviews-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
   .review-card{
     background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);
@@ -719,6 +723,10 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     <div class="section-head">
       <span class="eyebrow">Depoimentos</span>
       <h2>Opiniões dos Clientes</h2>
+      <div class="rating-summary">
+        <span class="rating-number">4.9<small>/5</small></span>
+        <span class="rating-stars">★★★★★</span>
+      </div>
       <p class="muted">Avaliações reais, com fotos enviadas pelas próprias clientes.</p>
     </div>
     <div class="reviews-grid">
