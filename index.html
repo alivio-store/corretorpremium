@@ -91,6 +91,14 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   }
   .btn-block{width:100%;}
   .btn-sm{padding:10px 18px;font-size:.9rem;border-radius:10px;}
+  .btn-pulse{animation:btnPulse 1.8s ease-in-out infinite;}
+  @keyframes btnPulse{
+    0%,100%{box-shadow:0 14px 30px -10px rgba(233,113,31,.55), 0 0 0 0 rgba(255,138,61,.55);}
+    50%{box-shadow:0 14px 30px -10px rgba(233,113,31,.55), 0 0 0 12px rgba(255,138,61,0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .btn-pulse{animation:none;}
+  }
 
   /* TOPBAR */
   .topbar{
@@ -661,7 +669,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 90 dias</li>
           </ul>
-          <a href="https://alivio3.pay.yampi.com.br/r/C56O44YNEY" class="btn btn-primary btn-block" target="_blank" rel="noopener">Comprar agora</a>
+          <a href="https://alivio3.pay.yampi.com.br/r/C56O44YNEY" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
         </div>
       </div>
 
@@ -677,7 +685,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 90 dias</li>
           </ul>
-          <a href="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1" class="btn btn-primary btn-block" target="_blank" rel="noopener">Comprar agora</a>
+          <a href="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
         </div>
       </div>
 
@@ -693,7 +701,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantia de 90 dias</li>
         </ul>
-        <a href="https://alivio3.pay.yampi.com.br/r/BH24KQUJ93" class="btn btn-primary btn-block" target="_blank" rel="noopener">Comprar agora</a>
+        <a href="https://alivio3.pay.yampi.com.br/r/BH24KQUJ93" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
       </div>
     </div>
   </div>
@@ -899,7 +907,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 <!-- STICKY MOBILE BAR -->
 <div class="mobile-bar">
   <div class="price">R$ 129,90 <small>ou 12x de R$ 10,83</small></div>
-  <a href="#comprar" class="btn btn-primary btn-sm">Escolher tamanho</a>
+  <a href="#comprar" class="btn btn-primary btn-sm btn-pulse">Escolher tamanho</a>
 </div>
 
 <script>
