@@ -242,11 +242,13 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);
     padding:18px;display:flex;flex-direction:column;gap:12px;
   }
+  .review-card-head{display:flex;align-items:center;justify-content:space-between;gap:8px;}
   .review-badge{
     display:inline-flex;align-items:center;gap:5px;width:fit-content;
     font-size:.72rem;font-weight:800;color:var(--teal-dark);background:rgba(20,184,166,.12);
     padding:5px 11px;border-radius:99px;
   }
+  .stars-sm{color:var(--gold);font-size:.78rem;letter-spacing:1px;white-space:nowrap;}
   .review-text{margin:0;font-size:.88rem;color:var(--ink);line-height:1.5;flex:1;}
   .review-card img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;}
 
@@ -724,29 +726,41 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
       <span class="eyebrow">Depoimentos</span>
       <h2>Opiniões dos Clientes</h2>
       <div class="rating-summary">
-        <span class="rating-number">4.9<small>/5</small></span>
+        <span class="rating-number"><span id="rating-avg">–</span><small>/5</small></span>
         <span class="rating-stars">★★★★★</span>
       </div>
-      <p class="muted">Avaliações reais, com fotos enviadas pelas próprias clientes.</p>
+      <p class="muted" id="review-count">avaliações reais de clientes</p>
     </div>
     <div class="reviews-grid">
       <div class="review-card">
-        <span class="review-badge">✓ Cliente verificada</span>
+        <div class="review-card-head">
+          <span class="review-badge">✓ Cliente verificada</span>
+          <span class="stars-sm">★★★★★</span>
+        </div>
         <p class="review-text">"Chegou rápido e é muito bom, tenho hérnia de disco, funciona para dor."</p>
         <img src="img/depoimento-1.jpg" alt="Foto enviada por cliente real do Corretor Premium">
       </div>
       <div class="review-card">
-        <span class="review-badge">✓ Cliente verificada</span>
+        <div class="review-card-head">
+          <span class="review-badge">✓ Cliente verificada</span>
+          <span class="stars-sm">★★★★★</span>
+        </div>
         <p class="review-text">"Fácil de usar, comprei pra mim e pra minha filha."</p>
         <img src="img/depoimento-2.jpg" alt="Foto enviada por cliente real do Corretor Premium">
       </div>
       <div class="review-card">
-        <span class="review-badge">✓ Cliente verificada</span>
+        <div class="review-card-head">
+          <span class="review-badge">✓ Cliente verificada</span>
+          <span class="stars-sm">★★★★☆</span>
+        </div>
         <p class="review-text">"Tenho dor na coluna, estou usando tem 1 mês para tratamento."</p>
         <img src="img/depoimento-3.jpg" alt="Foto enviada por cliente real do Corretor Premium">
       </div>
       <div class="review-card">
-        <span class="review-badge">✓ Cliente verificada</span>
+        <div class="review-card-head">
+          <span class="review-badge">✓ Cliente verificada</span>
+          <span class="stars-sm">★★★★★</span>
+        </div>
         <p class="review-text">"Meu fisioterapeuta indicou, vale a pena, recomendo."</p>
         <img src="img/depoimento-4.jpg" alt="Foto enviada por cliente real do Corretor Premium">
       </div>
@@ -791,6 +805,20 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     entrega.setDate(entrega.getDate() + 2);
     var texto = 'RECEBA ATÉ ' + diasSemana[entrega.getDay()].toUpperCase() + ', DIA ' + entrega.getDate() + ' DE ' + meses[entrega.getMonth()].toUpperCase();
     document.querySelectorAll('.delivery-date').forEach(function(el){ el.textContent = texto; });
+  })();
+
+  // Nota média calculada a partir das estrelas realmente exibidas em cada avaliação
+  // (nunca um número solto — some as ★ de cada .review-card presente na página)
+  (function(){
+    var cards = document.querySelectorAll('.review-card .stars-sm');
+    if(!cards.length) return;
+    var total = 0;
+    cards.forEach(function(el){
+      total += (el.textContent.match(/★/g) || []).length;
+    });
+    var avg = total / cards.length;
+    document.getElementById('rating-avg').textContent = avg.toFixed(1);
+    document.getElementById('review-count').textContent = 'de ' + cards.length + ' avaliações reais de clientes';
   })();
 
   // FAQ accordion
