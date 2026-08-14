@@ -228,6 +228,10 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   .how{background:var(--paper);}
   .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;position:relative;}
   .how-step{text-align:center;position:relative;}
+  .how-step-img{
+    width:100%;max-width:230px;aspect-ratio:4/3;object-fit:cover;
+    border-radius:16px;margin:0 auto 20px;box-shadow:var(--shadow);
+  }
   .how-step .num{
     width:56px;height:56px;border-radius:50%;background:var(--card);border:2px solid var(--teal);
     color:var(--teal-dark);font-weight:800;font-size:1.3rem;display:flex;align-items:center;justify-content:center;
@@ -514,6 +518,9 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 <!-- SOCIAL PROOF MINI (reaproveita os 4 depoimentos reais logo apos o Barone) -->
 <section class="reviews reviews-mini">
   <div class="wrap">
+    <div class="section-head">
+      <h2>Mais de 10.934 clientes satisfeitos em 2026</h2>
+    </div>
     <div class="reviews-grid">
       <div class="review-card">
         <div class="review-card-head">
@@ -644,16 +651,19 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     </div>
     <div class="how-grid">
       <div class="how-step">
+        <img src="img/como-funciona-3.jpg" alt="Vestindo o Corretor Premium" class="how-step-img">
         <div class="num">1</div>
         <h3>Vista em segundos</h3>
         <p>Coloque como uma mochila e feche o velcro da cinta lombar.</p>
       </div>
       <div class="how-step">
+        <img src="img/como-funciona-2.jpg" alt="Ajustando o Corretor Premium para o suporte ideal" class="how-step-img">
         <div class="num">2</div>
         <h3>Ajuste o conforto</h3>
         <p>Regule as tiras até sentir os ombros alinhados, sem apertar demais.</p>
       </div>
       <div class="how-step">
+        <img src="img/como-funciona-1.jpg" alt="Antes e depois do uso do Corretor Premium" class="how-step-img">
         <div class="num">3</div>
         <h3>Sinta a diferença</h3>
         <p>Use de 30 a 60 min por dia e aumente gradualmente. Resultados perceptíveis já nos primeiros dias.</p>
