@@ -1081,7 +1081,8 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     var topbarEl = document.getElementById('topbar-delivery');
     if(topbarEl) topbarEl.textContent = topbarTexto;
     var hoje = new Date();
-    document.querySelectorAll('.brinde-date').forEach(function(el){ el.textContent = hoje.getDate(); });
+    var brindeTexto = hoje.getDate() + ' de ' + meses[hoje.getMonth()];
+    document.querySelectorAll('.brinde-date').forEach(function(el){ el.textContent = brindeTexto; });
   })();
 
   // Banner de região no topbar: detecta o Estado do visitante por IP (geolocalização)
