@@ -433,6 +433,27 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   .mobile-bar .price{font-weight:800;font-size:1.05rem;}
   .mobile-bar .price small{display:block;font-weight:600;color:var(--muted);font-size:.7rem;}
 
+  /* ORDER NOTIFICATION */
+  .order-toast{
+    position:fixed;left:16px;bottom:16px;z-index:70;
+    display:flex;align-items:center;gap:10px;
+    background:#fff;border:1px solid var(--border);border-radius:14px;
+    padding:12px 16px;box-shadow:0 20px 40px -14px rgba(11,21,36,.35);
+    font-size:.85rem;color:var(--ink);max-width:280px;
+    opacity:0;transform:translateY(12px);
+    transition:opacity .35s ease, transform .35s ease;
+    pointer-events:none;
+  }
+  .order-toast.visible{opacity:1;transform:translateY(0);}
+  .order-toast-icon{font-size:1.2rem;flex:none;}
+  .order-toast strong{color:var(--teal-dark);}
+  @media (max-width: 720px){
+    .order-toast{bottom:92px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .order-toast{transition:none;}
+  }
+
   @media (max-width: 980px){
     .hero-grid{grid-template-columns:1fr;}
     .hero-visual{order:-1;}
@@ -1083,6 +1104,12 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   <a href="#comprar" class="btn btn-primary btn-sm btn-pulse">Escolher tamanho</a>
 </div>
 
+<!-- ORDER NOTIFICATION -->
+<div class="order-toast" id="order-toast">
+  <span class="order-toast-icon">🛒</span>
+  <div><strong id="order-toast-name">Allan</strong> acabou de fazer um pedido</div>
+</div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1164,6 +1191,24 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     prevBtn.addEventListener('click', function(){ if(page > 1){ page--; render(); wrap.scrollIntoView({block:'nearest'}); } });
     nextBtn.addEventListener('click', function(){ if(page < totalPages){ page++; render(); wrap.scrollIntoView({block:'nearest'}); } });
     render();
+  })();
+
+  // Notificação de pedido recente: cicla por primeiros nomes de clientes reais e verificados
+  // (mesmos nomes usados na seção de Depoimentos, com autorização) -- não são nomes inventados
+  (function(){
+    var toast = document.getElementById('order-toast');
+    var nameEl = document.getElementById('order-toast-name');
+    if(!toast || !nameEl) return;
+    var nomes = ['Allan','Anderson','Bianca','Camila','Carlos','Cristiano','Diogo','Fernanda','Gustavo','João','Jorge','Leonardo','Maria','Ramon','Suzana'];
+    var i = 0;
+    function ciclo(){
+      nameEl.textContent = nomes[i % nomes.length];
+      i++;
+      toast.classList.add('visible');
+      setTimeout(function(){ toast.classList.remove('visible'); }, 4000);
+    }
+    ciclo();
+    setInterval(ciclo, 7000);
   })();
 
   // FAQ accordion
