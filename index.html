@@ -291,6 +291,21 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   .guarantee-box h3{font-size:1.3rem;margin-bottom:8px;}
   .guarantee-box p{color:var(--muted);margin:0;font-size:.95rem;}
 
+  /* BRINDE */
+  .brinde{background:var(--navy);padding:44px 0;}
+  .brinde-box{
+    max-width:820px;margin:0 auto;display:flex;align-items:center;gap:32px;
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+    border-radius:22px;padding:28px 36px;
+  }
+  .brinde-box img{width:130px;flex:none;filter:drop-shadow(0 12px 20px rgba(0,0,0,.4));}
+  .brinde-tag{
+    display:inline-block;background:var(--yellow);color:#000;font-weight:800;font-size:.78rem;
+    text-transform:uppercase;letter-spacing:.02em;padding:6px 14px;border-radius:99px;margin-bottom:10px;
+  }
+  .brinde-body h2{color:#fff;font-size:1.4rem;margin-bottom:8px;}
+  .brinde-body p{color:rgba(255,255,255,.7);font-size:.92rem;margin:0;}
+
   /* PRICING */
   .pricing{background:#fff;}
   .offer-banner{
@@ -409,6 +424,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     .hero-grid{grid-template-columns:1fr;}
     .hero-visual{order:-1;}
     .barone-grid{grid-template-columns:1fr;}
+    .brinde-box{flex-direction:column;text-align:center;padding:28px 22px;}
     .problem-grid{grid-template-columns:repeat(2,1fr);}
     .benefits-grid{grid-template-columns:repeat(2,1fr);}
     .how-grid{grid-template-columns:1fr;gap:40px;}
@@ -761,6 +777,20 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   </div>
 </section>
 
+<!-- BRINDE -->
+<section class="brinde">
+  <div class="wrap">
+    <div class="brinde-box">
+      <img src="img/brinde-relogio.jpg" alt="Relógio inteligente de brinde">
+      <div class="brinde-body">
+        <div class="brinde-tag">Brinde somente hoje: dia <span class="brinde-date">--</span></div>
+        <h2>Receba hoje de brinde um relógio inteligente</h2>
+        <p>Fazendo seu pedido hoje, você garante o Corretor Premium + um relógio inteligente de brinde, sem custo extra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PRICING -->
 <section class="pricing" id="comprar">
   <div class="wrap">
@@ -1050,6 +1080,8 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     var topbarTexto = diasSemana[entrega.getDay()] + ', ' + entrega.getDate() + ' de ' + meses[entrega.getMonth()];
     var topbarEl = document.getElementById('topbar-delivery');
     if(topbarEl) topbarEl.textContent = topbarTexto;
+    var hoje = new Date();
+    document.querySelectorAll('.brinde-date').forEach(function(el){ el.textContent = hoje.getDate(); });
   })();
 
   // Banner de região no topbar: detecta o Estado do visitante por IP (geolocalização)
