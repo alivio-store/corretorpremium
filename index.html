@@ -102,11 +102,13 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 
   /* TOPBAR */
   .topbar{
-    background:var(--navy);color:#fff;font-size:.82rem;text-align:center;
-    padding:9px 12px;letter-spacing:.02em;
+    background:linear-gradient(90deg,var(--gold),var(--gold-dark));color:var(--navy);
+    font-size:.85rem;font-weight:600;text-align:center;
+    padding:11px 12px;letter-spacing:.02em;
+    box-shadow:0 4px 14px -4px rgba(0,0,0,.35);position:relative;z-index:60;
   }
-  .topbar strong{color:var(--gold);}
-  .region-banner{text-transform:uppercase;font-weight:700;}
+  .topbar strong{color:var(--navy);font-weight:800;}
+  .region-banner{text-transform:uppercase;font-weight:800;}
 
   /* HEADER */
   header.site{
@@ -405,7 +407,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 </head>
 <body>
 
-<div class="topbar">🔥 <strong>70% OFF no Agosto de Ofertas</strong> &nbsp;•&nbsp; <span id="region-banner" class="region-banner">Entrega express em até 2 dias para todo o Brasil</span> &nbsp;•&nbsp; Garantia de 90 dias ou seu dinheiro de volta</div>
+<div class="topbar">🔥 <strong>70% OFF no Agosto de Ofertas</strong> &nbsp;•&nbsp; <span id="region-banner" class="region-banner">Entrega express em até 2 dias para todo o Brasil</span> &nbsp;•&nbsp; Compre hoje e receba até dia <span id="topbar-delivery">carregando…</span></div>
 
 <header class="site">
   <div class="wrap nav">
@@ -488,6 +490,46 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
         <h2>O único corretor de postura aprovado pelo Barone</h2>
         <p>Testado de verdade antes de chegar até você — não é só mais um produto genérico.</p>
         <a href="#comprar" class="btn btn-primary btn-pulse">Quero o meu →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF MINI (reaproveita os 4 depoimentos reais logo apos o Barone) -->
+<section class="reviews reviews-mini">
+  <div class="wrap">
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-card-head">
+          <span class="review-badge">✓ Cliente verificada</span>
+          <span class="stars-sm">★★★★★</span>
+        </div>
+        <p class="review-text">"Chegou rápido e é muito bom, tenho hérnia de disco, funciona para dor."</p>
+        <img src="img/depoimento-1.jpg" alt="Foto enviada por cliente real do Corretor Premium">
+      </div>
+      <div class="review-card">
+        <div class="review-card-head">
+          <span class="review-badge">✓ Cliente verificada</span>
+          <span class="stars-sm">★★★★★</span>
+        </div>
+        <p class="review-text">"Fácil de usar, comprei pra mim e pra minha filha."</p>
+        <img src="img/depoimento-2.jpg" alt="Foto enviada por cliente real do Corretor Premium">
+      </div>
+      <div class="review-card">
+        <div class="review-card-head">
+          <span class="review-badge">✓ Cliente verificada</span>
+          <span class="stars-sm">★★★★☆</span>
+        </div>
+        <p class="review-text">"Tenho dor na coluna, estou usando tem 1 mês para tratamento."</p>
+        <img src="img/depoimento-3.jpg" alt="Foto enviada por cliente real do Corretor Premium">
+      </div>
+      <div class="review-card">
+        <div class="review-card-head">
+          <span class="review-badge">✓ Cliente verificada</span>
+          <span class="stars-sm">★★★★★</span>
+        </div>
+        <p class="review-text">"Meu fisioterapeuta indicou, vale a pena, recomendo."</p>
+        <img src="img/depoimento-4.jpg" alt="Foto enviada por cliente real do Corretor Premium">
       </div>
     </div>
   </div>
@@ -945,6 +987,9 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     entrega.setDate(entrega.getDate() + 2);
     var texto = 'RECEBA ATÉ ' + diasSemana[entrega.getDay()].toUpperCase() + ', DIA ' + entrega.getDate() + ' DE ' + meses[entrega.getMonth()].toUpperCase();
     document.querySelectorAll('.delivery-date').forEach(function(el){ el.textContent = texto; });
+    var topbarTexto = diasSemana[entrega.getDay()] + ', ' + entrega.getDate() + ' de ' + meses[entrega.getMonth()];
+    var topbarEl = document.getElementById('topbar-delivery');
+    if(topbarEl) topbarEl.textContent = topbarTexto;
   })();
 
   // Banner de região no topbar: detecta o Estado do visitante por IP (geolocalização)
@@ -975,7 +1020,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   // Nota média calculada a partir das estrelas realmente exibidas em cada avaliação
   // (nunca um número solto — some as ★ de cada .review-card presente na página)
   (function(){
-    var cards = document.querySelectorAll('.review-card .stars-sm');
+    var cards = document.querySelectorAll('#depoimentos .review-card .stars-sm');
     if(!cards.length) return;
     var total = 0;
     cards.forEach(function(el){
