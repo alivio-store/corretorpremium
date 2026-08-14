@@ -106,6 +106,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     padding:9px 12px;letter-spacing:.02em;
   }
   .topbar strong{color:var(--gold);}
+  .region-banner{text-transform:uppercase;font-weight:700;}
 
   /* HEADER */
   header.site{
@@ -396,7 +397,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 </head>
 <body>
 
-<div class="topbar">🔥 <strong>70% OFF no Agosto de Ofertas</strong> &nbsp;•&nbsp; 📦 Entrega express em 2 dias: <span class="delivery-date">calculando data de entrega…</span> &nbsp;•&nbsp; Garantia de 90 dias ou seu dinheiro de volta</div>
+<div class="topbar">🔥 <strong>70% OFF no Agosto de Ofertas</strong> &nbsp;•&nbsp; <span id="region-banner" class="region-banner">Entrega express em até 2 dias para todo o Brasil</span> &nbsp;•&nbsp; Garantia de 90 dias ou seu dinheiro de volta</div>
 
 <header class="site">
   <div class="wrap nav">
@@ -921,6 +922,31 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     entrega.setDate(entrega.getDate() + 2);
     var texto = 'RECEBA ATÉ ' + diasSemana[entrega.getDay()].toUpperCase() + ', DIA ' + entrega.getDate() + ' DE ' + meses[entrega.getMonth()].toUpperCase();
     document.querySelectorAll('.delivery-date').forEach(function(el){ el.textContent = texto; });
+  })();
+
+  // Banner de região no topbar: detecta o Estado do visitante por IP (geolocalização)
+  // Se não conseguir detectar (bloqueador, erro, fora do Brasil), mantém o texto genérico
+  (function(){
+    var el = document.getElementById('region-banner');
+    if(!el) return;
+    var fallback = el.textContent;
+    var done = false;
+    var timeout = setTimeout(function(){ done = true; }, 2500);
+    fetch('https://get.geojs.io/v1/ip/geo.json')
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        if(done) return;
+        clearTimeout(timeout);
+        if(data && data.region && data.country_code === 'BR'){
+          el.textContent = 'Você que está em ' + data.region + ', recebe em até 2 dias';
+        } else {
+          el.textContent = fallback;
+        }
+      })
+      .catch(function(){
+        clearTimeout(timeout);
+        el.textContent = fallback;
+      });
   })();
 
   // Nota média calculada a partir das estrelas realmente exibidas em cada avaliação
