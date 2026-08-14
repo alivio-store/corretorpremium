@@ -178,6 +178,13 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   .trust-item{display:flex;align-items:center;gap:10px;font-size:.88rem;font-weight:600;color:var(--ink);}
   .trust-item svg{color:var(--teal);}
 
+  /* BARONE */
+  .barone{background:var(--navy);color:#fff;padding:60px 0;}
+  .barone-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center;}
+  .barone-grid img{width:100%;border-radius:18px;box-shadow:0 25px 50px -20px rgba(0,0,0,.6);}
+  .barone-grid h2{font-size:clamp(1.5rem,3vw,2.1rem);text-wrap:balance;}
+  .barone-grid p{color:rgba(255,255,255,.75);font-size:1rem;margin-bottom:24px;}
+
   /* SECTION HEADS */
   .section-head{max-width:640px;margin:0 auto 52px;text-align:center;}
   .section-head h2{font-size:clamp(1.6rem,3vw,2.2rem);}
@@ -374,6 +381,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   @media (max-width: 980px){
     .hero-grid{grid-template-columns:1fr;}
     .hero-visual{order:-1;}
+    .barone-grid{grid-template-columns:1fr;}
     .problem-grid{grid-template-columns:repeat(2,1fr);}
     .benefits-grid{grid-template-columns:repeat(2,1fr);}
     .how-grid{grid-template-columns:1fr;gap:40px;}
@@ -469,6 +477,21 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 12h4l3-8 4 16 3-8h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Entrega expressa</div>
   </div>
 </div>
+
+<!-- BARONE -->
+<section class="barone">
+  <div class="wrap">
+    <div class="barone-grid">
+      <img src="img/barone-aprovado.jpg" alt="Barone testou e aprovou o Corretor Premium">
+      <div>
+        <span class="eyebrow" style="background:rgba(255,255,255,.1);color:#fff;">Aprovação real</span>
+        <h2>O único corretor de postura aprovado pelo Barone</h2>
+        <p>Testado de verdade antes de chegar até você — não é só mais um produto genérico.</p>
+        <a href="#comprar" class="btn btn-primary btn-pulse">Quero o meu →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PROBLEM -->
 <section class="problem" id="problema">
