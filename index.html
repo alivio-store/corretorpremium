@@ -151,6 +151,14 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   .hero h1{font-size:clamp(2.1rem,4vw,3.1rem);font-weight:800;letter-spacing:-.01em;}
   .hero h1 span{color:var(--teal);}
   .hero p.lead{font-size:1.12rem;color:rgba(255,255,255,.78);max-width:520px;margin-bottom:28px;}
+  .hero-audience{display:flex;flex-direction:column;gap:8px;margin:18px 0 28px;}
+  .hero-audience li{
+    position:relative;padding-left:22px;font-size:1.05rem;font-weight:600;color:rgba(255,255,255,.9);
+  }
+  .hero-audience li::before{
+    content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;
+    border-radius:50%;background:var(--teal);
+  }
   .hero-points{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
   .hero-points li{display:flex;gap:10px;align-items:flex-start;font-size:.98rem;color:rgba(255,255,255,.9);}
   .hero-points svg{flex:none;margin-top:2px;}
@@ -547,7 +555,11 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     <div>
       <span class="eyebrow">✔ Mais de 10.000 pessoas já corrigiram a postura</span>
       <h1>Acabe com a Dor e Mude Sua Postura com o <span>MELHOR CORRETOR DO BRASIL</span> (Testado e Aprovado)</h1>
-      <p class="lead">O Corretor Premium alinha ombros e coluna de forma suave, alivia a tensão muscular do dia a dia e devolve sua confiança, discreto por baixo da roupa, para homens e mulheres.</p>
+      <ul class="hero-audience">
+        <li>Para quem tem problemas de coluna</li>
+        <li>Para quem fica muito tempo sentado ou em pé</li>
+        <li>Para quem tem postura torta</li>
+      </ul>
 
       <ul class="hero-points">
         <li>
