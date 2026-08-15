@@ -312,11 +312,19 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   /* GUARANTEE */
   .guarantee{background:var(--paper);}
   .guarantee-box{
-    max-width:900px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;
+    max-width:900px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;
     background:#fff;border:1px solid var(--border);border-radius:24px;padding:40px;box-shadow:var(--shadow);
   }
-  .guarantee-box h3{font-size:1.3rem;margin-bottom:8px;}
-  .guarantee-box p{color:var(--muted);margin:0;font-size:.95rem;}
+  .guarantee-seal{
+    width:132px;height:132px;border-radius:50%;flex:none;
+    background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    border:4px solid #fff;box-shadow:0 0 0 2px var(--teal), 0 20px 40px -14px rgba(20,184,166,.55);
+  }
+  .guarantee-seal-num{font-size:2.7rem;font-weight:800;line-height:1;}
+  .guarantee-seal-label{font-size:.8rem;font-weight:800;letter-spacing:.12em;}
+  .guarantee-box h3{font-size:1.6rem;margin-bottom:10px;text-transform:uppercase;letter-spacing:.01em;}
+  .guarantee-box p{color:var(--muted);margin:0;font-size:1.02rem;}
 
   /* BRINDE */
   .brinde{background:var(--navy);padding:44px 0;}
@@ -561,24 +569,8 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
         <li>Para quem tem postura torta</li>
       </ul>
 
-      <ul class="hero-points">
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#14b8a6"/><path d="M7 12.5l3 3 7-7" stroke="#0b1524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Ajuste em 4 tamanhos de tiras, veste em segundos
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#14b8a6"/><path d="M7 12.5l3 3 7-7" stroke="#0b1524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Tecido respirável, confortável para o uso diário
-        </li>
-        <li>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#14b8a6"/><path d="M7 12.5l3 3 7-7" stroke="#0b1524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Discreto: usa por baixo da camiseta sem aparecer
-        </li>
-      </ul>
-
       <div class="hero-cta-row">
         <a href="#comprar" class="btn btn-primary">Quero minha postura de volta →</a>
-        <a href="#como-funciona" class="btn btn-ghost">Ver como funciona</a>
       </div>
       <div class="hero-price-note">📦 Estoque limitado nesta oferta &nbsp;•&nbsp; Envio em até 24h úteis</div>
 
@@ -857,10 +849,13 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 <section class="guarantee">
   <div class="wrap">
     <div class="guarantee-box">
-      <svg width="84" height="84" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" stroke="#14b8a6" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="guarantee-seal">
+        <span class="guarantee-seal-num">90</span>
+        <span class="guarantee-seal-label">DIAS</span>
+      </div>
       <div>
-        <h3>Garantia incondicional de 90 dias</h3>
-        <p>Experimente o Corretor Premium sem risco. Se não sentir diferença na sua postura ou conforto, devolvemos 100% do seu dinheiro, sem perguntas.</p>
+        <h3>Garantia Estendida de 90 Dias</h3>
+        <p>Compre hoje, comece a usar e tem até 3 meses para devolver e receber seu dinheiro de volta.</p>
       </div>
     </div>
   </div>
