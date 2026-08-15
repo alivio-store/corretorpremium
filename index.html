@@ -318,7 +318,16 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     text-transform:uppercase;letter-spacing:.02em;padding:6px 14px;border-radius:99px;margin-bottom:10px;
   }
   .brinde-body h2{color:#fff;font-size:1.4rem;margin-bottom:8px;}
-  .brinde-body p{color:rgba(255,255,255,.7);font-size:.92rem;margin:0;}
+  .brinde-body p{color:rgba(255,255,255,.7);font-size:.92rem;margin:0 0 16px;}
+  .brinde-countdown{
+    display:inline-flex;align-items:center;gap:10px;background:rgba(220,38,38,.15);
+    border:1px solid rgba(248,113,113,.5);border-radius:12px;padding:10px 16px;
+  }
+  .brinde-countdown span:first-child{color:#fff;font-size:.85rem;font-weight:700;}
+  .brinde-countdown-clock{
+    color:#ff4d4d;font-size:1.3rem;font-weight:800;letter-spacing:.03em;
+    font-variant-numeric:tabular-nums;text-shadow:0 0 14px rgba(255,77,77,.6);
+  }
 
   /* PRICING */
   .pricing{background:#fff;}
@@ -848,6 +857,10 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
         <div class="brinde-tag">Brinde somente hoje: dia <span class="brinde-date">--</span></div>
         <h2>Receba hoje de brinde um relógio inteligente</h2>
         <p>Fazendo seu pedido hoje, você garante o Corretor Premium + um relógio inteligente de brinde, sem custo extra.</p>
+        <div class="brinde-countdown">
+          <span>⏰ Essa oferta acaba em:</span>
+          <span class="brinde-countdown-clock" id="brinde-countdown">--:--:--</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1175,6 +1188,24 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     var hoje = new Date();
     var brindeTexto = hoje.getDate() + ' de ' + meses[hoje.getMonth()];
     document.querySelectorAll('.brinde-date').forEach(function(el){ el.textContent = brindeTexto; });
+  })();
+
+  // Contador regressivo até o fim do dia (o brinde "só hoje") -- recomeça sozinho todo dia à meia-noite
+  (function(){
+    var el = document.getElementById('brinde-countdown');
+    if(!el) return;
+    function atualizar(){
+      var agora = new Date();
+      var meiaNoite = new Date(agora.getFullYear(), agora.getMonth(), agora.getDate() + 1, 0, 0, 0);
+      var restante = meiaNoite - agora;
+      var h = Math.floor(restante / 3600000);
+      var m = Math.floor((restante % 3600000) / 60000);
+      var s = Math.floor((restante % 60000) / 1000);
+      function pad(n){ return String(n).padStart(2, '0'); }
+      el.textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
+    }
+    atualizar();
+    setInterval(atualizar, 1000);
   })();
 
   // Banner de região no topbar: detecta o Estado do visitante por IP (geolocalização)
