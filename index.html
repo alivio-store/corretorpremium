@@ -1437,17 +1437,18 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     ciclo();
   })();
 
-  // Barra fixa mobile: so aparece depois que a pessoa rolar a tela ate a secao do Barone
-  // (checagem por scroll de verdade, nao dispara sozinho na abertura da pagina)
+  // Barra fixa mobile: so aparece quando a pessoa rolar de verdade ate a 3a dobra
+  // (secao de videos) -- antes disparava cedo demais porque a checagem
+  // considerava "quase visivel" (dentro de 1 tela) como se ja tivesse chegado
   (function(){
     var bar = document.querySelector('.mobile-bar');
-    var barone = document.querySelector('.barone');
-    if(!bar || !barone) return;
+    var target = document.querySelector('.video-testimonials');
+    if(!bar || !target) return;
     var shown = false;
     function check(){
       if(shown) return;
-      var rect = barone.getBoundingClientRect();
-      if(window.scrollY > 30 && rect.top <= window.innerHeight){
+      var rect = target.getBoundingClientRect();
+      if(rect.top <= 0){
         bar.classList.add('visible');
         shown = true;
         window.removeEventListener('scroll', check);
