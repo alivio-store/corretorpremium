@@ -753,7 +753,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 <section class="reviews reviews-mini">
   <div class="wrap">
     <div class="section-head">
-      <h2>Mais de 10.934 clientes satisfeitos em 2026</h2>
+      <h2>Mais de <span id="clients-counter" data-target="10934">0</span> clientes satisfeitos em 2026</h2>
     </div>
     <div class="reviews-mini-viewport"><div class="reviews-grid" id="reviews-mini-grid">
       <div class="review-card">
@@ -1432,6 +1432,37 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     }
     atualizar();
     setInterval(atualizar, 1000);
+  })();
+
+  // Contador de clientes satisfeitos: sobe rápido de 0 até o número real
+  // assim que o bloco entra na tela (uma vez só)
+  (function(){
+    var el = document.getElementById('clients-counter');
+    if(!el) return;
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var duration = 900;
+    function animate(){
+      var start = null;
+      function step(ts){
+        if(!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target).toLocaleString('pt-BR');
+        if(progress < 1){ requestAnimationFrame(step); }
+        else { el.textContent = target.toLocaleString('pt-BR'); }
+      }
+      requestAnimationFrame(step);
+    }
+    if('IntersectionObserver' in window){
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){ animate(); observer.disconnect(); }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(el);
+    } else {
+      animate();
+    }
   })();
 
   // Banner de região no topbar: detecta o Estado do visitante por IP (geolocalização)
