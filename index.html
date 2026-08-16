@@ -289,6 +289,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   .rating-number{font-size:1.8rem;font-weight:800;color:var(--ink);}
   .rating-number small{font-size:1rem;font-weight:700;color:var(--muted);}
   .rating-stars{color:var(--gold);font-size:1.15rem;letter-spacing:2px;}
+  .reviews-mini-viewport{overflow:hidden;}
   .reviews-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
   .review-card{
     background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);
@@ -571,10 +572,17 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     .mobile-bar.visible{display:flex;}
     body{padding-bottom:78px;}
     .hero-price-note{display:none;}
+    #reviews-mini-grid{
+      display:flex;flex-wrap:nowrap;gap:14px;transition:transform .5s ease;
+      will-change:transform;
+    }
+    #reviews-mini-grid .review-card{flex:0 0 calc(50% - 7px);}
     .hero-trust{display:none;}
     .trust-strip{display:none;}
     .topbar-full{display:none;}
     .topbar-mobile{display:inline;}
+    .topbar{font-size:.72rem;padding:8px 10px;line-height:1.35;}
+    header.site{display:none;}
 
     /* Comprimir o hero pra caber na primeira dobra no celular */
     .hero{padding:20px 0 28px;}
@@ -686,7 +694,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     <div class="section-head">
       <h2>Mais de 10.934 clientes satisfeitos em 2026</h2>
     </div>
-    <div class="reviews-grid" id="reviews-mini-grid">
+    <div class="reviews-mini-viewport"><div class="reviews-grid" id="reviews-mini-grid">
       <div class="review-card">
         <div class="review-card-head">
           <span class="review-badge">✓ Cliente verificada</span>
@@ -719,6 +727,24 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
         <p class="review-text">"Meu fisioterapeuta indicou, vale a pena, recomendo."</p>
         <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/depoimento-4.jpg" alt="Foto enviada por cliente real do Corretor Premium"></a>
       </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- VIDEO TESTIMONIALS -->
+<section class="video-testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="background:rgba(255,255,255,.1);color:#fff;">Depoimentos em vídeo</span>
+      <h2>Quem usa, mostra</h2>
+      <p class="muted">Clientes reais mostrando o Corretor Premium no dia a dia.</p>
+    </div>
+    <div class="video-grid">
+      <video controls preload="none" playsinline poster="img/video-poster-1.jpg"><source src="videos/depoimento-1.mp4" type="video/mp4"></video>
+      <video controls preload="none" playsinline poster="img/video-poster-2.jpg"><source src="videos/depoimento-2.mp4" type="video/mp4"></video>
+      <video controls preload="none" playsinline poster="img/video-poster-3.jpg"><source src="videos/depoimento-3.mp4" type="video/mp4"></video>
+      <video controls preload="none" playsinline poster="img/video-poster-4.jpg"><source src="videos/depoimento-4.mp4" type="video/mp4"></video>
+      <video controls preload="none" playsinline poster="img/video-poster-5.jpg"><source src="videos/depoimento-5.mp4" type="video/mp4"></video>
     </div>
   </div>
 </section>
@@ -954,24 +980,6 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
         <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/brinde-recebido-3.jpg" alt="Apple Watch de brinde recebido por cliente"></a>
         <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/brinde-recebido-4.jpg" alt="Apple Watch de brinde recebido por cliente"></a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO TESTIMONIALS -->
-<section class="video-testimonials">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" style="background:rgba(255,255,255,.1);color:#fff;">Depoimentos em vídeo</span>
-      <h2>Quem usa, mostra</h2>
-      <p class="muted">Clientes reais mostrando o Corretor Premium no dia a dia.</p>
-    </div>
-    <div class="video-grid">
-      <video controls preload="metadata" playsinline poster="img/video-poster-1.jpg"><source src="video/depoimento-1.mp4" type="video/mp4"></video>
-      <video controls preload="metadata" playsinline poster="img/video-poster-2.jpg"><source src="video/depoimento-2.mp4" type="video/mp4"></video>
-      <video controls preload="metadata" playsinline poster="img/video-poster-3.jpg"><source src="video/depoimento-3.mp4" type="video/mp4"></video>
-      <video controls preload="metadata" playsinline poster="img/video-poster-4.jpg"><source src="video/depoimento-4.mp4" type="video/mp4"></video>
-      <video controls preload="metadata" playsinline poster="img/video-poster-5.jpg"><source src="video/depoimento-5.mp4" type="video/mp4"></video>
     </div>
   </div>
 </section>
@@ -1429,49 +1437,75 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     ciclo();
   })();
 
-  // Barra fixa mobile: so aparece a partir da secao do Barone (2a dobra), nao direto na abertura
+  // Barra fixa mobile: so aparece depois que a pessoa rolar a tela ate a secao do Barone
+  // (checagem por scroll de verdade, nao dispara sozinho na abertura da pagina)
   (function(){
     var bar = document.querySelector('.mobile-bar');
     var barone = document.querySelector('.barone');
     if(!bar || !barone) return;
-    if('IntersectionObserver' in window){
-      var obs = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if(entry.isIntersecting){
-            bar.classList.add('visible');
-            obs.unobserve(barone);
-          }
-        });
-      }, { threshold: 0 });
-      obs.observe(barone);
-    } else {
-      bar.classList.add('visible');
+    var shown = false;
+    function check(){
+      if(shown) return;
+      var rect = barone.getBoundingClientRect();
+      if(window.scrollY > 30 && rect.top <= window.innerHeight){
+        bar.classList.add('visible');
+        shown = true;
+        window.removeEventListener('scroll', check);
+      }
     }
+    window.addEventListener('scroll', check, { passive: true });
   })();
 
-  // Carrossel automatico da mini prova social, so no mobile (troca de card a cada 3s)
+  // Carrossel deslizante da mini prova social, so no mobile: 2 cards visiveis,
+  // avanca 1 card a cada 3s (o 2o card passa pra 1a posicao e um novo entra na 2a)
   (function(){
     var grid = document.getElementById('reviews-mini-grid');
     if(!grid) return;
-    var cards = Array.prototype.slice.call(grid.children);
+    var originalCards = Array.prototype.slice.call(grid.children);
+    var total = originalCards.length;
     var mq = window.matchMedia('(max-width: 720px)');
     var index = 0;
     var timer = null;
-    function show(i){
-      cards.forEach(function(c, idx){ c.style.display = (idx === i) ? '' : 'none'; });
+    var clonesAdded = false;
+
+    function step(){
+      var card = grid.children[0];
+      if(!card) return 0;
+      var style = getComputedStyle(grid);
+      var gap = parseFloat(style.columnGap || style.gap || 0);
+      return card.getBoundingClientRect().width + gap;
+    }
+    function advance(){
+      index++;
+      grid.style.transition = 'transform .5s ease';
+      grid.style.transform = 'translateX(-' + (step() * index) + 'px)';
+      if(index >= total){
+        setTimeout(function(){
+          grid.style.transition = 'none';
+          index = 0;
+          grid.style.transform = 'translateX(0px)';
+        }, 520);
+      }
     }
     function start(){
+      if(!clonesAdded){
+        originalCards.slice(0, 2).forEach(function(c){ grid.appendChild(c.cloneNode(true)); });
+        clonesAdded = true;
+      }
       index = 0;
-      show(index);
-      timer = setInterval(function(){
-        index = (index + 1) % cards.length;
-        show(index);
-      }, 3000);
+      grid.style.transition = 'none';
+      grid.style.transform = 'translateX(0px)';
+      timer = setInterval(advance, 3000);
     }
     function stop(){
       if(timer) clearInterval(timer);
       timer = null;
-      cards.forEach(function(c){ c.style.display = ''; });
+      grid.style.transition = 'none';
+      grid.style.transform = '';
+      if(clonesAdded){
+        while(grid.children.length > total){ grid.removeChild(grid.lastChild); }
+        clonesAdded = false;
+      }
     }
     function handle(e){
       if(e.matches){ start(); } else { stop(); }
