@@ -468,19 +468,22 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     background:#fff;border:1px solid var(--border);border-radius:20px;
     padding:20px 20px 22px;box-shadow:var(--shadow);
   }
-  .kit-toggle{display:flex;gap:8px;margin-bottom:10px;}
+  .kit-select-label{
+    text-align:center;font-size:.95rem;font-weight:800;color:var(--ink);
+    margin-bottom:12px;
+  }
+  .kit-toggle{display:flex;gap:10px;margin-bottom:18px;}
   .kit-toggle-btn{
-    flex:1;border:2px solid var(--border);background:var(--paper);color:var(--ink);
-    font-weight:800;font-size:.92rem;padding:10px 6px;border-radius:12px;cursor:pointer;
-    line-height:1.15;
+    flex:1;border:2.5px solid var(--border);background:var(--paper);color:var(--ink);
+    font-weight:800;font-size:1.15rem;padding:16px 6px;border-radius:14px;cursor:pointer;
+    line-height:1.15;transition:transform .12s ease;
   }
-  .kit-toggle-btn small{display:block;font-weight:600;font-size:.62rem;color:var(--muted);margin-top:1px;}
-  .kit-toggle-btn.selected{border-color:var(--teal-dark);background:rgba(20,184,166,.08);color:var(--teal-dark);}
+  .kit-toggle-btn small{display:block;font-weight:700;font-size:.7rem;color:var(--muted);margin-top:3px;}
+  .kit-toggle-btn.selected{
+    border-color:var(--teal-dark);background:rgba(20,184,166,.1);color:var(--teal-dark);
+    box-shadow:0 8px 20px -8px rgba(20,184,166,.5);transform:scale(1.04);
+  }
   .kit-toggle-btn.selected small{color:var(--teal-dark);}
-  .kit-compact-tag{
-    text-align:center;font-size:.72rem;font-weight:800;color:var(--teal-dark);
-    text-transform:uppercase;letter-spacing:.02em;margin-bottom:14px;min-height:1em;
-  }
   .kit-compact-price{text-align:center;margin-bottom:14px;}
   .kit-compact-discount-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:2px;}
   .kit-compact-pix{
@@ -657,8 +660,8 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     .pricing .offer-banner{font-size:.68rem;padding:6px 12px;border-radius:12px;margin-top:2px;}
     .pricing .offer-meta{display:none;}
     .kit-compact{padding:16px 16px 18px;}
-    .kit-toggle-btn{padding:8px 6px;}
-    .kit-compact-tag{margin-bottom:10px;}
+    .kit-toggle{margin-bottom:14px;}
+    .kit-toggle-btn{padding:13px 6px;font-size:1.05rem;}
     .kit-compact-price{margin-bottom:10px;}
     .kit-grid{margin-bottom:12px;}
   }
@@ -1147,12 +1150,12 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     <!-- Versão mobile: bloco único e compacto, tudo visível numa dobra só -->
     <div class="kit-select-wrap">
       <div class="kit-compact">
+        <div class="kit-select-label">Escolha o tamanho</div>
         <div class="kit-toggle">
           <button type="button" class="kit-toggle-btn" data-weight="Até 50 kg" data-link="https://alivio3.pay.yampi.com.br/r/C56O44YNEY">P/M<small>Até 50 kg</small></button>
           <button type="button" class="kit-toggle-btn selected" data-weight="Até 70 kg" data-link="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1">G<small>Até 70 kg</small></button>
           <button type="button" class="kit-toggle-btn" data-weight="Até 100 kg" data-link="https://alivio3.pay.yampi.com.br/r/BH24KQUJ93">GG<small>Até 100 kg</small></button>
         </div>
-        <div class="kit-compact-tag">⭐ Tamanho mais escolhido</div>
 
         <div class="kit-compact-price">
           <div class="kit-compact-discount-row">
@@ -1623,13 +1626,11 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   (function(){
     var buttons = document.querySelectorAll('.kit-toggle-btn');
     var buyBtn = document.getElementById('kit-buy-btn');
-    var tag = document.querySelector('.kit-compact-tag');
     if(!buttons.length || !buyBtn) return;
     function select(btn){
       buttons.forEach(function(b){ b.classList.remove('selected'); });
       btn.classList.add('selected');
       buyBtn.href = btn.getAttribute('data-link');
-      if(tag) tag.textContent = btn.getAttribute('data-weight') === 'Até 70 kg' ? '⭐ Tamanho mais escolhido' : '';
     }
     buttons.forEach(function(btn){
       btn.addEventListener('click', function(){ select(btn); });
