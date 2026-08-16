@@ -461,40 +461,39 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   .price-card ul li{display:flex;gap:8px;font-size:.88rem;margin-bottom:10px;align-items:flex-start;}
   .price-card ul li svg{flex:none;margin-top:2px;color:var(--teal-dark);}
 
-  /* Seletor de tamanho compacto (mobile): os 3 tamanhos numa lista só,
-     com os gatilhos (brinde, garantia, botão etc.) aparecendo uma única vez. */
+  /* Bloco de compra compacto (mobile): tamanho + preço + todos os gatilhos
+     visíveis numa dobra só, sem repetir nada 3x. */
   .kit-select-wrap{display:none;}
-  .kit-select-label{
-    font-size:.75rem;font-weight:800;color:var(--muted);text-transform:uppercase;
-    letter-spacing:.04em;text-align:center;margin-bottom:12px;
+  .kit-compact{
+    background:#fff;border:1px solid var(--border);border-radius:20px;
+    padding:20px 20px 22px;box-shadow:var(--shadow);
   }
-  .kit-option{
-    display:flex;align-items:center;gap:12px;border:2px solid var(--border);border-radius:16px;
-    padding:14px 16px;margin-bottom:10px;cursor:pointer;background:#fff;
+  .kit-toggle{display:flex;gap:8px;margin-bottom:10px;}
+  .kit-toggle-btn{
+    flex:1;border:2px solid var(--border);background:var(--paper);color:var(--ink);
+    font-weight:800;font-size:.92rem;padding:10px 6px;border-radius:12px;cursor:pointer;
+    line-height:1.15;
   }
-  .kit-option input{position:absolute;opacity:0;width:0;height:0;}
-  .kit-radio{
-    flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--border);position:relative;
+  .kit-toggle-btn small{display:block;font-weight:600;font-size:.62rem;color:var(--muted);margin-top:1px;}
+  .kit-toggle-btn.selected{border-color:var(--teal-dark);background:rgba(20,184,166,.08);color:var(--teal-dark);}
+  .kit-toggle-btn.selected small{color:var(--teal-dark);}
+  .kit-compact-tag{
+    text-align:center;font-size:.72rem;font-weight:800;color:var(--teal-dark);
+    text-transform:uppercase;letter-spacing:.02em;margin-bottom:14px;min-height:1em;
   }
-  .kit-option.selected{border-color:var(--teal-dark);background:rgba(20,184,166,.06);}
-  .kit-option.selected .kit-radio{border-color:var(--teal-dark);}
-  .kit-option.selected .kit-radio::after{
-    content:'';position:absolute;inset:3px;border-radius:50%;background:var(--teal-dark);
+  .kit-compact-price{text-align:center;margin-bottom:14px;}
+  .kit-compact-discount-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:2px;}
+  .kit-compact-pix{
+    font-size:.85rem;font-weight:800;color:var(--teal-dark);background:rgba(20,184,166,.1);
+    display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:99px;margin-top:6px;
   }
-  .kit-option-info{flex:1;min-width:0;}
-  .kit-option-badges{display:flex;gap:6px;margin-bottom:6px;flex-wrap:wrap;}
-  .kit-badge{
-    font-size:.62rem;font-weight:800;padding:3px 8px;border-radius:99px;
-    text-transform:uppercase;letter-spacing:.02em;white-space:nowrap;
+  .kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
+  .kit-chip{
+    display:flex;align-items:center;gap:6px;font-size:.74rem;font-weight:700;
+    color:var(--ink);background:var(--paper);border:1px solid var(--border);
+    padding:8px 8px;border-radius:10px;line-height:1.2;
   }
-  .kit-badge.off{background:var(--ink);color:#fff;}
-  .kit-badge.tag{background:rgba(20,184,166,.14);color:var(--teal-dark);}
-  .kit-option-name{font-weight:800;color:var(--ink);font-size:.92rem;}
-  .kit-option-name small{display:block;font-weight:600;color:var(--muted);font-size:.74rem;margin-top:1px;}
-  .kit-option-price{flex:none;text-align:right;}
-  .kit-price-new{font-weight:800;color:var(--ink);font-size:1.02rem;}
-  .kit-price-old{font-size:.7rem;color:var(--muted);text-decoration:line-through;}
-  .kit-shared{margin-top:18px;}
+  .kit-chip.full{grid-column:1/-1;background:rgba(255,214,10,.18);border-color:rgba(245,195,0,.4);color:var(--gold-dark);}
 
   /* FAQ */
   .faq{background:var(--paper);}
@@ -651,6 +650,17 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     /* Preço: no mobile troca os 3 cards por um seletor de tamanho compacto */
     .price-grid{display:none;}
     .kit-select-wrap{display:block;}
+    .pricing{padding:22px 0;}
+    .pricing .section-head{margin-bottom:12px;}
+    .pricing .eyebrow{display:none;}
+    .pricing .section-head h2{font-size:1.15rem;}
+    .pricing .offer-banner{font-size:.68rem;padding:6px 12px;border-radius:12px;margin-top:2px;}
+    .pricing .offer-meta{display:none;}
+    .kit-compact{padding:16px 16px 18px;}
+    .kit-toggle-btn{padding:8px 6px;}
+    .kit-compact-tag{margin-bottom:10px;}
+    .kit-compact-price{margin-bottom:10px;}
+    .kit-grid{margin-bottom:12px;}
   }
 </style>
 </head>
@@ -1134,72 +1144,34 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <!-- Versão mobile: os 3 tamanhos numa lista só, gatilhos aparecem 1 vez -->
+    <!-- Versão mobile: bloco único e compacto, tudo visível numa dobra só -->
     <div class="kit-select-wrap">
-      <div class="kit-select">
-        <div class="kit-select-label">Escolha o tamanho</div>
-
-        <label class="kit-option" data-link="https://alivio3.pay.yampi.com.br/r/C56O44YNEY">
-          <input type="radio" name="kit-size" value="pm">
-          <span class="kit-radio"></span>
-          <div class="kit-option-info">
-            <div class="kit-option-badges"><span class="kit-badge off">-70%</span></div>
-            <div class="kit-option-name">Tamanho P/M <small>Até 50 kg</small></div>
-          </div>
-          <div class="kit-option-price">
-            <div class="kit-price-new">R$ 129,90</div>
-            <div class="kit-price-old">R$ 433,00</div>
-          </div>
-        </label>
-
-        <label class="kit-option" data-link="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1">
-          <input type="radio" name="kit-size" value="g" checked>
-          <span class="kit-radio"></span>
-          <div class="kit-option-info">
-            <div class="kit-option-badges"><span class="kit-badge off">-70%</span><span class="kit-badge tag">Mais escolhido</span></div>
-            <div class="kit-option-name">Tamanho G <small>Até 70 kg</small></div>
-          </div>
-          <div class="kit-option-price">
-            <div class="kit-price-new">R$ 129,90</div>
-            <div class="kit-price-old">R$ 433,00</div>
-          </div>
-        </label>
-
-        <label class="kit-option" data-link="https://alivio3.pay.yampi.com.br/r/BH24KQUJ93">
-          <input type="radio" name="kit-size" value="gg">
-          <span class="kit-radio"></span>
-          <div class="kit-option-info">
-            <div class="kit-option-badges"><span class="kit-badge off">-70%</span></div>
-            <div class="kit-option-name">Tamanho GG <small>Até 100 kg</small></div>
-          </div>
-          <div class="kit-option-price">
-            <div class="kit-price-new">R$ 129,90</div>
-            <div class="kit-price-old">R$ 433,00</div>
-          </div>
-        </label>
-      </div>
-
-      <div class="price-card kit-shared">
-        <div class="price-card-body">
-          <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-hero.jpg" alt="Corretor Premium" class="price-photo"></a>
-          <div class="price-gift"><a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/brinde-relogio.jpg" alt="Relógio inteligente de brinde"></a><span>+ Brinde: Relógio Inteligente</span></div>
-          <div class="price-new"><span class="price-x">12x</span> <sup>R$</sup> 10<sup>,83</sup></div>
-          <div class="price-unit">ou <strong>R$ 123,40</strong> à vista no Pix</div>
-          <div class="pix-discount">💰 Economize +R$ 6,50 no PIX com 5% de desconto</div>
-          <div class="price-badges">
-            <div class="price-badge delivery">📦 Entrega em até 2 dias</div>
-            <div class="price-badge guarantee">🛡️ Garantia de 90 dias</div>
-          </div>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis</li>
-          </ul>
-          <a href="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1" id="kit-buy-btn" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
-          <div class="payment-icons">
-            <span class="pay-pill">⚡ Pix</span>
-            <span class="pay-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/></svg> Cartão</span>
-          </div>
-          <div class="secure-checkout">🔒 Compra 100% segura e protegida</div>
+      <div class="kit-compact">
+        <div class="kit-toggle">
+          <button type="button" class="kit-toggle-btn" data-weight="Até 50 kg" data-link="https://alivio3.pay.yampi.com.br/r/C56O44YNEY">P/M<small>Até 50 kg</small></button>
+          <button type="button" class="kit-toggle-btn selected" data-weight="Até 70 kg" data-link="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1">G<small>Até 70 kg</small></button>
+          <button type="button" class="kit-toggle-btn" data-weight="Até 100 kg" data-link="https://alivio3.pay.yampi.com.br/r/BH24KQUJ93">GG<small>Até 100 kg</small></button>
         </div>
+        <div class="kit-compact-tag">⭐ Tamanho mais escolhido</div>
+
+        <div class="kit-compact-price">
+          <div class="kit-compact-discount-row">
+            <span class="price-old">De R$ 433,00</span>
+            <span class="price-off-badge">-70%</span>
+          </div>
+          <div class="price-new"><span class="price-x">12x</span> <sup>R$</sup> 10<sup>,83</sup></div>
+          <div class="kit-compact-pix">💰 R$ 123,40 no Pix (5% OFF)</div>
+        </div>
+
+        <div class="kit-grid">
+          <div class="kit-chip">🚚 Frete grátis</div>
+          <div class="kit-chip">🛡️ Garantia 90 dias</div>
+          <div class="kit-chip">📦 Entrega até <span class="delivery-date-short">…</span></div>
+          <div class="kit-chip">🎁 + Relógio de brinde</div>
+        </div>
+
+        <a href="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1" id="kit-buy-btn" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
+        <div class="secure-checkout">🔒 Compra 100% segura e protegida</div>
       </div>
     </div>
   </div>
@@ -1429,6 +1401,8 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     entrega.setDate(entrega.getDate() + 2);
     var texto = 'RECEBA ATÉ ' + diasSemana[entrega.getDay()].toUpperCase() + ', DIA ' + entrega.getDate() + ' DE ' + meses[entrega.getMonth()].toUpperCase();
     document.querySelectorAll('.delivery-date').forEach(function(el){ el.textContent = texto; });
+    var textoCurto = String(entrega.getDate()).padStart(2, '0') + '/' + String(entrega.getMonth() + 1).padStart(2, '0');
+    document.querySelectorAll('.delivery-date-short').forEach(function(el){ el.textContent = textoCurto; });
     var topbarTexto = diasSemana[entrega.getDay()] + ', ' + entrega.getDate() + ' de ' + meses[entrega.getMonth()];
     var topbarEl = document.getElementById('topbar-delivery');
     if(topbarEl) topbarEl.textContent = topbarTexto;
@@ -1644,23 +1618,24 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     mq.addEventListener('change', handle);
   })();
 
-  // Seletor de tamanho compacto (mobile): troca o link do botão único
-  // conforme o tamanho escolhido, e marca a opção selecionada visualmente
+  // Bloco de compra compacto (mobile): troca o link do botão único
+  // conforme o tamanho escolhido no seletor P/M · G · GG
   (function(){
-    var options = document.querySelectorAll('.kit-option');
+    var buttons = document.querySelectorAll('.kit-toggle-btn');
     var buyBtn = document.getElementById('kit-buy-btn');
-    if(!options.length || !buyBtn) return;
-    function select(option){
-      options.forEach(function(o){ o.classList.remove('selected'); });
-      option.classList.add('selected');
-      buyBtn.href = option.getAttribute('data-link');
+    var tag = document.querySelector('.kit-compact-tag');
+    if(!buttons.length || !buyBtn) return;
+    function select(btn){
+      buttons.forEach(function(b){ b.classList.remove('selected'); });
+      btn.classList.add('selected');
+      buyBtn.href = btn.getAttribute('data-link');
+      if(tag) tag.textContent = btn.getAttribute('data-weight') === 'Até 70 kg' ? '⭐ Tamanho mais escolhido' : '';
     }
-    options.forEach(function(option){
-      var input = option.querySelector('input');
-      option.addEventListener('click', function(){ input.checked = true; select(option); });
-      input.addEventListener('change', function(){ select(option); });
-      if(input.checked) select(option);
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){ select(btn); });
     });
+    var initial = document.querySelector('.kit-toggle-btn.selected') || buttons[0];
+    select(initial);
   })();
 
   // FAQ accordion
