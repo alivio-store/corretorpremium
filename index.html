@@ -1434,7 +1434,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
       setTimeout(function(){ toast.classList.remove('visible'); }, 4000);
       if(i < LIMITE) setTimeout(ciclo, 7000);
     }
-    ciclo();
+    setTimeout(ciclo, 15000); // primeira notificacao so aparece 15s depois de carregar a pagina
   })();
 
   // Barra fixa mobile: so aparece quando a pessoa rolar de verdade ate a 3a dobra
