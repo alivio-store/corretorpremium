@@ -1122,7 +1122,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
         <div class="price-card-body">
           <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-hero.jpg" alt="Corretor Premium" class="price-photo"></a>
           <div class="price-gift"><a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/brinde-relogio.jpg" alt="Relógio inteligente de brinde"></a><span>+ Brinde: Relógio Inteligente</span></div>
-          <div class="save">Até 100 kg</div>
+          <div class="save">De 71 kg até 120 kg</div>
           <div class="price-discount-row">
             <span class="price-old">De R$ 433,00</span>
             <span class="price-off-badge">-70%</span>
@@ -1154,7 +1154,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
         <div class="kit-toggle">
           <button type="button" class="kit-toggle-btn" data-weight="Até 50 kg" data-link="https://alivio3.pay.yampi.com.br/r/C56O44YNEY">P/M<small>Até 50 kg</small></button>
           <button type="button" class="kit-toggle-btn selected" data-weight="Até 70 kg" data-link="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1">G<small>Até 70 kg</small></button>
-          <button type="button" class="kit-toggle-btn" data-weight="Até 100 kg" data-link="https://alivio3.pay.yampi.com.br/r/BH24KQUJ93">GG<small>Até 100 kg</small></button>
+          <button type="button" class="kit-toggle-btn" data-weight="De 71 kg até 120 kg" data-link="https://alivio3.pay.yampi.com.br/r/BH24KQUJ93">GG<small>71-120 kg</small></button>
         </div>
 
         <div class="kit-compact-price">
@@ -1576,22 +1576,36 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 
   // Barra fixa mobile: so aparece quando a pessoa rolar de verdade ate a 3a dobra
   // (secao de videos) -- antes disparava cedo demais porque a checagem
-  // considerava "quase visivel" (dentro de 1 tela) como se ja tivesse chegado
+  // considerava "quase visivel" (dentro de 1 tela) como se ja tivesse chegado.
+  // Some tambem sempre que a secao de preco estiver na tela (o card de preco
+  // ja mostra tudo isso, o botao fixo fica redundante ali).
   (function(){
     var bar = document.querySelector('.mobile-bar');
     var target = document.querySelector('.video-testimonials');
+    var pricing = document.querySelector('.pricing');
     if(!bar || !target) return;
-    var shown = false;
+    var pastTrigger = false;
     function check(){
-      if(shown) return;
-      var rect = target.getBoundingClientRect();
-      if(rect.top <= 0){
-        bar.classList.add('visible');
-        shown = true;
-        window.removeEventListener('scroll', check);
+      if(!pastTrigger){
+        var rect = target.getBoundingClientRect();
+        if(rect.top <= 0){ pastTrigger = true; }
       }
+      if(!pastTrigger){
+        bar.classList.remove('visible');
+        return;
+      }
+      if(pricing){
+        var pRect = pricing.getBoundingClientRect();
+        var pricingInView = pRect.top < window.innerHeight && pRect.bottom > 0;
+        if(pricingInView){
+          bar.classList.remove('visible');
+          return;
+        }
+      }
+      bar.classList.add('visible');
     }
     window.addEventListener('scroll', check, { passive: true });
+    check();
   })();
 
   // Carrossel deslizante da mini prova social, so no mobile: 2 cards visiveis,
