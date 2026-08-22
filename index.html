@@ -347,6 +347,13 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     border-radius:22px;padding:28px 36px;
   }
   .brinde-box img{width:130px;flex:none;filter:drop-shadow(0 12px 20px rgba(0,0,0,.4));}
+  .brinde-img-wrap{position:relative;flex:none;width:130px;}
+  .gratis-ribbon{
+    position:absolute;top:16px;right:-38px;width:150px;text-align:center;
+    background:linear-gradient(135deg,#ff3b3b,#c0392b);color:#fff;font-weight:900;
+    font-size:.8rem;letter-spacing:.06em;padding:5px 0;transform:rotate(40deg);
+    box-shadow:0 4px 10px rgba(0,0,0,.4);text-transform:uppercase;
+  }
   .brinde-tag{
     display:inline-block;background:var(--yellow);color:#000;font-weight:800;font-size:.78rem;
     text-transform:uppercase;letter-spacing:.02em;padding:6px 14px;border-radius:99px;margin-bottom:10px;
@@ -1033,7 +1040,10 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 <section class="brinde">
   <div class="wrap">
     <div class="brinde-box">
-      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/brinde-relogio.gif" alt="Relógio inteligente de brinde"></a>
+      <div class="brinde-img-wrap">
+        <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/brinde-relogio.gif" alt="Relógio inteligente de brinde"></a>
+        <span class="gratis-ribbon">Grátis</span>
+      </div>
       <div class="brinde-body">
         <div class="brinde-tag">Brinde disponível enquanto durar o estoque</div>
         <h2>Receba de brinde um relógio inteligente</h2>
