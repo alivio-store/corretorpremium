@@ -23,6 +23,16 @@ descritivos, e já são usadas na página:
   incluir em algum lugar, por exemplo substituindo as 3 fotos individuais
   da seção "Como usar")
 
+As 3 fotos reais do brinde (Oxímetro de Pulso Multilaser) também estão em
+`img/`:
+
+- `brinde-oximetro-1.webp` — visor de frente, mostrando SpO2/PR (em uso na
+  miniatura "Ver o brinde" da galeria da PDP)
+- `brinde-oximetro-2.webp` — no dedo, ângulo lateral (em uso na seção de
+  brinde)
+- `brinde-oximetro-3.webp` — no dedo, com a marca Multilaser visível (ainda
+  **não** está em uso — fica disponível caso queira trocar ou complementar)
+
 O vídeo do produto (`videos/video-topo-medidor.mp4`) já está em uso como
 mídia principal da PDP, no topo da página, e os 5 vídeos de depoimento
 (`videos/depoimento-1.mp4` a `depoimento-5.mp4`) já estão na seção "Quem já
@@ -46,10 +56,9 @@ imagens em `img/` e o atributo `poster="img/..."` em cada `<video>`.
    comentário `DEPOIMENTOS (placeholders...)`. Ajuste também o
    `data-target` do contador de clientes satisfeitos para o valor real.
 
-3. **Brinde** — não incluído (não havia brinde/foto confirmados). Se for
-   oferecer um brinde, a seção `.brinde` (CSS já pronto) foi removida do
-   HTML — o comentário `<!-- BRINDE: removida por enquanto ... -->` mostra
-   onde recolocar, seguindo o padrão de `/teste-b/`.
+3. **Brinde** — incluído: **Oxímetro de Pulso Multilaser**, com fotos reais.
+   Aparece no banner da PDP (🎁 logo abaixo do rating), na miniatura "Ver o
+   brinde" da galeria, na seção `.brinde` ("Receba de brinde...") e no FAQ.
 
 4. **Notificação de pedido** ("Fulano acabou de comprar") — vem
    **desativada por padrão** (`ENABLE_ORDER_TOAST = false` no `<script>`
@@ -70,11 +79,11 @@ imagens em `img/` e o atributo `poster="img/..."` em cada `<video>`.
 ## Estrutura da página
 
 Topbar promocional → Header fixo → Breadcrumb → PDP (galeria com vídeo +
-fotos + preço + botão de compra) → Descrição do produto → "Fala o resultado
-em português" → prova social (mini) → vídeos de depoimento → Dores
-(agitação) → Benefícios → Como usar (3 passos) → Seção educativa → Galeria
-→ Sem controle x Com controle →
-Garantia de 90 dias → FAQ → CTA final → Depoimentos (completo, com
+fotos + banner de brinde + preço + botão de compra) → Descrição do produto
+→ "Fala o resultado em português" → prova social (mini) → vídeos de
+depoimento → Dores (agitação) → Benefícios → Como usar (3 passos) → Seção
+educativa → Galeria → Sem controle x Com controle → Garantia de 90 dias →
+Brinde (Oxímetro Multilaser) → FAQ → CTA final → Depoimentos (completo, com
 paginação) → Rodapé → barra fixa de compra no mobile → notificação de
 pedido (desativada).
 
