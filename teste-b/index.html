@@ -738,6 +738,12 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     .how{display:none;}
     .barone{display:none;}
     .hero-price-note{display:none;}
+
+    /* Sobe o bloco do brinde pra logo depois do PDP (2a dobra) só no mobile,
+       sem mudar a ordem no desktop */
+    .mobile-reorder{display:flex;flex-direction:column;}
+    .brinde{order:-1;}
+    .brinde-proof{display:none;}
     #reviews-mini-grid{
       display:flex;flex-wrap:nowrap;gap:14px;transition:transform .5s ease;
       will-change:transform;
@@ -920,6 +926,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   </div>
 </section>
 
+<div class="mobile-reorder">
 <!-- BARONE -->
 <section class="barone">
   <div class="wrap">
@@ -1230,6 +1237,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     </div>
   </div>
 </section>
+</div>
 
 <!-- FAQ -->
 <section class="faq" id="faq">
