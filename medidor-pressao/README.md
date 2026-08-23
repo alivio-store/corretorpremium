@@ -36,13 +36,13 @@ dependências externas.
    Se preferir nomes diferentes, é só trocar nos atributos `src`/`poster`/
    `data-img` do `index.html`.
 
-2. **Preços e link de checkout**
-   Os valores em `#comprar` (`R$ 129,90`, `R$ 219,90`, `R$ 289,90`, os
-   parcelamentos e o desconto no Pix) são **exemplos**. Troque pelos valores
-   reais e pelo link de cada variação (`data-link="#"` nos 3
-   `<label class="pdp-size-option">` e o `href="#"` do botão principal
-   `#pdp-buy-btn`) pelo link real de checkout (Yampi, etc.) — procure o
-   comentário `PREÇOS DE EXEMPLO`.
+2. **Preço e link de checkout**
+   Já preenchidos com dados reais: de **R$ 390,00** por **R$ 159,90**
+   (12x sem juros de R$ 13,33, ou R$ 151,91 no Pix), com o botão de compra
+   apontando para `https://alivio3.pay.yampi.com.br/r/O4H1HQA1NI`. Esse
+   preço/link aparece em 2 lugares — atualize os dois se mudar: a caixa de
+   preço da PDP (`.pdp-total-box` + `#pdp-buy-btn`) e a barra fixa mobile
+   (`.mobile-bar`).
 
 3. **Depoimentos**
    Os depoimentos em `#depoimentos`, na prova social logo após o bloco de

@@ -402,6 +402,7 @@ src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
     background:var(--paper);border:1px solid var(--border);border-radius:14px;
     padding:16px 18px;margin-bottom:16px;
   }
+  .pdp-discount-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
   .pdp-total-row{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;}
   .pdp-total-label{font-weight:700;color:var(--muted);font-size:.9rem;}
   .pdp-total-price{font-weight:800;font-size:1.5rem;color:var(--ink);}
@@ -596,9 +597,11 @@ src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
      abaixo (produto-hero.jpg, produto-uso-1.jpg, etc.) — ou troque os nomes
      nos atributos src/poster. Veja o README.md desta pasta para a lista
      completa de arquivos esperados.
-  2) PREÇOS E LINKS DE CHECKOUT: os valores e o href="#" dos botões de compra
-     são EXEMPLO. Troque pelos valores reais e pelo link da Yampi/checkout.
-     Procure o comentário "PREÇOS DE EXEMPLO" na seção da PDP.
+  2) PREÇO E LINK DE CHECKOUT: já preenchidos com o link real da Yampi
+     (https://alivio3.pay.yampi.com.br/r/O4H1HQA1NI) e o preço R$ 390,00
+     por R$ 159,90. Se o valor mudar, atualize nos 2 lugares que repetem o
+     preço: a caixa de preço da PDP (.pdp-total-box) e a barra fixa mobile
+     (.mobile-bar).
   3) DEPOIMENTOS: os depoimentos e a contagem de avaliações são EXEMPLO.
      Substitua por avaliações reais (com autorização) antes de publicar.
      Procure "DEPOIMENTOS (placeholders...)".
@@ -670,53 +673,20 @@ src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
       <!-- Banner de brinde: EXEMPLO, apague este bloco se não houver brinde -->
       <div class="pdp-gift-banner">🎁 <strong>+ Brinde: Termômetro Digital Infravermelho</strong> — enquanto durar o estoque</div>
 
-      <!-- PREÇOS DE EXEMPLO: troque pelos valores e links reais da Yampi/checkout -->
-      <div class="pdp-select-label">Escolha a quantidade:</div>
-      <div class="pdp-size-list">
-        <label class="pdp-size-option" data-link="#">
-          <input type="radio" name="pdp-size">
-          <span class="pdp-radio"></span>
-          <span class="pdp-size-info"><strong>1 Medidor</strong><small>Uso individual</small></span>
-          <span class="pdp-size-price">
-            <span class="pdp-price-old">R$ 297,00</span>
-            <span class="pdp-price-new">R$ 129,90</span>
-          </span>
-          <span class="pdp-off-badge">-56%</span>
-        </label>
-        <label class="pdp-size-option selected" data-link="#">
-          <input type="radio" name="pdp-size" checked>
-          <span class="pdp-radio"></span>
-          <span class="pdp-size-info"><strong>Kit com 2</strong><small>Ideal para o casal</small></span>
-          <span class="pdp-size-price">
-            <span class="pdp-price-old">R$ 594,00</span>
-            <span class="pdp-price-new">R$ 219,90</span>
-          </span>
-          <span class="pdp-off-badge">-63%</span>
-          <span class="pdp-tag">Mais vendido</span>
-        </label>
-        <label class="pdp-size-option" data-link="#">
-          <input type="radio" name="pdp-size">
-          <span class="pdp-radio"></span>
-          <span class="pdp-size-info"><strong>Kit Família com 3</strong><small>Para toda a casa</small></span>
-          <span class="pdp-size-price">
-            <span class="pdp-price-old">R$ 891,00</span>
-            <span class="pdp-price-new">R$ 289,90</span>
-          </span>
-          <span class="pdp-off-badge">-67%</span>
-        </label>
-      </div>
-
       <div class="pdp-total-box">
-        <div class="pdp-total-row">
-          <span class="pdp-total-label">Total:</span>
-          <span class="pdp-total-price">R$ 219,90</span>
-          <span class="pdp-total-old">R$ 594,00</span>
+        <div class="pdp-discount-row">
+          <span class="pdp-total-old">R$ 390,00</span>
+          <span class="pdp-off-badge">-59%</span>
         </div>
-        <div class="pdp-total-installment">em até 12x sem juros de <strong>R$ 18,33</strong></div>
-        <div class="pdp-pix-line">💰 ou <strong>R$ 208,91</strong> à vista no Pix <span class="pdp-pix-save">(economize R$ 10,99)</span></div>
+        <div class="pdp-total-row">
+          <span class="pdp-total-label">Por:</span>
+          <span class="pdp-total-price">R$ 159,90</span>
+        </div>
+        <div class="pdp-total-installment">em até 12x sem juros de <strong>R$ 13,33</strong></div>
+        <div class="pdp-pix-line">💰 ou <strong>R$ 151,91</strong> à vista no Pix <span class="pdp-pix-save">(economize R$ 7,99)</span></div>
       </div>
 
-      <a href="#" id="pdp-buy-btn" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
+      <a href="https://alivio3.pay.yampi.com.br/r/O4H1HQA1NI" id="pdp-buy-btn" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
       <div class="secure-checkout">🔒 Compra 100% segura e protegida</div>
 
       <div class="pdp-trust-row">
@@ -1185,8 +1155,8 @@ src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
 
 <!-- STICKY MOBILE BAR -->
 <div class="mobile-bar">
-  <div class="price">R$ 208,91 <small>no Pix ou 12x de R$ 18,33</small></div>
-  <a href="#comprar" class="btn btn-primary btn-sm btn-pulse">Escolher quantidade</a>
+  <div class="price">R$ 159,90 <small>ou R$ 151,91 no Pix</small></div>
+  <a href="https://alivio3.pay.yampi.com.br/r/O4H1HQA1NI" class="btn btn-primary btn-sm btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
 </div>
 
 <!-- ORDER NOTIFICATION (desativada por padrão — ver ENABLE_ORDER_TOAST no script) -->
@@ -1289,22 +1259,6 @@ src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
     var pdpCount = document.getElementById('pdp-review-count');
     if(pdpAvg) pdpAvg.textContent = avg.toFixed(1);
     if(pdpCount) pdpCount.textContent = cards.length + ' avaliações reais';
-  })();
-
-  // PDP: seleção de quantidade/kit atualiza o botão de compra
-  (function(){
-    var options = document.querySelectorAll('.pdp-size-option');
-    var buyBtn = document.getElementById('pdp-buy-btn');
-    if(!options.length || !buyBtn) return;
-    function select(option){
-      options.forEach(function(o){ o.classList.remove('selected'); o.querySelector('input').checked = false; });
-      option.classList.add('selected');
-      option.querySelector('input').checked = true;
-      buyBtn.href = option.getAttribute('data-link');
-    }
-    options.forEach(function(option){
-      option.addEventListener('click', function(){ select(option); });
-    });
   })();
 
   // PDP: miniaturas trocam a mídia principal (vídeo ou foto)
