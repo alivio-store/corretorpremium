@@ -462,13 +462,17 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     background:var(--paper);border:1px solid var(--border);border-radius:14px;
     padding:16px 18px;margin-bottom:16px;
   }
-  .pdp-total-row{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;}
+  .pdp-total-row{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;flex-wrap:wrap;}
   .pdp-total-label{font-weight:700;color:var(--muted);font-size:.9rem;}
-  .pdp-total-price{font-weight:800;font-size:1.5rem;color:var(--ink);}
+  .pdp-pix-tag{
+    display:inline-flex;align-items:center;gap:4px;background:rgba(20,184,166,.12);
+    color:var(--teal-dark);font-weight:800;font-size:.78rem;padding:4px 10px;border-radius:99px;
+  }
+  .pdp-total-price{font-weight:800;font-size:2rem;color:var(--teal-dark);}
   .pdp-total-old{color:var(--muted);text-decoration:line-through;font-size:.85rem;}
   .pdp-total-installment{font-size:.85rem;color:var(--muted);margin-bottom:6px;}
   .pdp-pix-line{font-size:.85rem;font-weight:700;color:var(--teal-dark);}
-  .pdp-pix-save{font-weight:600;color:var(--muted);}
+  .pdp-pix-save{font-weight:700;color:var(--teal-dark);font-size:.85rem;margin-bottom:6px;}
   .pdp-trust-row{
     display:flex;flex-wrap:wrap;gap:8px 18px;margin:16px 0 12px;font-size:.82rem;
     font-weight:600;color:var(--ink);
@@ -890,12 +894,12 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 
       <div class="pdp-total-box">
         <div class="pdp-total-row">
-          <span class="pdp-total-label">Total:</span>
-          <span class="pdp-total-price">R$ 129,90</span>
+          <span class="pdp-pix-tag">💰 no Pix</span>
+          <span class="pdp-total-price">R$ 123,40</span>
           <span class="pdp-total-old">R$ 433,00</span>
         </div>
-        <div class="pdp-total-installment">em até 12x sem juros de <strong>R$ 10,83</strong></div>
-        <div class="pdp-pix-line">💰 ou <strong>R$ 123,40</strong> à vista no Pix <span class="pdp-pix-save">(economize R$ 6,50)</span></div>
+        <div class="pdp-pix-save">✔ Economize R$ 6,50 pagando à vista no Pix</div>
+        <div class="pdp-total-installment">ou em até 12x sem juros de <strong>R$ 10,83</strong></div>
       </div>
 
       <a href="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1" id="pdp-buy-btn" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
