@@ -395,6 +395,92 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     background:#000;border:1px solid rgba(255,255,255,.12);
   }
 
+  /* BREADCRUMB */
+  .breadcrumb{background:var(--paper);border-bottom:1px solid var(--border);padding:12px 0;}
+  .breadcrumb .wrap{font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--muted);}
+  .breadcrumb a:hover{color:var(--teal-dark);}
+  .breadcrumb span{color:var(--muted);}
+  .breadcrumb .current{color:var(--ink);font-weight:600;}
+
+  /* PDP (versão e-commerce) */
+  .pdp{background:#fff;padding:36px 0 0;}
+  .pdp-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
+  .pdp-gallery{position:sticky;top:24px;}
+  .pdp-main-img{
+    background:var(--paper);border:1px solid var(--border);border-radius:18px;
+    aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden;
+  }
+  .pdp-main-img img,.pdp-main-img video{width:100%;height:100%;object-fit:contain;}
+  .pdp-thumbs{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;}
+  .pdp-thumb{
+    position:relative;width:64px;height:64px;border-radius:10px;border:2px solid var(--border);background:#fff;
+    padding:4px;cursor:pointer;overflow:hidden;
+  }
+  .pdp-thumb img{width:100%;height:100%;object-fit:cover;border-radius:6px;}
+  .pdp-thumb.selected{border-color:var(--teal-dark);}
+  .pdp-thumb-play{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(11,21,36,.35);color:#fff;font-size:1rem;border-radius:6px;
+  }
+  .pdp-info h1{font-size:1.6rem;margin-bottom:10px;}
+  .pdp-rating{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--muted);margin-bottom:18px;}
+  .pdp-rating .stars-sm{color:var(--gold);letter-spacing:1px;}
+  .pdp-gift-banner{
+    background:rgba(255,214,10,.18);border:1px solid rgba(245,195,0,.4);color:var(--gold-dark);
+    font-size:.88rem;padding:10px 14px;border-radius:12px;margin-bottom:22px;
+  }
+  .pdp-select-label{font-weight:800;font-size:.95rem;margin-bottom:10px;}
+  .pdp-size-list{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
+  .pdp-size-option{
+    position:relative;display:flex;align-items:center;gap:12px;border:2px solid var(--border);
+    border-radius:14px;padding:14px 16px;cursor:pointer;background:#fff;
+  }
+  .pdp-size-option input{position:absolute;opacity:0;width:0;height:0;}
+  .pdp-radio{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--border);position:relative;}
+  .pdp-size-option.selected{border-color:var(--teal-dark);background:rgba(20,184,166,.05);}
+  .pdp-size-option.selected .pdp-radio{border-color:var(--teal-dark);}
+  .pdp-size-option.selected .pdp-radio::after{
+    content:'';position:absolute;inset:3px;border-radius:50%;background:var(--teal-dark);
+  }
+  .pdp-size-info{flex:1;display:flex;flex-direction:column;}
+  .pdp-size-info strong{font-size:1rem;color:var(--ink);}
+  .pdp-size-info small{color:var(--muted);font-size:.8rem;}
+  .pdp-size-price{display:flex;flex-direction:column;align-items:flex-end;}
+  .pdp-price-old{font-size:.78rem;color:var(--muted);text-decoration:line-through;}
+  .pdp-price-new{font-weight:800;color:var(--ink);font-size:1.05rem;}
+  .pdp-off-badge{
+    background:var(--ink);color:#fff;font-weight:800;font-size:.7rem;padding:4px 9px;
+    border-radius:8px;flex:none;
+  }
+  .pdp-tag{
+    position:absolute;top:-11px;right:16px;background:var(--teal-dark);color:#fff;
+    font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.02em;
+    padding:4px 10px;border-radius:99px;
+  }
+  .pdp-total-box{
+    background:var(--paper);border:1px solid var(--border);border-radius:14px;
+    padding:16px 18px;margin-bottom:16px;
+  }
+  .pdp-total-row{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;}
+  .pdp-total-label{font-weight:700;color:var(--muted);font-size:.9rem;}
+  .pdp-total-price{font-weight:800;font-size:1.5rem;color:var(--ink);}
+  .pdp-total-old{color:var(--muted);text-decoration:line-through;font-size:.85rem;}
+  .pdp-total-installment{font-size:.85rem;color:var(--muted);margin-bottom:6px;}
+  .pdp-pix-line{font-size:.85rem;font-weight:700;color:var(--teal-dark);}
+  .pdp-pix-save{font-weight:600;color:var(--muted);}
+  .pdp-trust-row{
+    display:flex;flex-wrap:wrap;gap:8px 18px;margin:16px 0 12px;font-size:.82rem;
+    font-weight:600;color:var(--ink);
+  }
+  .pdp-description{
+    max-width:820px;margin:44px auto 0;padding:32px 24px 0;border-top:1px solid var(--border);
+  }
+  .pdp-description h2{font-size:1.3rem;margin-bottom:14px;}
+  .pdp-description p{color:var(--muted);margin-bottom:16px;}
+  .pdp-description ul{display:flex;flex-direction:column;gap:8px;}
+  .pdp-description li{font-size:.92rem;color:var(--ink);}
+
   /* PRICING */
   .pricing{background:#fff;}
   .offer-banner{
@@ -633,6 +719,16 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     .mobile-bar.visible{display:flex;}
     body{padding-bottom:78px;}
 
+    /* PDP no mobile: empilha galeria e informações */
+    .pdp{padding:18px 0 0;}
+    .pdp-grid{grid-template-columns:1fr;gap:20px;}
+    .pdp-gallery{position:static;}
+    .pdp-main-img{padding:14px;}
+    .pdp-thumb{width:54px;height:54px;}
+    .pdp-info h1{font-size:1.25rem;}
+    .pdp-total-price{font-size:1.3rem;}
+    .pdp-description{margin-top:28px;padding:24px 24px 0;}
+
     /* Encurtar a LP no mobile: corta blocos redundantes com prova social /
        conteúdo educativo que já aparece em outro lugar da página */
     .reviews-mini{display:none;}
@@ -713,54 +809,116 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">✔ Mais de 10.000 pessoas já corrigiram a postura</span>
-      <h1>Fim das Dores com o <span>MELHOR CORRETOR DO BRASIL</span></h1>
-      <ul class="hero-audience">
-        <li>Para quem tem problemas de coluna</li>
-        <li>Para quem fica muito tempo sentado ou em pé</li>
-        <li>Para quem tem postura torta</li>
-      </ul>
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="wrap">
+    <a href="#">Página inicial</a><span>›</span><a href="#">Todos os produtos</a><span>›</span><span class="current">Corretor Premium de Postura</span>
+  </div>
+</div>
 
-      <div class="hero-cta-row">
-        <a href="#comprar" class="btn btn-primary">Quero minha postura de volta →</a>
-      </div>
-      <div class="hero-price-note">📦 Estoque limitado nesta oferta &nbsp;•&nbsp; Envio em até 24h úteis</div>
-
-      <div class="hero-trust">
-        <div>🔒 Compra 100% segura</div>
-        <div>↩️ 90 dias de garantia</div>
-        <div>🚚 Frete grátis</div>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="hero-card">
-        <a href="#comprar" class="img-link" aria-label="Ver oferta">
-          <video poster="../img/produto-hero.jpg" width="420" autoplay muted loop playsinline aria-label="Corretor de postura Premium sendo usado">
+<!-- PDP -->
+<section class="pdp" id="comprar">
+  <div class="wrap pdp-grid">
+    <div class="pdp-gallery">
+      <div class="pdp-main-img">
+        <div id="pdp-main-media">
+          <video poster="../img/produto-hero.jpg" autoplay muted loop playsinline aria-label="Corretor de postura Premium sendo usado">
             <source src="../videos/hero-produto.webm" type="video/webm">
             <source src="../videos/hero-produto.mp4" type="video/mp4">
           </video>
-        </a>
+        </div>
       </div>
-      <div class="float-badge b1">⭐ 4.8/5 avaliação</div>
-      <div class="float-badge b3"><a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="../img/brinde-relogio.jpg" alt="Relógio inteligente de brinde"></a> <span>+ BRINDE<br><small>Relógio Inteligente</small><br><small class="b3-urgent">ENQUANTO DURAR O ESTOQUE</small></span></div>
+      <div class="pdp-thumbs">
+        <button type="button" class="pdp-thumb selected" data-type="video" aria-label="Ver vídeo"><img src="../img/produto-hero.jpg" alt=""><span class="pdp-thumb-play">▶</span></button>
+        <button type="button" class="pdp-thumb" data-type="image" data-img="../img/produto-hero.jpg" aria-label="Ver foto 1"><img src="../img/produto-hero.jpg" alt=""></button>
+        <button type="button" class="pdp-thumb" data-type="image" data-img="../img/produto-uso-1.jpg" aria-label="Ver foto 2"><img src="../img/produto-uso-1.jpg" alt=""></button>
+        <button type="button" class="pdp-thumb" data-type="image" data-img="../img/produto-uso-2.jpg" aria-label="Ver foto 3"><img src="../img/produto-uso-2.jpg" alt=""></button>
+        <button type="button" class="pdp-thumb" data-type="image" data-img="../img/produto-mulher-1.jpg" aria-label="Ver foto 4"><img src="../img/produto-mulher-1.jpg" alt=""></button>
+        <button type="button" class="pdp-thumb" data-type="image" data-img="../img/brinde-relogio.jpg" aria-label="Ver o brinde"><img src="../img/brinde-relogio.jpg" alt=""></button>
+      </div>
+    </div>
+
+    <div class="pdp-info">
+      <h1>Corretor Premium de Postura — Ajustável, Unissex</h1>
+      <div class="pdp-rating">
+        <span class="stars-sm">★★★★★</span>
+        <span><strong id="pdp-rating-avg">4.9</strong>/5.0 &nbsp;|&nbsp; <span id="pdp-review-count">19 avaliações reais</span></span>
+      </div>
+
+      <div class="pdp-gift-banner">🎁 <strong>+ Brinde: Relógio Inteligente</strong> — enquanto durar o estoque</div>
+
+      <div class="pdp-select-label">Escolha o tamanho:</div>
+      <div class="pdp-size-list">
+        <label class="pdp-size-option" data-link="https://alivio3.pay.yampi.com.br/r/C56O44YNEY">
+          <input type="radio" name="pdp-size">
+          <span class="pdp-radio"></span>
+          <span class="pdp-size-info"><strong>P/M</strong><small>Até 50 kg</small></span>
+          <span class="pdp-size-price">
+            <span class="pdp-price-old">R$ 433,00</span>
+            <span class="pdp-price-new">R$ 129,90</span>
+          </span>
+          <span class="pdp-off-badge">-70%</span>
+        </label>
+        <label class="pdp-size-option selected" data-link="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1">
+          <input type="radio" name="pdp-size" checked>
+          <span class="pdp-radio"></span>
+          <span class="pdp-size-info"><strong>G</strong><small>Até 70 kg</small></span>
+          <span class="pdp-size-price">
+            <span class="pdp-price-old">R$ 433,00</span>
+            <span class="pdp-price-new">R$ 129,90</span>
+          </span>
+          <span class="pdp-off-badge">-70%</span>
+          <span class="pdp-tag">Mais vendido</span>
+        </label>
+        <label class="pdp-size-option" data-link="https://alivio3.pay.yampi.com.br/r/BH24KQUJ93">
+          <input type="radio" name="pdp-size">
+          <span class="pdp-radio"></span>
+          <span class="pdp-size-info"><strong>GG</strong><small>De 71 kg até 120 kg</small></span>
+          <span class="pdp-size-price">
+            <span class="pdp-price-old">R$ 433,00</span>
+            <span class="pdp-price-new">R$ 129,90</span>
+          </span>
+          <span class="pdp-off-badge">-70%</span>
+        </label>
+      </div>
+
+      <div class="pdp-total-box">
+        <div class="pdp-total-row">
+          <span class="pdp-total-label">Total:</span>
+          <span class="pdp-total-price">R$ 129,90</span>
+          <span class="pdp-total-old">R$ 433,00</span>
+        </div>
+        <div class="pdp-total-installment">em até 12x sem juros de <strong>R$ 10,83</strong></div>
+        <div class="pdp-pix-line">💰 ou <strong>R$ 123,40</strong> à vista no Pix <span class="pdp-pix-save">(economize R$ 6,50)</span></div>
+      </div>
+
+      <a href="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1" id="pdp-buy-btn" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
+      <div class="secure-checkout">🔒 Compra 100% segura e protegida</div>
+
+      <div class="pdp-trust-row">
+        <div>🚚 Frete grátis</div>
+        <div>🛡️ Garantia de 90 dias</div>
+        <div>📦 Entrega em até 2 dias</div>
+      </div>
+      <div class="payment-icons">
+        <span class="pay-pill">⚡ Pix</span>
+        <span class="pay-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/></svg> Cartão</span>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- TRUST STRIP -->
-<div class="trust-strip">
-  <div class="wrap">
-    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12l4-8h10l4 8-9 9-9-9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> Frete grátis para todo o Brasil</div>
-    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> Pagamento 100% seguro</div>
-    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1016 0 8 8 0 00-16 0z" stroke="currentColor" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Garantia de 90 dias</div>
-    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 12h4l3-8 4 16 3-8h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Entrega expressa</div>
+  <div class="wrap pdp-description">
+    <h2>Descrição</h2>
+    <p>O Corretor Premium é um colete postural ajustável que alinha ombros e coluna de forma suave, reduzindo a sobrecarga na lombar e nos ombros ao longo do dia. Ajuste em 4 pontos (tiras e cinta lombar), tecido respirável e design discreto que não marca por baixo da roupa — para uso em casa, no trabalho ou treinando.</p>
+    <ul>
+      <li>✔ Ajuste em 4 pontos, veste em segundos</li>
+      <li>✔ Tecido respirável, confortável pro dia todo</li>
+      <li>✔ Discreto por baixo da camiseta</li>
+      <li>✔ Unissex, serve para qualquer biotipo</li>
+      <li>✔ Frete grátis e garantia de 90 dias</li>
+    </ul>
   </div>
-</div>
+</section>
 
 <!-- BARONE -->
 <section class="barone">
@@ -1073,141 +1231,6 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="pricing" id="comprar">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Oferta especial</span>
-      <h2>Garanta o seu Corretor Premium</h2>
-      <div class="offer-banner">70% de desconto (agosto de ofertas)</div>
-      <div class="offer-meta">
-        <span>⚡ Últimas unidades disponíveis</span>
-        <span>📦 Entrega express em 2 dias: <span class="delivery-date">calculando data de entrega…</span></span>
-      </div>
-    </div>
-
-    <div class="price-grid">
-      <div class="price-card">
-        <div class="price-banner">Tamanho P/M</div>
-        <div class="price-card-body">
-          <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="../img/produto-hero.jpg" alt="Corretor Premium" class="price-photo"></a>
-          <div class="price-gift"><a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="../img/brinde-relogio.jpg" alt="Relógio inteligente de brinde"></a><span>+ Brinde: Relógio Inteligente</span></div>
-          <div class="save">Até 50 kg</div>
-          <div class="price-discount-row">
-            <span class="price-old">De R$ 433,00</span>
-            <span class="price-off-badge">-70%</span>
-          </div>
-          <div class="price-new"><span class="price-x">12x</span> <sup>R$</sup> 10<sup>,83</sup></div>
-          <div class="price-unit">ou <strong>R$ 123,40</strong> à vista no Pix</div>
-          <div class="pix-discount">💰 Economize +R$ 6,50 no PIX com 5% de desconto</div>
-          <div class="price-badges">
-            <div class="price-badge delivery">📦 Entrega em até 2 dias</div>
-            <div class="price-badge guarantee">🛡️ Garantia de 90 dias</div>
-          </div>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis</li>
-          </ul>
-          <a href="https://alivio3.pay.yampi.com.br/r/C56O44YNEY" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
-          <div class="payment-icons">
-            <span class="pay-pill">⚡ Pix</span>
-            <span class="pay-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/></svg> Cartão</span>
-          </div>
-          <div class="secure-checkout">🔒 Compra 100% segura e protegida</div>
-        </div>
-      </div>
-
-      <div class="price-card featured">
-        <div class="price-banner">Tamanho G</div>
-        <div class="price-card-body">
-          <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="../img/produto-hero.jpg" alt="Corretor Premium" class="price-photo"></a>
-          <div class="price-gift"><a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="../img/brinde-relogio.jpg" alt="Relógio inteligente de brinde"></a><span>+ Brinde: Relógio Inteligente</span></div>
-          <div class="save">Até 70 kg</div>
-          <div class="price-discount-row">
-            <span class="price-old">De R$ 433,00</span>
-            <span class="price-off-badge">-70%</span>
-          </div>
-          <div class="price-new"><span class="price-x">12x</span> <sup>R$</sup> 10<sup>,83</sup></div>
-          <div class="price-unit">ou <strong>R$ 123,40</strong> à vista no Pix</div>
-          <div class="pix-discount">💰 Economize +R$ 6,50 no PIX com 5% de desconto</div>
-          <div class="price-badges">
-            <div class="price-badge delivery">📦 Entrega em até 2 dias</div>
-            <div class="price-badge guarantee">🛡️ Garantia de 90 dias</div>
-          </div>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis</li>
-          </ul>
-          <a href="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
-          <div class="payment-icons">
-            <span class="pay-pill">⚡ Pix</span>
-            <span class="pay-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/></svg> Cartão</span>
-          </div>
-          <div class="secure-checkout">🔒 Compra 100% segura e protegida</div>
-        </div>
-      </div>
-
-      <div class="price-card">
-        <div class="price-banner">Tamanho GG</div>
-        <div class="price-card-body">
-          <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="../img/produto-hero.jpg" alt="Corretor Premium" class="price-photo"></a>
-          <div class="price-gift"><a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="../img/brinde-relogio.jpg" alt="Relógio inteligente de brinde"></a><span>+ Brinde: Relógio Inteligente</span></div>
-          <div class="save">De 71 kg até 120 kg</div>
-          <div class="price-discount-row">
-            <span class="price-old">De R$ 433,00</span>
-            <span class="price-off-badge">-70%</span>
-          </div>
-          <div class="price-new"><span class="price-x">12x</span> <sup>R$</sup> 10<sup>,83</sup></div>
-          <div class="price-unit">ou <strong>R$ 123,40</strong> à vista no Pix</div>
-          <div class="pix-discount">💰 Economize +R$ 6,50 no PIX com 5% de desconto</div>
-          <div class="price-badges">
-            <div class="price-badge delivery">📦 Entrega em até 2 dias</div>
-            <div class="price-badge guarantee">🛡️ Garantia de 90 dias</div>
-          </div>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Frete grátis</li>
-          </ul>
-        <a href="https://alivio3.pay.yampi.com.br/r/BH24KQUJ93" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
-          <div class="payment-icons">
-            <span class="pay-pill">⚡ Pix</span>
-            <span class="pay-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/></svg> Cartão</span>
-          </div>
-          <div class="secure-checkout">🔒 Compra 100% segura e protegida</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Versão mobile: bloco único e compacto, tudo visível numa dobra só -->
-    <div class="kit-select-wrap">
-      <div class="kit-compact">
-        <div class="kit-select-label">Escolha o tamanho</div>
-        <div class="kit-toggle">
-          <button type="button" class="kit-toggle-btn" data-weight="Até 50 kg" data-link="https://alivio3.pay.yampi.com.br/r/C56O44YNEY">P/M<small>Até 50 kg</small></button>
-          <button type="button" class="kit-toggle-btn selected" data-weight="Até 70 kg" data-link="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1">G<small>Até 70 kg</small></button>
-          <button type="button" class="kit-toggle-btn" data-weight="De 71 kg até 120 kg" data-link="https://alivio3.pay.yampi.com.br/r/BH24KQUJ93">GG<small>71-120 kg</small></button>
-        </div>
-
-        <div class="kit-compact-price">
-          <div class="kit-compact-discount-row">
-            <span class="price-old">De R$ 433,00</span>
-            <span class="price-off-badge">-70%</span>
-          </div>
-          <div class="price-new"><span class="price-x">12x</span> <sup>R$</sup> 10<sup>,83</sup></div>
-          <div class="kit-compact-pix">💰 R$ 123,40 no Pix (5% OFF)</div>
-        </div>
-
-        <div class="kit-grid">
-          <div class="kit-chip">🚚 Frete grátis</div>
-          <div class="kit-chip">🛡️ Garantia 90 dias</div>
-          <div class="kit-chip">📦 Entrega até <span class="delivery-date-short">…</span></div>
-          <div class="kit-chip">🎁 + Relógio de brinde</div>
-        </div>
-
-        <a href="https://alivio3.pay.yampi.com.br/r/L9Y2XC14T1" id="kit-buy-btn" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
-        <div class="secure-checkout">🔒 Compra 100% segura e protegida</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="wrap">
@@ -1514,6 +1537,49 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     var avg = total / cards.length;
     document.getElementById('rating-avg').textContent = avg.toFixed(1);
     document.getElementById('review-count').textContent = 'de ' + cards.length + ' avaliações reais de clientes';
+    var pdpAvg = document.getElementById('pdp-rating-avg');
+    var pdpCount = document.getElementById('pdp-review-count');
+    if(pdpAvg) pdpAvg.textContent = avg.toFixed(1);
+    if(pdpCount) pdpCount.textContent = cards.length + ' avaliações reais';
+  })();
+
+  // PDP: seleção de tamanho atualiza o botão de compra
+  (function(){
+    var options = document.querySelectorAll('.pdp-size-option');
+    var buyBtn = document.getElementById('pdp-buy-btn');
+    if(!options.length || !buyBtn) return;
+    function select(option){
+      options.forEach(function(o){ o.classList.remove('selected'); o.querySelector('input').checked = false; });
+      option.classList.add('selected');
+      option.querySelector('input').checked = true;
+      buyBtn.href = option.getAttribute('data-link');
+    }
+    options.forEach(function(option){
+      option.addEventListener('click', function(){ select(option); });
+    });
+  })();
+
+  // PDP: miniaturas trocam a mídia principal (vídeo ou foto)
+  (function(){
+    var thumbs = document.querySelectorAll('.pdp-thumb');
+    var main = document.getElementById('pdp-main-media');
+    if(!thumbs.length || !main) return;
+    var videoHtml = main.innerHTML;
+    thumbs.forEach(function(thumb){
+      thumb.addEventListener('click', function(){
+        thumbs.forEach(function(t){ t.classList.remove('selected'); });
+        thumb.classList.add('selected');
+        if(thumb.getAttribute('data-type') === 'video'){
+          main.innerHTML = videoHtml;
+        } else {
+          var img = document.createElement('img');
+          img.src = thumb.getAttribute('data-img');
+          img.alt = 'Corretor Premium';
+          main.innerHTML = '';
+          main.appendChild(img);
+        }
+      });
+    });
   })();
 
   // Paginação das avaliações adicionais (7 por página)
@@ -1589,7 +1655,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   (function(){
     var bar = document.querySelector('.mobile-bar');
     var target = document.querySelector('.video-testimonials');
-    var pricing = document.querySelector('.pricing');
+    var pricing = document.querySelector('.pdp');
     if(!bar || !target) return;
     var pastTrigger = false;
     function check(){
