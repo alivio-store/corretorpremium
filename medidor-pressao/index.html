@@ -13,21 +13,16 @@
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E❤️%3C/text%3E%3C/svg%3E">
 
-<!-- Google tag (gtag.js) -->
-<!-- TODO: crie uma propriedade GA4 própria para este produto e cole o ID abaixo (não reaproveite o ID do Corretor Premium, senão os dados dos dois produtos se misturam) -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- Google tag (gtag.js) — mesmo ID do Corretor Premium, a pedido do usuário -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7SRPE880LX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-7SRPE880LX');
 </script>
--->
 
-<!-- Meta Pixel Code -->
-<!-- TODO: crie um Pixel próprio para este produto (ou um novo evento/conjunto de anúncios) e cole o ID abaixo -->
-<!--
+<!-- Meta Pixel Code — mesmo Pixel do Corretor Premium, a pedido do usuário -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -37,13 +32,12 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'SEU_PIXEL_ID');
+fbq('init', '1734988077420170');
 fbq('track', 'PageView');
 </script>
 <noscript><a href="#comprar" class="img-link" aria-label="Ver oferta"><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 /></a></noscript>
--->
 <!-- End Meta Pixel Code -->
 
 <style>
@@ -597,9 +591,10 @@ src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
      produto-tela-touch.webp, produto-bateria.webp, produto-voz-pt.png,
      produto-caixa-conteudo.webp, produto-como-usar.png — essa última ainda
      não está em uso na página, fica disponível pra quem quiser).
-     VÍDEO: ainda não tem vídeo do produto — por isso a seção de vídeo do
-     topo da PDP virou uma foto, e a seção de vídeo-depoimentos foi removida
-     (comentário no HTML mostra como reativar). Veja o README.md.
+     VÍDEO: já usa o vídeo real enviado (videos/video-topo-medidor.mp4) no
+     topo da PDP. A seção de vídeo-depoimentos segue removida (sem vídeos de
+     clientes ainda) — comentário no HTML mostra como reativar. Veja o
+     README.md.
   2) PREÇO E LINK DE CHECKOUT: já preenchidos com o link real da Yampi
      (https://alivio3.pay.yampi.com.br/r/O4H1HQA1NI) e o preço R$ 390,00
      por R$ 159,90. Se o valor mudar, atualize nos 2 lugares que repetem o
@@ -611,8 +606,9 @@ src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
   4) NOTIFICAÇÃO DE PEDIDO ("Fulano de tal acabou de comprar"): vem
      DESATIVADA por padrão (ENABLE_ORDER_TOAST = false no <script> final)
      porque ainda não há pedidos reais. Só ative com nomes/cidades reais.
-  5) GA4 / Meta Pixel: os blocos estão comentados no <head> — descomente e
-     preencha com IDs próprios deste produto quando for publicar.
+  5) GA4 / Meta Pixel: já ativos, reaproveitando os mesmos IDs do Corretor
+     Premium (a pedido do usuário) — as conversões dos dois produtos vão
+     ficar misturadas na mesma conta de Analytics/Ads.
   6) CONTATO: troque o e-mail de contato no rodapé.
   ===========================================================================
 -->
@@ -650,11 +646,14 @@ src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
     <div class="pdp-gallery">
       <div class="pdp-main-img">
         <div id="pdp-main-media">
-          <img src="img/produto-hero.png" alt="Medidor de Pressão Digital 2026 de pulso">
+          <video poster="img/produto-hero.png" autoplay muted loop playsinline aria-label="Medidor de Pressão Digital 2026 sendo usado no pulso">
+            <source src="videos/video-topo-medidor.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
       <div class="pdp-thumbs">
-        <button type="button" class="pdp-thumb selected" data-type="image" data-img="img/produto-hero.png" aria-label="Ver foto 1"><img src="img/produto-hero.png" alt=""></button>
+        <button type="button" class="pdp-thumb selected" data-type="video" aria-label="Ver vídeo"><img src="img/produto-hero.png" alt=""><span class="pdp-thumb-play">▶</span></button>
+        <button type="button" class="pdp-thumb" data-type="image" data-img="img/produto-hero.png" aria-label="Ver foto 1"><img src="img/produto-hero.png" alt=""></button>
         <button type="button" class="pdp-thumb" data-type="image" data-img="img/produto-uso-pulso.png" aria-label="Ver foto no pulso"><img src="img/produto-uso-pulso.png" alt=""></button>
         <button type="button" class="pdp-thumb" data-type="image" data-img="img/produto-tela-touch.webp" aria-label="Ver tela touch"><img src="img/produto-tela-touch.webp" alt=""></button>
         <button type="button" class="pdp-thumb" data-type="image" data-img="img/produto-bateria.webp" aria-label="Ver bateria"><img src="img/produto-bateria.webp" alt=""></button>

@@ -23,12 +23,10 @@ descritivos, e já são usadas na página:
   incluir em algum lugar, por exemplo substituindo as 3 fotos individuais
   da seção "Como usar")
 
-**Ainda faltam** (opcionais, a página funciona sem eles):
-- Um vídeo do produto em uso, para a `pdp-main-img` no topo (hoje mostra
-  `produto-hero.png` como foto estática). Se enviar um vídeo, salve em
-  `videos/hero-produto.mp4` e troque o `<img>` dentro de `#pdp-main-media`
-  de volta por um `<video autoplay muted loop playsinline poster="...">`
-  (veja o padrão em `/teste-b/index.html` do Corretor Premium).
+O vídeo do produto (`videos/video-topo-medidor.mp4`) já está em uso como
+mídia principal da PDP, no topo da página.
+
+**Ainda falta** (opcional, a página funciona sem isso):
 - Vídeos de depoimentos de clientes — a seção `.video-testimonials` foi
   removida por enquanto (comentário no HTML mostra onde recolocar).
 
@@ -59,10 +57,12 @@ descritivos, e já são usadas na página:
    de preencher a lista `pessoas` com primeiros nomes e cidades reais de
    clientes.
 
-5. **Analytics / Pixel** — os blocos de Google Analytics (GA4) e Meta Pixel
-   estão comentados no `<head>`. Crie uma propriedade/pixel próprios para
-   este produto (não reaproveite os IDs do Corretor Premium) e descomente
-   com os IDs corretos.
+5. **Analytics / Pixel** — já ativos no `<head>`, reaproveitando os mesmos
+   IDs do Corretor Premium (GA4 `G-7SRPE880LX` e Meta Pixel
+   `1734988077420170`), a pedido do usuário. As conversões dos dois
+   produtos ficam misturadas na mesma conta de Analytics/Ads — se no futuro
+   quiser separar os dados por produto, crie uma propriedade/pixel próprios
+   e troque os IDs no `<head>`.
 
 6. **Contato** — no rodapé, troque o e-mail de contato se for diferente de
    `contato@alivio.store`.
