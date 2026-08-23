@@ -592,9 +592,8 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
      produto-caixa-conteudo.webp, produto-como-usar.png — essa última ainda
      não está em uso na página, fica disponível pra quem quiser).
      VÍDEO: já usa o vídeo real enviado (videos/video-topo-medidor.mp4) no
-     topo da PDP. A seção de vídeo-depoimentos segue removida (sem vídeos de
-     clientes ainda) — comentário no HTML mostra como reativar. Veja o
-     README.md.
+     topo da PDP, e os 5 vídeos de depoimento reais (videos/depoimento-1.mp4
+     a depoimento-5.mp4) na seção "Quem já usa, aprova". Veja o README.md.
   2) PREÇO E LINK DE CHECKOUT: já preenchidos com o link real da Yampi
      (https://alivio3.pay.yampi.com.br/r/O4H1HQA1NI) e o preço R$ 390,00
      por R$ 159,90. Se o valor mudar, atualize nos 2 lugares que repetem o
@@ -770,9 +769,21 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- VIDEO TESTIMONIALS: removida por enquanto (sem vídeos de clientes ainda).
-     Para reativar, adicione vídeos reais em videos/ e recoloque esta seção
-     no mesmo formato usada em /teste-b/ do Corretor Premium. -->
+<!-- VIDEO TESTIMONIALS -->
+<section class="video-testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Quem já usa, aprova</h2>
+    </div>
+    <div class="video-grid">
+      <video controls preload="metadata" playsinline><source src="videos/depoimento-1.mp4" type="video/mp4"></video>
+      <video controls preload="metadata" playsinline><source src="videos/depoimento-2.mp4" type="video/mp4"></video>
+      <video controls preload="metadata" playsinline><source src="videos/depoimento-3.mp4" type="video/mp4"></video>
+      <video controls preload="metadata" playsinline><source src="videos/depoimento-4.mp4" type="video/mp4"></video>
+      <video controls preload="metadata" playsinline><source src="videos/depoimento-5.mp4" type="video/mp4"></video>
+    </div>
+  </div>
+</section>
 
 <!-- PROBLEM -->
 <section class="problem" id="problema">

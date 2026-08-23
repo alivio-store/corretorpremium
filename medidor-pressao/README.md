@@ -24,11 +24,11 @@ descritivos, e já são usadas na página:
   da seção "Como usar")
 
 O vídeo do produto (`videos/video-topo-medidor.mp4`) já está em uso como
-mídia principal da PDP, no topo da página.
-
-**Ainda falta** (opcional, a página funciona sem isso):
-- Vídeos de depoimentos de clientes — a seção `.video-testimonials` foi
-  removida por enquanto (comentário no HTML mostra onde recolocar).
+mídia principal da PDP, no topo da página, e os 5 vídeos de depoimento
+(`videos/depoimento-1.mp4` a `depoimento-5.mp4`) já estão na seção "Quem já
+usa, aprova". Nenhum vídeo tem `poster` (capa) definida — o navegador mostra
+o primeiro frame automaticamente; se quiser capas customizadas, adicione as
+imagens em `img/` e o atributo `poster="img/..."` em cada `<video>`.
 
 ## O que fazer antes de publicar
 
@@ -69,10 +69,11 @@ mídia principal da PDP, no topo da página.
 
 ## Estrutura da página
 
-Topbar promocional → Header fixo → Breadcrumb → PDP (galeria de fotos +
-preço + botão de compra) → Descrição do produto → "Fala o resultado em
-português" → prova social (mini) → Dores (agitação) → Benefícios → Como
-usar (3 passos) → Seção educativa → Galeria → Sem controle x Com controle →
+Topbar promocional → Header fixo → Breadcrumb → PDP (galeria com vídeo +
+fotos + preço + botão de compra) → Descrição do produto → "Fala o resultado
+em português" → prova social (mini) → vídeos de depoimento → Dores
+(agitação) → Benefícios → Como usar (3 passos) → Seção educativa → Galeria
+→ Sem controle x Com controle →
 Garantia de 90 dias → FAQ → CTA final → Depoimentos (completo, com
 paginação) → Rodapé → barra fixa de compra no mobile → notificação de
 pedido (desativada).
