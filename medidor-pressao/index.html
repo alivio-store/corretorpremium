@@ -399,8 +399,12 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   .pdp-discount-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
   .pdp-total-row{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;}
   .pdp-total-label{font-weight:700;color:var(--muted);font-size:.9rem;}
-  .pdp-total-price{font-weight:800;font-size:1.5rem;color:var(--ink);}
+  .pdp-total-price{font-weight:800;font-size:1.7rem;color:var(--teal-dark);}
   .pdp-total-old{color:var(--muted);text-decoration:line-through;font-size:.85rem;}
+  .pdp-pix-tag{
+    display:inline-flex;align-items:center;gap:4px;font-size:.78rem;font-weight:800;
+    color:var(--teal-dark);background:rgba(20,184,166,.12);padding:4px 10px;border-radius:99px;
+  }
   .pdp-total-installment{font-size:.85rem;color:var(--muted);margin-bottom:6px;}
   .pdp-pix-line{font-size:.85rem;font-weight:700;color:var(--teal-dark);}
   .pdp-pix-save{font-weight:600;color:var(--muted);}
@@ -552,14 +556,11 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     .pdp-total-price{font-size:1.3rem;}
     .pdp-description{display:none;}
 
-    /* Encurtar a LP no mobile: corta blocos redundantes com prova social /
-       conteúdo educativo que já aparece em outro lugar da página */
-    .reviews-mini{display:none;}
+    /* No mobile, mantém todos os blocos do desktop, exceto os 3 pedidos
+       pra ficar de fora: galeria "No dia a dia", comparação "Sem controle
+       x com controle" e a descrição da PDP (essa já fica oculta acima). */
     .gallery{display:none;}
     .compare{display:none;}
-    .problem{display:none;}
-    .how{display:none;}
-    .endorsement{display:none;}
 
     /* Sobe o bloco do brinde pra logo depois do PDP (2a dobra) só no mobile,
        sem mudar a ordem no desktop */
@@ -676,14 +677,13 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
       <div class="pdp-total-box">
         <div class="pdp-discount-row">
           <span class="pdp-total-old">R$ 390,00</span>
-          <span class="pdp-off-badge">-59%</span>
+          <span class="pdp-off-badge">-61%</span>
         </div>
         <div class="pdp-total-row">
-          <span class="pdp-total-label">Por:</span>
-          <span class="pdp-total-price">R$ 159,90</span>
+          <span class="pdp-total-price">R$ 151,91</span>
+          <span class="pdp-pix-tag">⚡ à vista no Pix</span>
         </div>
-        <div class="pdp-total-installment">em até 12x sem juros de <strong>R$ 13,33</strong></div>
-        <div class="pdp-pix-line">💰 ou <strong>R$ 151,91</strong> à vista no Pix <span class="pdp-pix-save">(economize R$ 7,99)</span></div>
+        <div class="pdp-total-installment">ou <strong>R$ 159,90</strong> em até 12x sem juros de R$ 13,33</div>
       </div>
 
       <a href="https://alivio3.pay.yampi.com.br/r/O4H1HQA1NI" id="pdp-buy-btn" class="btn btn-primary btn-block btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
@@ -1161,7 +1161,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 
 <!-- STICKY MOBILE BAR -->
 <div class="mobile-bar">
-  <div class="price">R$ 159,90 <small>ou R$ 151,91 no Pix</small></div>
+  <div class="price">R$ 151,91 no Pix <small>ou R$ 159,90 em 12x</small></div>
   <a href="https://alivio3.pay.yampi.com.br/r/O4H1HQA1NI" class="btn btn-primary btn-sm btn-pulse" target="_blank" rel="noopener">Comprar agora</a>
 </div>
 
