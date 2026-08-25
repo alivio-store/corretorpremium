@@ -74,6 +74,27 @@
   .btn-primary:hover{box-shadow:0 18px 36px -10px rgba(233,113,31,.65);}
   .btn-block{width:100%;}
 
+  /* ===== BARRA PROMOCIONAL (topo, dispensável) ===== */
+  .promo-bar{
+    background:var(--gold-dark);color:#fff;font-size:.85rem;
+  }
+  .promo-bar .wrap{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    padding:10px 44px;position:relative;min-height:20px;
+  }
+  .promo-bar strong{color:var(--navy);background:#fff;padding:2px 8px;border-radius:6px;font-weight:800;letter-spacing:.02em;}
+  .promo-bar-close{
+    position:absolute;right:16px;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:#fff;font-size:1.1rem;line-height:1;cursor:pointer;
+    width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    opacity:.85;
+  }
+  .promo-bar-close:hover{opacity:1;background:rgba(255,255,255,.15);}
+  .promo-bar.hidden{display:none;}
+  @media (max-width:520px){
+    .promo-bar .wrap{padding:10px 40px;text-align:center;}
+  }
+
   /* ===== TABS DE DEPARTAMENTO (barra escura no topo, como categorias de loja) =====
      Pra adicionar uma categoria nova: acrescente um <button class="dept-tab" data-cat="sua-categoria">
      aqui e use o mesmo valor em data-cat no <article class="product-card"> do produto. */
@@ -288,6 +309,14 @@
 </style>
 </head>
 <body>
+
+<!-- BARRA PROMOCIONAL (topo, dispensável) -->
+<div class="promo-bar" id="promo-bar">
+  <div class="wrap">
+    <span>🎁 Primeira compra? Use o cupom <strong>ALIVIO10</strong> e ganhe 10% OFF + frete grátis</span>
+    <button type="button" class="promo-bar-close" id="promo-bar-close" aria-label="Fechar aviso">✕</button>
+  </div>
+</div>
 
 <!-- TABS DE DEPARTAMENTO -->
 <div class="dept-bar">
@@ -516,6 +545,20 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Barra promocional do topo: dispensa só nesta aba (sessionStorage), volta a
+  // aparecer se a pessoa fechar o navegador e voltar depois.
+  (function(){
+    var bar = document.getElementById('promo-bar');
+    var closeBtn = document.getElementById('promo-bar-close');
+    try{
+      if (sessionStorage.getItem('promoBarDismissed') === '1') bar.classList.add('hidden');
+    }catch(e){}
+    closeBtn.addEventListener('click', function(){
+      bar.classList.add('hidden');
+      try{ sessionStorage.setItem('promoBarDismissed', '1'); }catch(e){}
+    });
+  })();
 
   // Busca + categoria + ordenação + grade/lista — tudo client-side, sem servidor.
   // Pra cada novo produto adicionado no grid, isso já passa a considerar ele
