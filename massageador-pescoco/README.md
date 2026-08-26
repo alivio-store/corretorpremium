@@ -36,34 +36,30 @@ assim que a página abre. A primeira miniatura da galeria (com o ícone ▶)
 volta pra ele; as outras trocam para as fotos. O vídeo usa
 `img/produto-hero.jpg` como capa (`poster`) enquanto carrega.
 
-## O que fazer antes de publicar
+## Status — revisado e aprovado pelo usuário
 
-1. **Preço e link de checkout** — já preenchidos com dados reais: preço de
-   venda **R$ 169,90** (12x sem juros de R$ 14,16, ou R$ 161,40 no Pix),
-   botão de compra apontando para
-   `https://alivio3.pay.yampi.com.br/r/PEV090FERZ`. Esse link aparece em
-   2 lugares — atualize os dois se mudar: o botão da PDP (`#pdp-buy-btn`)
-   e o botão da barra fixa mobile (`.mobile-bar`). O "de **R$ 297,90**"
-   (preço "antes do desconto") ainda é **EXEMPLO** — confirme o valor real
-   antes de publicar.
+1. **Preço e link de checkout** ✅ — preço de venda **R$ 169,90** (de
+   R$ 297,90, 12x sem juros de R$ 14,16, ou R$ 161,40 no Pix), botão de
+   compra apontando para `https://alivio3.pay.yampi.com.br/r/PEV090FERZ`.
+   Esse link aparece em 2 lugares — se mudar no futuro, atualize os dois:
+   o botão da PDP (`#pdp-buy-btn`) e o botão da barra fixa mobile
+   (`.mobile-bar`).
 
 2. **Depoimentos** — os depoimentos em `#depoimentos`, a prova social logo
    após a seção de aquecimento, e a contagem de clientes satisfeitos são
-   **placeholders de exemplo**. Substitua por avaliações reais de clientes
-   (com autorização deles) antes de publicar — procure o comentário
-   "DEPOIMENTOS (placeholders...)". Ajuste também o `data-target` do
-   contador de clientes satisfeitos para o valor real.
+   **placeholders de exemplo** (não são de clientes reais). Por decisão do
+   usuário, ficam assim por enquanto. Se no futuro quiser trocar por
+   avaliações reais (com autorização dos clientes), procure o comentário
+   "DEPOIMENTOS (placeholders...)" e ajuste também o `data-target` do
+   contador de clientes satisfeitos.
 
-3. **Ficha técnica** — a seção "Especificações do produto" já usa os dados
-   reais que você mostrou (entrada 5V, ABS + Silicone, bateria 2.000 mAh,
-   10W, 760g/1.100g, embalagem 200×170×142mm, cor Verde Musgo). Confira se
-   batem com o fornecedor final antes de publicar.
+3. **Ficha técnica** ✅ — a seção "Especificações do produto" usa os dados
+   reais do fornecedor (entrada 5V, ABS + Silicone, bateria 2.000 mAh,
+   10W, 760g/1.100g, embalagem 200×170×142mm, cor Verde Musgo).
 
-4. **Segurança/contraindicações** — o aviso no rodapé e no FAQ (gestantes,
-   marca-passo, feridas abertas, sensibilidade na pele) é um texto de
-   cautela padrão. Revise com a ficha técnica real do fornecedor e, se
-   necessário, com um profissional, antes de publicar — é um produto que
-   aquece e faz pressão no corpo.
+4. **FAQ / Segurança e contraindicações** ✅ — revisado e aprovado pelo
+   usuário (gestantes, marca-passo, feridas abertas, sensibilidade na
+   pele).
 
 5. **Notificação de pedido** ("Fulano acabou de comprar") — vem
    **desativada por padrão** (`ENABLE_ORDER_TOAST = false` no `<script>`
@@ -71,21 +67,25 @@ volta pra ele; as outras trocam para as fotos. O vídeo usa
    de preencher a lista `pessoas` com primeiros nomes e cidades reais de
    clientes.
 
-6. **Analytics / Pixel** — já ativos no `<head>`, reaproveitando os mesmos
-   IDs dos demais produtos da Alívio (GA4 `G-7SRPE880LX` e Meta Pixel
-   `1734988077420170`), seguindo o padrão já usado em `/medidor-pressao/`.
-   As conversões de todos os produtos ficam misturadas na mesma conta de
-   Analytics/Ads — se no futuro quiser separar os dados por produto, crie
-   uma propriedade/pixel próprios e troque os IDs no `<head>`.
+6. **Analytics / Pixel** ✅ — já ativos no `<head>`, reaproveitando os
+   mesmos IDs dos demais produtos da Alívio (GA4 `G-7SRPE880LX` e Meta
+   Pixel `1734988077420170`), seguindo o padrão já usado em
+   `/medidor-pressao/`. As conversões de todos os produtos ficam
+   misturadas na mesma conta de Analytics/Ads — se no futuro quiser
+   separar os dados por produto, crie uma propriedade/pixel próprios e
+   troque os IDs no `<head>`.
 
-7. **Contato** — no rodapé, troque o e-mail de contato se for diferente de
-   `contato@alivio.store`.
+7. **Contato** ✅ — e-mail do rodapé confirmado: `contato@alivio.store`,
+   igual aos demais produtos da Alívio.
 
 8. **Vídeos de depoimento (opcional)** — esta página não tem seção de
    depoimentos em vídeo de clientes (só o vídeo do produto no topo da PDP,
    já incluído). Se quiser adicionar, siga o padrão de `/medidor-pressao/`
    (seção `.video-testimonials`, CSS já documentado lá), colocando os
    arquivos em `videos/` aqui dentro.
+
+**Nome do produto na Yampi:** confirmado pelo usuário — "Massageador de
+Pescoço e Ombros 8 Pontos com Aquecimento" (mesmo nome do `<h1>` da PDP).
 
 ## Estrutura da página
 
