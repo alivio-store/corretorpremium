@@ -47,10 +47,12 @@ diferente. O domínio final depende de onde você faz o deploy deste
    placeholders de exemplo. Substitua por depoimentos reais de clientes
    (com autorização deles) antes de publicar.
 
-5. **App Store / Google Play** — os selos no hero são só visuais (não têm
-   link), porque o app ainda não existe nas lojas. Adicione os links reais
-   quando o app estiver publicado, ou remova o selo "1M+ downloads" se
-   ainda não tiver esse volume real de instalações.
+5. **App Store / Google Play** — de propósito, a LP **não promete mais**
+   presença nas lojas (removi o "1M+ downloads" e os selos de loja): o
+   produto (`app/`) é um **PWA** (web app instalável), não um app nativo —
+   veja `app/README.md` para o motivo. O selo "4.7 average rating" na hero
+   também é placeholder — some junto com os depoimentos reais, ou remova
+   se ainda não tiver avaliações reais.
 
 6. **Rodapé / conformidade** — troque `[insert legal entity name and
    address]` e `support@[insert-domain].com` pelos dados reais da empresa
@@ -69,6 +71,21 @@ diferente. O domínio final depende de onde você faz o deploy deste
 8. **Fotos/ilustrações** — a página hoje não usa nenhuma foto (só ícones/
    emojis como placeholder visual, já que ainda não há mídia real). Quando
    tiver fotos/vídeos aprovados para uso, adicione em `img/`.
+
+## O produto em si (`app/`)
+
+O programa de 28 dias vendido aqui é um **PWA** (web app instalável, sem
+loja de app) em `app/` — código próprio, sem framework. Veja
+[`app/README.md`](app/README.md) para detalhes completos: conteúdo do
+programa, como funciona o acesso, limitações de segurança, e **o passo a
+passo de como configurar o produto/entrega na Hotmart** apontando para
+esse app.
+
+Resumo do fluxo: cliente compra na Hotmart → Hotmart entrega (por e-mail
+ou página de obrigado) o link do app + o código de acesso → cliente abre o
+link, digita o código, e o app libera. Isso significa que os botões "Get
+My Plan" desta LP apontam para o **checkout da Hotmart**, não diretamente
+para o app.
 
 ## Estrutura da página
 
