@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velvet — Your Personal Pleasure Coach</title>
+<meta name="description" content="A guided, science-backed program to help you understand your body, build confidence, and experience stronger, more consistent orgasms — at your own pace, 100% private.">
+
+<!-- OPEN GRAPH (edit the share image URL once you have a final brand image) -->
+<meta property="og:title" content="Velvet — Your Personal Pleasure Coach">
+<meta property="og:description" content="A guided, science-backed program for deeper arousal and stronger orgasms. 100% private. 30-day money-back guarantee.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%8B%3C/text%3E%3C/svg%3E">
+
+<style>
+  :root{
+    --ink:#241a24;
+    --bg-dark:#160f18;
+    --bg-dark-2:#1f1521;
+    --paper:#fbf6f4;
+    --card:#ffffff;
+    --rose:#c14468;
+    --rose-dark:#9c3252;
+    --gold:#cf9d51;
+    --gold-dark:#a97c37;
+    --muted:#7a6d76;
+    --border:#ece2e3;
+    --radius:16px;
+    --shadow:0 20px 45px -20px rgba(36,26,36,.25);
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+  section{padding:76px 0;}
+  h1,h2,h3{line-height:1.15;margin:0 0 .5em;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--rose-dark);background:rgba(193,68,104,.1);
+    padding:6px 14px;border-radius:99px;margin-bottom:16px;
+  }
+  .center{text-align:center;}
+  .muted{color:var(--muted);}
+  .section-head{max-width:640px;margin:0 auto 44px;}
+
+  /* BUTTONS */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 30px;border-radius:12px;font-weight:700;font-size:1rem;
+    cursor:pointer;border:none;transition:transform .15s ease, box-shadow .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+    color:#241505;box-shadow:0 14px 30px -10px rgba(169,124,55,.55);
+  }
+  .btn-primary:hover{box-shadow:0 18px 36px -10px rgba(169,124,55,.65);}
+  .btn-ghost{background:transparent;border:2px solid rgba(255,255,255,.35);color:#fff;}
+  .btn-block{width:100%;}
+  .btn-sm{padding:10px 18px;font-size:.9rem;border-radius:10px;}
+
+  /* TOPBAR */
+  .topbar{
+    background:var(--bg-dark);color:#fff;font-size:.82rem;text-align:center;
+    padding:9px 12px;letter-spacing:.02em;
+  }
+  .topbar strong{color:var(--gold);}
+
+  /* HEADER */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(22,15,24,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:.01em;}
+  .logo .dot{width:10px;height:10px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 4px rgba(193,68,104,.28);}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{color:rgba(255,255,255,.75);font-size:.92rem;font-weight:600;transition:color .15s;}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{display:flex;align-items:center;gap:16px;}
+  .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    background:radial-gradient(120% 140% at 15% 0%, #241329 0%, var(--bg-dark) 55%, var(--bg-dark-2) 100%);
+    color:#fff;position:relative;overflow:hidden;padding:64px 0 80px;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(420px 420px at 88% 18%, rgba(193,68,104,.28), transparent 70%),
+      radial-gradient(360px 360px at 100% 90%, rgba(207,157,81,.18), transparent 70%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto;text-align:center;}
+  .hero h1{font-size:clamp(2rem,4.2vw,2.9rem);font-weight:800;letter-spacing:-.01em;}
+  .hero p.lead{font-size:1.1rem;color:rgba(255,255,255,.78);margin:0 0 30px;}
+  .age-tag{
+    display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.04em;
+    color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.25);
+    border-radius:99px;padding:4px 12px;margin-bottom:18px;
+  }
+
+  /* GOAL CARDS (visual only, mimics quiz step) */
+  .goal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0;}
+  .goal-card{
+    background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.14);
+    border-radius:14px;padding:20px 14px;text-align:center;font-weight:700;font-size:.95rem;
+    transition:border-color .15s, background .15s;
+  }
+  .goal-card:hover{border-color:rgba(207,157,81,.7);background:rgba(255,255,255,.1);}
+  .goal-card .emoji{font-size:1.7rem;display:block;margin-bottom:8px;}
+  .goal-note{font-size:.82rem;color:rgba(255,255,255,.55);margin:6px 0 26px;}
+
+  .trust-row{
+    display:flex;flex-wrap:wrap;gap:18px;justify-content:center;align-items:center;
+    margin-top:26px;font-size:.85rem;color:rgba(255,255,255,.65);
+  }
+  .trust-row .stars{color:var(--gold);letter-spacing:2px;}
+  .badge-row{display:flex;gap:10px;justify-content:center;margin-top:16px;}
+  .store-badge{
+    display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:8px 14px;
+    font-size:.78rem;color:rgba(255,255,255,.8);
+  }
+
+  /* BRAND STATEMENT */
+  .statement{background:var(--card);}
+  .statement-box{
+    background:linear-gradient(135deg,#2a1a2d,#160f18);
+    border-radius:24px;padding:56px 40px;text-align:center;color:#fff;
+  }
+  .statement-box h2{font-size:clamp(1.5rem,3vw,2.1rem);max-width:680px;margin:0 auto .3em;}
+  .statement-box p{color:rgba(255,255,255,.65);max-width:520px;margin:0 auto;}
+
+  /* WHY UNIQUE */
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:36px;}
+  .why-item{
+    display:flex;gap:14px;background:var(--card);border:1px solid var(--border);
+    border-radius:14px;padding:20px;
+  }
+  .why-item .ico{
+    flex:none;width:40px;height:40px;border-radius:10px;
+    background:rgba(193,68,104,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+  }
+  .why-item h3{font-size:1.02rem;margin:0 0 4px;}
+  .why-item p{margin:0;font-size:.92rem;color:var(--muted);}
+
+  /* STATS */
+  .stats-band{background:var(--bg-dark);color:#fff;}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;}
+  .stat-num{font-size:clamp(2.2rem,5vw,3rem);font-weight:800;color:var(--gold);}
+  .stat-label{font-size:.9rem;color:rgba(255,255,255,.65);margin-top:6px;}
+  .stats-footnote{font-size:.75rem;color:rgba(255,255,255,.4);text-align:center;margin-top:28px;}
+
+  /* COMPARISON */
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .compare-card{border-radius:16px;padding:28px;}
+  .compare-card.without{background:#f3ecec;border:1px solid var(--border);}
+  .compare-card.with{background:linear-gradient(135deg,#2a1a2d,#160f18);color:#fff;}
+  .compare-card h3{font-size:1.05rem;}
+  .compare-card li{display:flex;gap:10px;padding:8px 0;font-size:.94rem;align-items:flex-start;}
+  .compare-card.without li{color:#5c5257;}
+  .compare-card.with li{color:rgba(255,255,255,.85);}
+
+  /* PROGRAM CONTENTS */
+  .program-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center;}
+  .program-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px 14px;}
+  .program-card .num{font-size:1.7rem;font-weight:800;color:var(--rose-dark);}
+  .program-card .lbl{font-size:.85rem;color:var(--muted);margin-top:4px;}
+
+  /* TESTIMONIALS */
+  .quote-card{
+    background:var(--card);border:1px solid var(--border);border-radius:18px;
+    padding:32px;max-width:560px;margin:0 auto;text-align:center;box-shadow:var(--shadow);
+  }
+  .quote-avatar{
+    width:56px;height:56px;border-radius:50%;margin:0 auto 14px;
+    background:linear-gradient(135deg,var(--rose),var(--gold));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.2rem;
+  }
+  .quote-stars{color:var(--gold);margin-bottom:10px;letter-spacing:2px;}
+  .quote-text{font-size:1.02rem;font-style:italic;color:var(--ink);}
+  .quote-name{margin-top:14px;font-weight:700;font-size:.92rem;}
+  .quote-name span{font-weight:400;color:var(--muted);}
+
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .t-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;}
+  .t-card .quote-stars{margin-bottom:8px;}
+  .t-card p{font-size:.9rem;color:var(--ink);margin:0 0 12px;}
+  .t-card .quote-name{font-size:.85rem;}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--border);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    padding:20px 4px;font-size:1rem;font-weight:700;display:flex;justify-content:space-between;
+    align-items:center;color:var(--ink);
+  }
+  .faq-q .plus{font-size:1.3rem;color:var(--rose-dark);transition:transform .2s;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .faq-a p{margin:0 4px 20px;color:var(--muted);font-size:.94rem;}
+
+  /* PRICING */
+  .pricing{background:var(--bg-dark);color:#fff;}
+  .guarantee-pill{
+    display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:8px 18px;
+    font-size:.85rem;margin-bottom:30px;
+  }
+  .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;}
+  .plan-card{
+    background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.14);
+    border-radius:18px;padding:26px 20px;text-align:center;position:relative;
+    display:flex;flex-direction:column;
+  }
+  .plan-card.popular{border-color:var(--gold);background:rgba(207,157,81,.1);}
+  .plan-badge{
+    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--gold);color:#241505;font-size:.72rem;font-weight:800;
+    padding:4px 14px;border-radius:99px;letter-spacing:.03em;
+  }
+  .plan-len{font-weight:700;font-size:1.05rem;margin-bottom:6px;}
+  .plan-old{font-size:.85rem;color:rgba(255,255,255,.45);text-decoration:line-through;}
+  .plan-price{font-size:2rem;font-weight:800;margin:2px 0;}
+  .plan-per{font-size:.78rem;color:rgba(255,255,255,.55);margin-bottom:18px;}
+  .plan-card .btn{margin-top:auto;}
+
+  /* SEAL */
+  .seal-row{display:flex;justify-content:center;margin-top:40px;}
+  .seal{
+    display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 26px;
+  }
+  .seal .ico{font-size:1.8rem;}
+  .seal b{display:block;font-size:.95rem;}
+  .seal span{font-size:.8rem;color:rgba(255,255,255,.6);}
+
+  /* FINAL CTA */
+  .final-cta{
+    background:linear-gradient(135deg,var(--rose),var(--rose-dark));
+    color:#fff;text-align:center;border-radius:28px;padding:56px 30px;
+  }
+  .final-cta h2{font-size:clamp(1.5rem,3.2vw,2.2rem);}
+  .final-cta .btn-primary{background:#fff;color:var(--rose-dark);box-shadow:0 14px 30px -10px rgba(0,0,0,.35);}
+
+  /* FOOTER */
+  footer{background:var(--bg-dark-2);color:rgba(255,255,255,.6);padding:52px 0 110px;font-size:.85rem;}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;margin-bottom:24px;}
+  .footer-brand{max-width:320px;}
+  .footer-brand .logo{color:#fff;margin-bottom:10px;}
+  .footer-links{display:flex;gap:48px;flex-wrap:wrap;}
+  .footer-links h4{color:#fff;font-size:.85rem;margin:0 0 12px;}
+  .footer-links li{margin-bottom:8px;}
+  .footer-links a:hover{color:#fff;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:.78rem;color:rgba(255,255,255,.4);}
+  .disclaimer{font-size:.76rem;color:rgba(255,255,255,.35);margin-top:14px;max-width:760px;}
+
+  /* MOBILE STICKY BAR */
+  .mobile-bar{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:#fff;border-top:1px solid var(--border);
+    padding:12px 16px;box-shadow:0 -10px 30px -14px rgba(0,0,0,.25);
+    align-items:center;justify-content:space-between;gap:12px;
+  }
+  .mobile-bar .price{font-weight:800;font-size:1.05rem;}
+  .mobile-bar .price small{display:block;font-weight:400;font-size:.72rem;color:var(--muted);}
+
+  @media (max-width: 860px){
+    .why-grid,.compare-grid{grid-template-columns:1fr;}
+    .program-grid{grid-template-columns:repeat(2,1fr);}
+    .stats-grid{grid-template-columns:1fr;gap:36px;}
+    .t-grid{grid-template-columns:1fr;}
+    .plans-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .nav-toggle{display:block;}
+    .mobile-bar{display:flex;}
+    section{padding:56px 0;}
+    body{padding-bottom:70px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">🔒 100% private &amp; discreet checkout · <strong>30-day money-back guarantee</strong></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="#" class="logo"><span class="dot"></span> Velvet</a>
+    <nav class="nav-links">
+      <a href="#program">Program</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#plans" class="btn btn-primary btn-sm">Get My Plan</a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="age-tag">18+ · For adults</span>
+    <h1>Get Your Personal Pleasure Plan</h1>
+    <p class="lead">A guided, step-by-step program to help you understand your body, build confidence, and experience stronger, more consistent orgasms — at your own pace.</p>
+
+    <!-- Visual goal cards (illustrative only — not an interactive quiz on this simple LP) -->
+    <div class="goal-grid">
+      <div class="goal-card"><span class="emoji">🎯</span>More intense orgasms</div>
+      <div class="goal-card"><span class="emoji">💗</span>Better body confidence</div>
+    </div>
+    <p class="goal-note">Millions of women started exactly where you are now.</p>
+
+    <a href="#plans" class="btn btn-primary btn-block">Get My Plan</a>
+
+    <div class="trust-row">
+      <span><span class="stars">★★★★★</span> 4.7 average rating</span>
+      <span>·</span>
+      <span>1M+ downloads</span>
+    </div>
+    <div class="badge-row">
+      <!-- Placeholder store badges — replace with real App Store / Google Play links once the app is live -->
+      <span class="store-badge">📱 App Store</span>
+      <span class="store-badge">▶ Google Play</span>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STATEMENT -->
+<section class="statement">
+  <div class="wrap">
+    <div class="statement-box">
+      <h2>Your personal pleasure coach.<br>Backed by science, guided step by step.</h2>
+      <p>No guesswork, no generic advice — just a structured practice built around how arousal actually works.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY UNIQUE -->
+<section id="program">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Why Velvet is different</span>
+      <h2>A program built to actually work for you</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="ico">🌙</div>
+        <div><h3>Suits all energy levels</h3><p>Go at your own pace — every lesson adapts to how much time and energy you have.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="ico">🔬</div>
+        <div><h3>Backed by science &amp; modern methods</h3><p>Every exercise is grounded in research on arousal, anatomy, and mindful touch.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="ico">🧭</div>
+        <div><h3>Mindfully architected practice</h3><p>A real curriculum, not a random list of tips — each lesson builds on the last.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="ico">🎓</div>
+        <div><h3>Created with certified educators</h3><p>Developed alongside certified sex educators and therapists.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="ico">📋</div>
+        <div><h3>Step-by-step framework</h3><p>Clear daily lessons that take a few minutes — never overwhelming.</p></div>
+      </div>
+      <div class="why-item">
+        <div class="ico">🔒</div>
+        <div><h3>100% private</h3><p>Discreet billing, no judgment, delete your data anytime.</p></div>
+      </div>
+    </div>
+    <div class="center"><a href="#plans" class="btn btn-primary">Get My Plan</a></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-band">
+  <div class="wrap">
+    <div class="section-head center" style="margin-bottom:36px;">
+      <span class="eyebrow" style="background:rgba(207,157,81,.15);color:var(--gold);">Real results</span>
+      <h2>Real changes after 4 weeks*</h2>
+    </div>
+    <div class="stats-grid">
+      <div><div class="stat-num">67%</div><div class="stat-label">report noticeably stronger orgasms</div></div>
+      <div><div class="stat-num">41%</div><div class="stat-label">feel more confident initiating intimacy</div></div>
+      <div><div class="stat-num">55%</div><div class="stat-label">say communication with their partner improved</div></div>
+    </div>
+    <p class="stats-footnote">*Example figures for this draft — replace with real survey data (and cite the source) before publishing.</p>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Before &amp; after</span>
+      <h2>How life might look with Velvet</h2>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card without">
+        <h3>Without Velvet</h3>
+        <ul>
+          <li>❌ Guessing what actually works</li>
+          <li>❌ Feeling stuck or disconnected from your body</li>
+          <li>❌ Staying silent about what you need</li>
+          <li>❌ Comparing yourself to unrealistic expectations</li>
+        </ul>
+      </div>
+      <div class="compare-card with">
+        <h3>With Velvet</h3>
+        <ul>
+          <li>✅ A clear, guided path forward</li>
+          <li>✅ Renewed connection to your own body</li>
+          <li>✅ Confidence to ask for what you want</li>
+          <li>✅ A pace that's entirely your own</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM CONTENTS -->
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Inside your program</span>
+      <h2>What you actually get</h2>
+    </div>
+    <div class="program-grid">
+      <div class="program-card"><div class="num">28-day</div><div class="lbl">program</div></div>
+      <div class="program-card"><div class="num">50+</div><div class="lbl">guided lessons</div></div>
+      <div class="program-card"><div class="num">30+</div><div class="lbl">techniques</div></div>
+      <div class="program-card"><div class="num">25+</div><div class="lbl">practices</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SINGLE TESTIMONIAL -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="quote-card">
+      <div class="quote-avatar">A</div>
+      <div class="quote-stars">★★★★★</div>
+      <p class="quote-text">"I went in skeptical, but the step-by-step lessons actually made sense of things I'd never understood about my own body. Four weeks in, it's a completely different experience."</p>
+      <div class="quote-name">Alex R. <span>· Verified member</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MORE TESTIMONIALS (placeholders) -->
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Real stories</span>
+      <h2>What our members are saying</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="quote-stars">★★★★★</div>
+        <p>"The daily lessons take five minutes but the difference has been huge. Wish I'd started sooner."</p>
+        <div class="quote-name">Jamie L. <span>· Verified member</span></div>
+      </div>
+      <div class="t-card">
+        <div class="quote-stars">★★★★★</div>
+        <p>"Finally an app that treats this like something worth actually learning, not a taboo."</p>
+        <div class="quote-name">Morgan T. <span>· Verified member</span></div>
+      </div>
+      <div class="t-card">
+        <div class="quote-stars">★★★★★</div>
+        <p>"Private, judgment-free, and genuinely well made. The guarantee is what convinced me to try it."</p>
+        <div class="quote-name">Casey B. <span>· Verified member</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head center">
+      <span class="eyebrow">FAQ</span>
+      <h2>People often ask</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Is this based on real science? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes — every lesson is grounded in published research on arousal, anatomy, and mindful touch, and reviewed with certified sex educators.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will anyone know I'm using Velvet? <span class="plus">+</span></button>
+        <div class="faq-a"><p>No. Billing appears under a discreet, unrelated name, and the app itself has no visible branding on your lock screen notifications.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do I need a partner to use it? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Not at all. Most of the program is designed for solo practice, with optional lessons if you want to include a partner.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I cancel anytime? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes, cancel anytime from your account settings — no phone calls required.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if it's not for me? <span class="plus">+</span></button>
+        <div class="faq-a"><p>You're covered by our 30-day money-back guarantee — if you don't see results, we'll refund your purchase.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="plans">
+  <div class="wrap center">
+    <div class="section-head center">
+      <span class="eyebrow" style="background:rgba(207,157,81,.15);color:var(--gold);">Get started today</span>
+      <h2>Get noticeable results in 4 weeks</h2>
+    </div>
+    <div class="guarantee-pill">🛡️ 30-day money-back guarantee</div>
+
+    <!-- PLACEHOLDER PRICES — replace with real prices and a real checkout link before publishing -->
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-len">4 Weeks</div>
+        <div class="plan-old">$39.99</div>
+        <div class="plan-price">$19.99</div>
+        <div class="plan-per">$4.99 / week</div>
+        <a href="#" class="btn btn-primary btn-block">Get My Plan</a>
+      </div>
+      <div class="plan-card popular">
+        <span class="plan-badge">Most Popular</span>
+        <div class="plan-len">12 Weeks</div>
+        <div class="plan-old">$89.99</div>
+        <div class="plan-price">$44.99</div>
+        <div class="plan-per">$3.75 / week</div>
+        <a href="#" class="btn btn-primary btn-block">Get My Plan</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-len">24 Weeks</div>
+        <div class="plan-old">$149.99</div>
+        <div class="plan-price">$69.99</div>
+        <div class="plan-per">$2.92 / week</div>
+        <a href="#" class="btn btn-primary btn-block">Get My Plan</a>
+      </div>
+    </div>
+
+    <div class="seal-row">
+      <div class="seal">
+        <span class="ico">🛡️</span>
+        <div><b>100% Money-Back Guarantee</b><span>Try it risk-free for 30 days</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Ready to feel the difference?</h2>
+      <p style="opacity:.85;max-width:480px;margin:0 auto 26px;">Start your personal plan today — risk-free, for 30 days.</p>
+      <a href="#plans" class="btn btn-primary">Get My Plan</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="dot"></span> Velvet</div>
+        <p>Your personal pleasure coach — a guided, science-backed program for adults 18+.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Program</h4>
+          <ul>
+            <li><a href="#program">How it works</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Refund Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:support@[insert-domain].com">support@[insert-domain].com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="disclaimer">This app is intended for adults 18+ and does not provide medical advice. If you have a specific medical concern, please consult a licensed healthcare professional. Company name and address: [insert legal entity name and address before publishing].</p>
+    <div class="footer-bottom">© 2026 Velvet. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <div class="price">$44.99 <small>12-week plan</small></div>
+  <a href="#plans" class="btn btn-primary btn-sm">Get My Plan</a>
+</div>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Mobile nav toggle
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      var isShown = links.style.display === 'flex';
+      links.style.display = isShown ? 'none' : 'flex';
+      links.style.cssText += isShown ? '' : 'position:absolute;top:64px;left:0;right:0;background:#160f18;flex-direction:column;padding:16px 24px;gap:16px;';
+    });
+  }
+</script>
+
+</body>
+</html>
