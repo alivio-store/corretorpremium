@@ -77,15 +77,31 @@ diferente. O domínio final depende de onde você faz o deploy deste
 
 8. **Fotos** — o `index.html` já espera 4 arquivos dentro de uma pasta
    `img/` (que você cria do lado do `index.html`, dentro de
-   `velvet-coach-usa/`), com esses nomes exatos:
-   - `img/hero.jpg` — foto do hero (mulher se alongando)
-   - `img/before.jpg` — foto do "Without Velvet" (casal distante)
-   - `img/after.jpg` — foto do "With Velvet" (casal se abraçando)
-   - `img/lifestyle.jpg` — foto circular da seção de declaração de marca
+   `velvet-coach-usa/`), com esses nomes exatos e usados nestes lugares:
+   - `img/before.jpg` — casal distante/desconectado → aparece 2x: no card
+     "Where you are now" (topo do hero, estilo antes/depois igual à
+     referência) e no card "Without Velvet" (seção de comparação)
+   - `img/after.jpg` — casal se abraçando → aparece 2x: no card "Where
+     you're headed" (topo do hero) e no card "With Velvet" (comparação)
+   - `img/hero.jpg` — mulher se alongando → foto da faixa escura de
+     declaração de marca (equivalente à faixa "COACH" da oferta original)
+   - `img/lifestyle.jpg` — homem sorrindo no sofá → foto do avatar do
+     depoimento em destaque (era um círculo com iniciais, agora é a foto)
    Sem essas 4 fotos na pasta `img/`, esses espaços aparecem quebrados
    (ícone de imagem não encontrada) — é só colocar os arquivos com esses
    nomes exatos (pode ser `.jpg`, `.jpeg`, `.png` ou `.webp`, só ajuste a
    extensão no `src=` correspondente se não for `.jpg`).
+
+   ⚠️ **Sobre usar `lifestyle.jpg` como foto do depoimento**: se essa foto
+   for um banco de imagens/gerada por IA (não uma foto de um cliente real
+   que deu depoimento de verdade), **não publique isso com tráfego pago
+   nos EUA sem trocar por um cliente real**. Desde 2024 a FTC (o órgão
+   antitruste/consumidor dos EUA) proíbe explicitamente usar foto de uma
+   pessoa que não é quem realmente deu aquele depoimento — é tratado como
+   propaganda enganosa, ainda mais decorado com "Verified member". Antes
+   de rodar anúncio de verdade: ou é foto + depoimento de um cliente real
+   (com autorização), ou tire a foto do card e deixe só o texto/iniciais
+   como está documentado no item 4 acima.
 
 9. **Sobre a copy** — a estrutura, o tom e os títulos foram inspirados de
    perto na oferta de referência que você mandou (headline, "why unique",
@@ -112,11 +128,14 @@ para o app.
 
 ## Estrutura da página
 
-Topbar → Header fixo → Hero (com "goal cards" visuais estilo quiz) →
-Declaração de marca → Por que é diferente (6 itens) → Estatísticas de
-resultado → Antes/depois → Conteúdo do programa → Depoimento em destaque →
-Mais depoimentos (3) → FAQ → Preços (3 planos) → Selo de garantia → CTA
-final → Rodapé (com aviso 18+ e disclaimer) → barra fixa de compra no
+Topbar → Header fixo → Hero (com os cards "Where you are now / Where
+you're headed" logo no topo, estilo antes/depois da referência) →
+Declaração de marca (faixa escura com foto) → Por que é diferente
+(6 itens) → Featured in (placeholder) → Estatísticas de resultado →
+Antes/depois (seção completa, com fotos) → Conteúdo do programa →
+Depoimento em destaque (com foto) → Mais depoimentos (3) → FAQ → Preços
+(3 planos) → Selo de garantia → CTA final → Rodapé (com aviso 18+ e
+disclaimer) → barra fixa de compra no
 mobile.
 
 ## Rodando localmente

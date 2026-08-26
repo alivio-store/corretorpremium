@@ -99,54 +99,44 @@
 
   /* HERO */
   .hero{background:var(--paper);padding:56px 0 64px;position:relative;overflow:hidden;}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
+  .hero-grid{max-width:600px;margin:0 auto;text-align:center;}
   .hero h1{font-size:clamp(2rem,4vw,2.9rem);font-weight:800;letter-spacing:-.01em;}
-  .hero p.lead{font-size:1.08rem;color:var(--muted);margin:0 0 26px;max-width:480px;}
+  .hero p.lead{font-size:1.08rem;color:var(--muted);margin:0 auto 26px;max-width:480px;}
   .age-tag{
     display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.04em;
     color:var(--muted);border:1px solid var(--border);
     border-radius:99px;padding:4px 12px;margin-bottom:16px;
   }
 
-  /* GOAL CARDS (visual only, mimics quiz step) */
-  .goal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0;max-width:480px;}
+  /* BEFORE/AFTER CARDS (visual only, mimics quiz intro step) */
+  .goal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px auto;max-width:420px;}
   .goal-card{
-    background:var(--cream);border:1.5px solid var(--border);
-    border-radius:14px;padding:18px 14px;text-align:center;font-weight:700;font-size:.92rem;
-    transition:border-color .15s, background .15s;
+    background:var(--cream);border:1.5px solid var(--border);border-radius:14px;
+    padding:8px;text-align:center;font-weight:700;font-size:.82rem;overflow:hidden;
+    transition:border-color .15s;
   }
-  .goal-card:hover{border-color:var(--gold);background:#fff;}
-  .goal-card .emoji{font-size:1.6rem;display:block;margin-bottom:6px;}
+  .goal-card:hover{border-color:var(--gold);}
+  .goal-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:9px;margin-bottom:8px;}
+  .goal-card.goal-card-after{border-color:var(--gold);}
   .goal-note{font-size:.82rem;color:var(--muted);margin:6px 0 24px;}
 
   .trust-row{
-    display:flex;flex-wrap:wrap;gap:16px;align-items:center;
+    display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:center;
     margin-top:22px;font-size:.85rem;color:var(--muted);
   }
   .trust-row .stars{color:var(--gold-dark);letter-spacing:2px;}
-  .badge-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+  .badge-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;justify-content:center;}
   .store-badge{
     display:flex;align-items:center;gap:8px;background:var(--cream);
     border:1px solid var(--border);border-radius:10px;padding:8px 14px;
     font-size:.78rem;color:var(--ink);
   }
 
-  /* HERO PHOTO */
-  .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;}
-  .hero-visual .blob{
-    position:absolute;inset:6% 8%;border-radius:44% 56% 62% 38% / 45% 40% 60% 55%;
-    background:linear-gradient(160deg,var(--rose-tint),#fbf1e2);z-index:0;
-  }
-  .hero-photo{
-    position:relative;z-index:1;width:100%;max-width:340px;aspect-ratio:3/4;
-    object-fit:cover;border-radius:28px;box-shadow:var(--shadow);
-  }
-
-  /* BRAND STATEMENT (dark band) */
+  /* BRAND STATEMENT (dark band, with photo — mirrors the reference's dark logo band) */
   .statement{background:var(--band);color:#fff;}
   .statement-inner{display:flex;align-items:center;gap:40px;justify-content:center;flex-wrap:wrap;text-align:left;}
   .statement-inner .mark{
-    flex:none;width:76px;height:76px;border-radius:50%;
+    flex:none;width:140px;height:140px;border-radius:24px;
     background:linear-gradient(135deg,var(--gold),var(--rose));
     display:flex;align-items:center;justify-content:center;font-size:2rem;
     overflow:hidden;
@@ -208,7 +198,9 @@
     width:56px;height:56px;border-radius:50%;margin:0 auto 14px;
     background:linear-gradient(135deg,var(--rose),var(--gold));
     display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.2rem;
+    overflow:hidden;
   }
+  .quote-avatar img{width:100%;height:100%;object-fit:cover;}
   .quote-stars{color:var(--gold-dark);margin-bottom:10px;letter-spacing:2px;}
   .quote-text{font-size:1.02rem;font-style:italic;color:var(--ink);}
   .quote-name{margin-top:14px;font-weight:700;font-size:.92rem;}
@@ -342,12 +334,18 @@
       <h1>Get Your Personal Pleasure Plan</h1>
       <p class="lead">A guided, step-by-step program to help you understand your body, build confidence, and experience stronger, more consistent orgasms — at your own pace.</p>
 
-      <!-- Visual goal cards (illustrative only — not an interactive quiz on this simple LP) -->
+      <!-- Visual before/after cards (illustrative only — not an interactive quiz on this simple LP) -->
       <div class="goal-grid">
-        <div class="goal-card"><span class="emoji">🎯</span>More intense orgasms</div>
-        <div class="goal-card"><span class="emoji">💗</span>Better body confidence</div>
+        <div class="goal-card">
+          <img src="img/before.jpg" alt="Where you are now">
+          <span>Where you are now</span>
+        </div>
+        <div class="goal-card goal-card-after">
+          <img src="img/after.jpg" alt="Where you're headed">
+          <span>Where you're headed</span>
+        </div>
       </div>
-      <p class="goal-note">Millions of women started exactly where you are now.</p>
+      <p class="goal-note">Millions of couples started exactly where you are now.</p>
 
       <a href="#plans" class="btn btn-primary">Get My Plan</a>
 
@@ -363,17 +361,13 @@
       </div>
     </div>
 
-    <div class="hero-visual">
-      <div class="blob"></div>
-      <img class="hero-photo" src="img/hero.jpg" alt="Woman stretching, focused on herself">
-    </div>
   </div>
 </section>
 
 <!-- BRAND STATEMENT -->
 <section class="statement">
   <div class="wrap statement-inner">
-    <div class="mark"><img src="img/lifestyle.jpg" alt=""></div>
+    <div class="mark"><img src="img/hero.jpg" alt=""></div>
     <div>
       <h2>It's pleasure training — backed by science, guided step by step.</h2>
       <p>No guesswork, no generic advice — just a structured practice built around how arousal actually works.</p>
@@ -502,7 +496,7 @@
 <section id="reviews">
   <div class="wrap">
     <div class="quote-card">
-      <div class="quote-avatar">A</div>
+      <div class="quote-avatar"><img src="img/lifestyle.jpg" alt=""></div>
       <div class="quote-stars">★★★★★</div>
       <p class="quote-text">"I went in skeptical, but the step-by-step lessons actually made sense of things I'd never understood about my own body. Four weeks in, it's a completely different experience."</p>
       <div class="quote-name">Alex R. <span>· Verified member</span></div>
