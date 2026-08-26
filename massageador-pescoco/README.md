@@ -38,13 +38,14 @@ volta pra ele; as outras trocam para as fotos. O vídeo usa
 
 ## O que fazer antes de publicar
 
-1. **Preço e link de checkout** — o preço de venda já é o valor real
-   informado: **R$ 169,90** (12x sem juros de R$ 14,16, ou R$ 161,40 no
-   Pix). O "de **R$ 297,90**" (preço "antes do desconto") ainda é
-   **EXEMPLO** — confirme o valor real antes de publicar. O botão de
-   compra (`#pdp-buy-btn`) e o botão da barra fixa mobile (`.mobile-bar`)
-   estão com `href="#"` — troque pelo link real do seu checkout (Yampi,
-   Shopify, Kiwify, WhatsApp etc.) nos dois lugares.
+1. **Preço e link de checkout** — já preenchidos com dados reais: preço de
+   venda **R$ 169,90** (12x sem juros de R$ 14,16, ou R$ 161,40 no Pix),
+   botão de compra apontando para
+   `https://alivio3.pay.yampi.com.br/r/PEV090FERZ`. Esse link aparece em
+   2 lugares — atualize os dois se mudar: o botão da PDP (`#pdp-buy-btn`)
+   e o botão da barra fixa mobile (`.mobile-bar`). O "de **R$ 297,90**"
+   (preço "antes do desconto") ainda é **EXEMPLO** — confirme o valor real
+   antes de publicar.
 
 2. **Depoimentos** — os depoimentos em `#depoimentos`, a prova social logo
    após a seção de aquecimento, e a contagem de clientes satisfeitos são
