@@ -131,13 +131,16 @@
     font-size:.78rem;color:var(--ink);
   }
 
-  /* HERO ILLUSTRATION */
+  /* HERO PHOTO */
   .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;}
   .hero-visual .blob{
     position:absolute;inset:6% 8%;border-radius:44% 56% 62% 38% / 45% 40% 60% 55%;
     background:linear-gradient(160deg,var(--rose-tint),#fbf1e2);z-index:0;
   }
-  .hero-visual svg{position:relative;z-index:1;width:100%;max-width:360px;}
+  .hero-photo{
+    position:relative;z-index:1;width:100%;max-width:340px;aspect-ratio:3/4;
+    object-fit:cover;border-radius:28px;box-shadow:var(--shadow);
+  }
 
   /* BRAND STATEMENT (dark band) */
   .statement{background:var(--band);color:#fff;}
@@ -146,7 +149,9 @@
     flex:none;width:76px;height:76px;border-radius:50%;
     background:linear-gradient(135deg,var(--gold),var(--rose));
     display:flex;align-items:center;justify-content:center;font-size:2rem;
+    overflow:hidden;
   }
+  .statement-inner .mark img{width:100%;height:100%;object-fit:cover;}
   .statement h2{font-size:clamp(1.4rem,2.8vw,2rem);max-width:560px;margin:0 0 .3em;}
   .statement p{color:rgba(255,255,255,.6);max-width:520px;margin:0;}
 
@@ -186,6 +191,7 @@
   .compare-card li{display:flex;gap:10px;padding:8px 0;font-size:.94rem;align-items:flex-start;}
   .compare-card.without li{color:#6b6570;}
   .compare-card.with li{color:var(--ink);}
+  .compare-photo{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;margin-bottom:18px;}
 
   /* PROGRAM CONTENTS */
   .program-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center;}
@@ -357,19 +363,9 @@
       </div>
     </div>
 
-    <!-- Illustration standing in for a real product/lifestyle photo (none provided yet) -->
     <div class="hero-visual">
       <div class="blob"></div>
-      <svg viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="160" cy="330" rx="90" ry="14" fill="#efe3d2"/>
-        <path d="M160 60c-24 0-42 19-42 44 0 17 8 31 20 39-30 12-52 40-58 96-2 16 10 30 26 30h108c16 0 28-14 26-30-6-56-28-84-58-96 12-8 20-22 20-39 0-25-18-44-42-44z" fill="#f6e4e9"/>
-        <circle cx="160" cy="104" r="40" fill="#f2c6ce"/>
-        <path d="M120 100c0-24 18-42 40-42s40 18 40 42" stroke="#c14468" stroke-width="6" stroke-linecap="round"/>
-        <path d="M96 230c14-34 38-52 64-52s50 18 64 52" stroke="#e9b26b" stroke-width="6" stroke-linecap="round" fill="none"/>
-        <circle cx="90" cy="240" r="10" fill="#f0b83c" opacity=".85"/>
-        <circle cx="238" cy="200" r="7" fill="#c14468" opacity=".7"/>
-        <circle cx="250" cy="270" r="5" fill="#f0b83c" opacity=".7"/>
-      </svg>
+      <img class="hero-photo" src="img/hero.jpg" alt="Woman stretching, focused on herself">
     </div>
   </div>
 </section>
@@ -377,7 +373,7 @@
 <!-- BRAND STATEMENT -->
 <section class="statement">
   <div class="wrap statement-inner">
-    <div class="mark">🦋</div>
+    <div class="mark"><img src="img/lifestyle.jpg" alt=""></div>
     <div>
       <h2>It's pleasure training — backed by science, guided step by step.</h2>
       <p>No guesswork, no generic advice — just a structured practice built around how arousal actually works.</p>
@@ -463,6 +459,7 @@
     </div>
     <div class="compare-grid">
       <div class="compare-card without">
+        <img class="compare-photo" src="img/before.jpg" alt="Couple sitting apart, disconnected">
         <h3>Without Velvet</h3>
         <ul>
           <li>❌ Guessing what actually works</li>
@@ -472,6 +469,7 @@
         </ul>
       </div>
       <div class="compare-card with">
+        <img class="compare-photo" src="img/after.jpg" alt="Couple embracing warmly">
         <h3>With Velvet</h3>
         <ul>
           <li>✅ A clear, guided path forward</li>

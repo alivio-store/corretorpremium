@@ -75,11 +75,17 @@ diferente. O domínio final depende de onde você faz o deploy deste
    inteira em risco. Crie uma conta de anúncios e um Pixel/GA4 **dedicados**
    a esta oferta.
 
-8. **Fotos/ilustrações** — a página usa uma ilustração vetorial (SVG,
-   inline no próprio `index.html`, dentro de `.hero-visual`) no lugar de
-   uma foto real do produto, já que ainda não há mídia real aprovada.
-   Quando tiver fotos/vídeos reais, troque esse bloco `<svg>` por
-   `<img src="img/...">` — crie a pasta `img/` pra isso.
+8. **Fotos** — o `index.html` já espera 4 arquivos dentro de uma pasta
+   `img/` (que você cria do lado do `index.html`, dentro de
+   `velvet-coach-usa/`), com esses nomes exatos:
+   - `img/hero.jpg` — foto do hero (mulher se alongando)
+   - `img/before.jpg` — foto do "Without Velvet" (casal distante)
+   - `img/after.jpg` — foto do "With Velvet" (casal se abraçando)
+   - `img/lifestyle.jpg` — foto circular da seção de declaração de marca
+   Sem essas 4 fotos na pasta `img/`, esses espaços aparecem quebrados
+   (ícone de imagem não encontrada) — é só colocar os arquivos com esses
+   nomes exatos (pode ser `.jpg`, `.jpeg`, `.png` ou `.webp`, só ajuste a
+   extensão no `src=` correspondente se não for `.jpg`).
 
 9. **Sobre a copy** — a estrutura, o tom e os títulos foram inspirados de
    perto na oferta de referência que você mandou (headline, "why unique",
