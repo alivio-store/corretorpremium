@@ -28,10 +28,15 @@ diferente. O domínio final depende de onde você faz o deploy deste
    outro nome, troque `Velvet` em todo o arquivo (título, header, footer,
    `og:title`) antes de publicar.
 
-2. **Checkout/preço** — os 3 planos (`$19.99`, `$44.99`, `$69.99`) e os
-   botões "Get My Plan" apontam para `href="#"`. Troque pelo link real de
-   checkout/assinatura (Stripe, etc.) e pelos preços reais — procure o
-   comentário `PLACEHOLDER PRICES`.
+2. **Checkout/preço** — o checkout será pela **Hotmart**. Os 3 planos
+   (`$19.99`, `$44.99`, `$69.99`) e os botões "Get My Plan" hoje apontam
+   para `href="#"` — troque cada um pelo link real do produto/oferta na
+   Hotmart (um link por plano, se forem ofertas separadas) e ajuste os
+   preços para os valores reais cadastrados lá — procure o comentário
+   `PLACEHOLDER PRICES`. A Hotmart também cuida da nota fiscal/fatura do
+   comprador (aparece como "Hotmart" na fatura do cartão), o que já reforça
+   sozinho a promessa de "billing discreto" feita no FAQ — não precisa
+   configurar nada extra pra isso.
 
 3. **Estatísticas de resultado** (67% / 41% / 55%) são **exemplos**, sem
    base real — marcado com `*` e nota de rodapé. **Não publique números
