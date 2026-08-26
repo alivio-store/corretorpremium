@@ -28,6 +28,14 @@ com nomes descritivos:
 As 4 ilustrações SVG placeholder que existiam antes (`hero.svg`,
 `calor.svg`, `uso.svg`, `detalhe.svg`) foram removidas do repositório.
 
+## Vídeo
+
+O vídeo real enviado (`videos/video-topo-massageador.mp4`) já está em uso
+como mídia principal da PDP, no topo da página — é o que toca em loop, mudo,
+assim que a página abre. A primeira miniatura da galeria (com o ícone ▶)
+volta pra ele; as outras trocam para as fotos. O vídeo usa
+`img/produto-hero.jpg` como capa (`poster`) enquanto carrega.
+
 ## O que fazer antes de publicar
 
 1. **Preço e link de checkout** — o preço de venda já é o valor real
@@ -72,10 +80,11 @@ As 4 ilustrações SVG placeholder que existiam antes (`hero.svg`,
 7. **Contato** — no rodapé, troque o e-mail de contato se for diferente de
    `contato@alivio.store`.
 
-8. **Vídeos (opcional)** — esta página não tem seção de depoimentos em
-   vídeo (o produto ainda não tem vídeos reais). Se quiser adicionar,
-   siga o padrão de `/medidor-pressao/` (seção `.video-testimonials`, CSS
-   já documentado lá) criando uma pasta `videos/` aqui dentro.
+8. **Vídeos de depoimento (opcional)** — esta página não tem seção de
+   depoimentos em vídeo de clientes (só o vídeo do produto no topo da PDP,
+   já incluído). Se quiser adicionar, siga o padrão de `/medidor-pressao/`
+   (seção `.video-testimonials`, CSS já documentado lá), colocando os
+   arquivos em `videos/` aqui dentro.
 
 ## Estrutura da página
 

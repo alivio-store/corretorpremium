@@ -305,6 +305,10 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   }
   .pdp-thumb img{width:100%;height:100%;object-fit:cover;border-radius:6px;}
   .pdp-thumb.selected{border-color:var(--teal-dark);}
+  .pdp-thumb-play{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(11,21,36,.35);color:#fff;font-size:1rem;border-radius:6px;
+  }
   .pdp-info h1{font-size:1.6rem;margin-bottom:10px;}
   .pdp-rating{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--muted);margin-bottom:18px;}
   .pdp-rating .stars-sm{color:var(--gold);letter-spacing:1px;}
@@ -513,7 +517,10 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
      galeria da PDP, na seção de diferencial (aquecimento), em "Como usar",
      na seção educativa, na ficha técnica e na galeria de fotos. As 4
      ilustrações SVG placeholder (hero/calor/uso/detalhe.svg) foram
-     removidas do repositório. Veja o README.md.
+     removidas do repositório. VÍDEO: já usa o vídeo real enviado
+     (videos/video-topo-massageador.mp4) como mídia principal da PDP, no
+     topo da página (primeira miniatura, com poster em produto-hero.jpg).
+     Veja o README.md.
   2) PREÇO E LINK DE CHECKOUT: o preço de venda (R$ 169,90) já é o valor
      real informado pelo usuário. O "de R$ 297,90" (preço "antes") ainda é
      EXEMPLO — confirme o valor real de tabela antes de publicar. Troque
@@ -570,14 +577,17 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     <div class="pdp-gallery">
       <div class="pdp-main-img">
         <div id="pdp-main-media">
-          <img src="img/produto-hero.jpg" alt="Massageador de Pescoço e Ombros 8 Pontos com aquecimento">
+          <video poster="img/produto-hero.jpg" autoplay muted loop playsinline aria-label="Massageador de Pescoço e Ombros 8 Pontos em uso">
+            <source src="videos/video-topo-massageador.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
       <div class="pdp-thumbs">
-        <button type="button" class="pdp-thumb selected" data-img="img/produto-hero.jpg" aria-label="Ver foto do produto"><img src="img/produto-hero.jpg" alt=""></button>
-        <button type="button" class="pdp-thumb" data-img="img/produto-calor.webp" aria-label="Ver aquecimento em ação"><img src="img/produto-calor.webp" alt=""></button>
-        <button type="button" class="pdp-thumb" data-img="img/produto-uso.webp" aria-label="Ver uso no pescoço e ombros"><img src="img/produto-uso.webp" alt=""></button>
-        <button type="button" class="pdp-thumb" data-img="img/produto-detalhe.webp" aria-label="Ver detalhe do silicone"><img src="img/produto-detalhe.webp" alt=""></button>
+        <button type="button" class="pdp-thumb selected" data-type="video" aria-label="Ver vídeo"><img src="img/produto-hero.jpg" alt=""><span class="pdp-thumb-play">▶</span></button>
+        <button type="button" class="pdp-thumb" data-type="image" data-img="img/produto-hero.jpg" aria-label="Ver foto do produto"><img src="img/produto-hero.jpg" alt=""></button>
+        <button type="button" class="pdp-thumb" data-type="image" data-img="img/produto-calor.webp" aria-label="Ver aquecimento em ação"><img src="img/produto-calor.webp" alt=""></button>
+        <button type="button" class="pdp-thumb" data-type="image" data-img="img/produto-uso.webp" aria-label="Ver uso no pescoço e ombros"><img src="img/produto-uso.webp" alt=""></button>
+        <button type="button" class="pdp-thumb" data-type="image" data-img="img/produto-detalhe.webp" aria-label="Ver detalhe do silicone"><img src="img/produto-detalhe.webp" alt=""></button>
       </div>
     </div>
 
@@ -1141,20 +1151,25 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     if(pdpCount) pdpCount.textContent = cards.length + ' avaliações reais';
   })();
 
-  // PDP: miniaturas trocam a foto principal
+  // PDP: miniaturas trocam a mídia principal (vídeo ou foto)
   (function(){
     var thumbs = document.querySelectorAll('.pdp-thumb');
     var main = document.getElementById('pdp-main-media');
     if(!thumbs.length || !main) return;
+    var videoHtml = main.innerHTML;
     thumbs.forEach(function(thumb){
       thumb.addEventListener('click', function(){
         thumbs.forEach(function(t){ t.classList.remove('selected'); });
         thumb.classList.add('selected');
-        var img = document.createElement('img');
-        img.src = thumb.getAttribute('data-img');
-        img.alt = 'Massageador de Pescoço e Ombros 8 Pontos';
-        main.innerHTML = '';
-        main.appendChild(img);
+        if(thumb.getAttribute('data-type') === 'video'){
+          main.innerHTML = videoHtml;
+        } else {
+          var img = document.createElement('img');
+          img.src = thumb.getAttribute('data-img');
+          img.alt = 'Massageador de Pescoço e Ombros 8 Pontos';
+          main.innerHTML = '';
+          main.appendChild(img);
+        }
       });
     });
   })();
