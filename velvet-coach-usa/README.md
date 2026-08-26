@@ -75,26 +75,26 @@ diferente. O domínio final depende de onde você faz o deploy deste
    inteira em risco. Crie uma conta de anúncios e um Pixel/GA4 **dedicados**
    a esta oferta.
 
-8. **Fotos** — o `index.html` já espera 6 arquivos dentro de uma pasta
-   `img/` (que você cria do lado do `index.html`, dentro de
-   `velvet-coach-usa/`), com os nomes de arquivo reais do usuário e
-   usados nestes lugares:
-   - `img/bloco_01_distancia.png` — casal distante/desconectado → card
+8. **Fotos** — o `index.html` espera 6 arquivos **soltos na mesma pasta**
+   `velvet-coach-usa/`, do lado do `index.html` (sem pasta `img/`, de
+   propósito — pra simplificar), com os nomes de arquivo reais do
+   usuário e usados nestes lugares:
+   - `bloco_01_distancia.png` — casal distante/desconectado → card
      "Where you are now" (topo do hero, estilo antes/depois da referência)
-   - `img/bloco_01_conexao.png` — casal se abraçando → card "Where you're
+   - `bloco_01_conexao.png` — casal se abraçando → card "Where you're
      headed" (topo do hero)
-   - `img/bloco_02_cut_training.png` — mulher em treino/alongamento →
+   - `bloco_02_cut_training.png` — mulher em treino/alongamento →
      foto da faixa escura de declaração de marca (equivalente à faixa
      "COACH" da oferta original)
-   - `img/bloco_03_depoimento.png` — homem sorrindo → foto do avatar do
+   - `bloco_03_depoimento.png` — homem sorrindo → foto do avatar do
      depoimento em destaque (era um círculo com iniciais, agora é a foto)
-   - `img/bloco_04_antes.png` — 2º casal distante → card "Without Velvet"
+   - `bloco_04_antes.png` — 2º casal distante → card "Without Velvet"
      (seção de comparação, mais abaixo na página)
-   - `img/bloco_04_depois.png` — 2º casal se abraçando → card "With
+   - `bloco_04_depois.png` — 2º casal se abraçando → card "With
      Velvet" (seção de comparação)
-   Sem essas 6 fotos na pasta `img/`, esses espaços aparecem quebrados
-   (ícone de imagem não encontrada) — é só colocar os arquivos com esses
-   nomes exatos, extensão `.png` incluída.
+   Sem essas 6 fotos na pasta, esses espaços aparecem quebrados (ícone
+   de imagem não encontrada) — é só colocar os arquivos com esses nomes
+   exatos, extensão `.png` incluída, direto dentro de `velvet-coach-usa/`.
 
    ⚠️ **Sobre usar `bloco_03_depoimento.png` como foto do depoimento**:
    se essa foto
