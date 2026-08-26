@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#faf7f2"/>
+      <stop offset="100%" stop-color="#efe9dd"/>
+    </linearGradient>
+    <radialGradient id="pad" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#7a8c6c"/>
+      <stop offset="60%" stop-color="#556248"/>
+      <stop offset="100%" stop-color="#3a4632"/>
+    </radialGradient>
+  </defs>
+  <rect width="700" height="700" fill="url(#bg3)"/>
+  <ellipse cx="350" cy="330" rx="220" ry="210" fill="url(#pad)"/>
+  <ellipse cx="290" cy="260" rx="70" ry="46" fill="#fff" opacity=".12"/>
+  <g fill="#2f382a" opacity=".35">
+    <circle cx="260" cy="260" r="5"/><circle cx="300" cy="240" r="5"/><circle cx="340" cy="255" r="5"/>
+    <circle cx="380" cy="235" r="5"/><circle cx="420" cy="260" r="5"/>
+    <circle cx="270" cy="310" r="5"/><circle cx="315" cy="300" r="5"/><circle cx="360" cy="310" r="5"/>
+    <circle cx="405" cy="300" r="5"/><circle cx="440" cy="315" r="5"/>
+    <circle cx="285" cy="360" r="5"/><circle cx="330" cy="355" r="5"/><circle cx="375" cy="360" r="5"/>
+    <circle cx="415" cy="355" r="5"/>
+    <circle cx="310" cy="405" r="5"/><circle cx="355" cy="405" r="5"/><circle cx="395" cy="400" r="5"/>
+  </g>
+  <rect x="215" y="565" width="270" height="46" rx="23" fill="#e9711f"/>
+  <text x="350" y="595" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,Arial,sans-serif" font-size="16" font-weight="800" fill="#fff">SILICONE GRAU ALIMENTÍCIO</text>
+</svg>
