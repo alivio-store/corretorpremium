@@ -75,24 +75,29 @@ diferente. O domínio final depende de onde você faz o deploy deste
    inteira em risco. Crie uma conta de anúncios e um Pixel/GA4 **dedicados**
    a esta oferta.
 
-8. **Fotos** — o `index.html` já espera 4 arquivos dentro de uma pasta
+8. **Fotos** — o `index.html` já espera 6 arquivos dentro de uma pasta
    `img/` (que você cria do lado do `index.html`, dentro de
-   `velvet-coach-usa/`), com esses nomes exatos e usados nestes lugares:
-   - `img/before.jpg` — casal distante/desconectado → aparece 2x: no card
-     "Where you are now" (topo do hero, estilo antes/depois igual à
-     referência) e no card "Without Velvet" (seção de comparação)
-   - `img/after.jpg` — casal se abraçando → aparece 2x: no card "Where
-     you're headed" (topo do hero) e no card "With Velvet" (comparação)
-   - `img/hero.jpg` — mulher se alongando → foto da faixa escura de
-     declaração de marca (equivalente à faixa "COACH" da oferta original)
-   - `img/lifestyle.jpg` — homem sorrindo no sofá → foto do avatar do
+   `velvet-coach-usa/`), com os nomes de arquivo reais do usuário e
+   usados nestes lugares:
+   - `img/bloco_01_distancia.png` — casal distante/desconectado → card
+     "Where you are now" (topo do hero, estilo antes/depois da referência)
+   - `img/bloco_01_conexao.png` — casal se abraçando → card "Where you're
+     headed" (topo do hero)
+   - `img/bloco_02_cut_training.png` — mulher em treino/alongamento →
+     foto da faixa escura de declaração de marca (equivalente à faixa
+     "COACH" da oferta original)
+   - `img/bloco_03_depoimento.png` — homem sorrindo → foto do avatar do
      depoimento em destaque (era um círculo com iniciais, agora é a foto)
-   Sem essas 4 fotos na pasta `img/`, esses espaços aparecem quebrados
+   - `img/bloco_04_antes.png` — 2º casal distante → card "Without Velvet"
+     (seção de comparação, mais abaixo na página)
+   - `img/bloco_04_depois.png` — 2º casal se abraçando → card "With
+     Velvet" (seção de comparação)
+   Sem essas 6 fotos na pasta `img/`, esses espaços aparecem quebrados
    (ícone de imagem não encontrada) — é só colocar os arquivos com esses
-   nomes exatos (pode ser `.jpg`, `.jpeg`, `.png` ou `.webp`, só ajuste a
-   extensão no `src=` correspondente se não for `.jpg`).
+   nomes exatos, extensão `.png` incluída.
 
-   ⚠️ **Sobre usar `lifestyle.jpg` como foto do depoimento**: se essa foto
+   ⚠️ **Sobre usar `bloco_03_depoimento.png` como foto do depoimento**:
+   se essa foto
    for um banco de imagens/gerada por IA (não uma foto de um cliente real
    que deu depoimento de verdade), **não publique isso com tráfego pago
    nos EUA sem trocar por um cliente real**. Desde 2024 a FTC (o órgão
