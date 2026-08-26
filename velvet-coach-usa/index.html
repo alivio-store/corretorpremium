@@ -15,19 +15,21 @@
 
 <style>
   :root{
-    --ink:#241a24;
-    --bg-dark:#160f18;
-    --bg-dark-2:#1f1521;
-    --paper:#fbf6f4;
+    --ink:#1c1a20;
+    --band:#131116;
+    --paper:#ffffff;
+    --cream:#f8f5f0;
     --card:#ffffff;
     --rose:#c14468;
     --rose-dark:#9c3252;
-    --gold:#cf9d51;
-    --gold-dark:#a97c37;
-    --muted:#7a6d76;
-    --border:#ece2e3;
+    --rose-tint:#fdeef2;
+    --gold:#f0b83c;
+    --gold-dark:#c98f1e;
+    --muted:#6f6a72;
+    --border:#ece7e2;
+    --ok:#3f8f6c;
     --radius:16px;
-    --shadow:0 20px 45px -20px rgba(36,26,36,.25);
+    --shadow:0 20px 45px -20px rgba(28,26,32,.18);
     font-size:16px;
   }
   *{box-sizing:border-box;}
@@ -45,108 +47,115 @@
   ul{margin:0;padding:0;list-style:none;}
   .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
   section{padding:76px 0;}
-  h1,h2,h3{line-height:1.15;margin:0 0 .5em;}
+  h1,h2,h3{line-height:1.15;margin:0 0 .5em;text-wrap:balance;}
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--rose-dark);background:rgba(193,68,104,.1);
+    color:var(--rose-dark);background:var(--rose-tint);
     padding:6px 14px;border-radius:99px;margin-bottom:16px;
   }
   .center{text-align:center;}
   .muted{color:var(--muted);}
   .section-head{max-width:640px;margin:0 auto 44px;}
+  .on-cream{background:var(--cream);}
 
   /* BUTTONS */
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    padding:16px 30px;border-radius:12px;font-weight:700;font-size:1rem;
+    padding:16px 30px;border-radius:12px;font-weight:800;font-size:1rem;
     cursor:pointer;border:none;transition:transform .15s ease, box-shadow .15s ease;
     white-space:nowrap;
   }
   .btn:hover{transform:translateY(-2px);}
   .btn-primary{
     background:linear-gradient(135deg,var(--gold),var(--gold-dark));
-    color:#241505;box-shadow:0 14px 30px -10px rgba(169,124,55,.55);
+    color:#241505;box-shadow:0 14px 26px -10px rgba(201,143,30,.55);
   }
-  .btn-primary:hover{box-shadow:0 18px 36px -10px rgba(169,124,55,.65);}
-  .btn-ghost{background:transparent;border:2px solid rgba(255,255,255,.35);color:#fff;}
+  .btn-primary:hover{box-shadow:0 18px 32px -10px rgba(201,143,30,.65);}
+  .btn-dark{background:var(--band);color:#fff;}
   .btn-block{width:100%;}
   .btn-sm{padding:10px 18px;font-size:.9rem;border-radius:10px;}
 
   /* TOPBAR */
   .topbar{
-    background:var(--bg-dark);color:#fff;font-size:.82rem;text-align:center;
+    background:var(--band);color:#fff;font-size:.82rem;text-align:center;
     padding:9px 12px;letter-spacing:.02em;
   }
   .topbar strong{color:var(--gold);}
 
   /* HEADER */
   header.site{
-    position:sticky;top:0;z-index:50;
-    background:rgba(22,15,24,.92);backdrop-filter:blur(8px);
-    border-bottom:1px solid rgba(255,255,255,.08);
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--border);
   }
   .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:.01em;}
-  .logo .dot{width:10px;height:10px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 4px rgba(193,68,104,.28);}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem;color:var(--ink);letter-spacing:.01em;}
+  .logo .dot{width:10px;height:10px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 4px var(--rose-tint);}
   .nav-links{display:flex;gap:32px;align-items:center;}
-  .nav-links a{color:rgba(255,255,255,.75);font-size:.92rem;font-weight:600;transition:color .15s;}
-  .nav-links a:hover{color:#fff;}
+  .nav-links a{color:var(--muted);font-size:.92rem;font-weight:600;transition:color .15s;}
+  .nav-links a:hover{color:var(--ink);}
   .nav-cta{display:flex;align-items:center;gap:16px;}
-  .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;}
+  .nav-toggle{display:none;background:none;border:none;color:var(--ink);font-size:1.6rem;cursor:pointer;}
 
   /* HERO */
-  .hero{
-    background:radial-gradient(120% 140% at 15% 0%, #241329 0%, var(--bg-dark) 55%, var(--bg-dark-2) 100%);
-    color:#fff;position:relative;overflow:hidden;padding:64px 0 80px;
-  }
-  .hero::before{
-    content:"";position:absolute;inset:0;
-    background:
-      radial-gradient(420px 420px at 88% 18%, rgba(193,68,104,.28), transparent 70%),
-      radial-gradient(360px 360px at 100% 90%, rgba(207,157,81,.18), transparent 70%);
-    pointer-events:none;
-  }
-  .hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto;text-align:center;}
-  .hero h1{font-size:clamp(2rem,4.2vw,2.9rem);font-weight:800;letter-spacing:-.01em;}
-  .hero p.lead{font-size:1.1rem;color:rgba(255,255,255,.78);margin:0 0 30px;}
+  .hero{background:var(--paper);padding:56px 0 64px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
+  .hero h1{font-size:clamp(2rem,4vw,2.9rem);font-weight:800;letter-spacing:-.01em;}
+  .hero p.lead{font-size:1.08rem;color:var(--muted);margin:0 0 26px;max-width:480px;}
   .age-tag{
     display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.04em;
-    color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.25);
-    border-radius:99px;padding:4px 12px;margin-bottom:18px;
+    color:var(--muted);border:1px solid var(--border);
+    border-radius:99px;padding:4px 12px;margin-bottom:16px;
   }
 
   /* GOAL CARDS (visual only, mimics quiz step) */
-  .goal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0;}
+  .goal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0;max-width:480px;}
   .goal-card{
-    background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.14);
-    border-radius:14px;padding:20px 14px;text-align:center;font-weight:700;font-size:.95rem;
+    background:var(--cream);border:1.5px solid var(--border);
+    border-radius:14px;padding:18px 14px;text-align:center;font-weight:700;font-size:.92rem;
     transition:border-color .15s, background .15s;
   }
-  .goal-card:hover{border-color:rgba(207,157,81,.7);background:rgba(255,255,255,.1);}
-  .goal-card .emoji{font-size:1.7rem;display:block;margin-bottom:8px;}
-  .goal-note{font-size:.82rem;color:rgba(255,255,255,.55);margin:6px 0 26px;}
+  .goal-card:hover{border-color:var(--gold);background:#fff;}
+  .goal-card .emoji{font-size:1.6rem;display:block;margin-bottom:6px;}
+  .goal-note{font-size:.82rem;color:var(--muted);margin:6px 0 24px;}
 
   .trust-row{
-    display:flex;flex-wrap:wrap;gap:18px;justify-content:center;align-items:center;
-    margin-top:26px;font-size:.85rem;color:rgba(255,255,255,.65);
+    display:flex;flex-wrap:wrap;gap:16px;align-items:center;
+    margin-top:22px;font-size:.85rem;color:var(--muted);
   }
-  .trust-row .stars{color:var(--gold);letter-spacing:2px;}
-  .badge-row{display:flex;gap:10px;justify-content:center;margin-top:16px;}
+  .trust-row .stars{color:var(--gold-dark);letter-spacing:2px;}
+  .badge-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
   .store-badge{
-    display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:8px 14px;
-    font-size:.78rem;color:rgba(255,255,255,.8);
+    display:flex;align-items:center;gap:8px;background:var(--cream);
+    border:1px solid var(--border);border-radius:10px;padding:8px 14px;
+    font-size:.78rem;color:var(--ink);
   }
 
-  /* BRAND STATEMENT */
-  .statement{background:var(--card);}
-  .statement-box{
-    background:linear-gradient(135deg,#2a1a2d,#160f18);
-    border-radius:24px;padding:56px 40px;text-align:center;color:#fff;
+  /* HERO ILLUSTRATION */
+  .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;}
+  .hero-visual .blob{
+    position:absolute;inset:6% 8%;border-radius:44% 56% 62% 38% / 45% 40% 60% 55%;
+    background:linear-gradient(160deg,var(--rose-tint),#fbf1e2);z-index:0;
   }
-  .statement-box h2{font-size:clamp(1.5rem,3vw,2.1rem);max-width:680px;margin:0 auto .3em;}
-  .statement-box p{color:rgba(255,255,255,.65);max-width:520px;margin:0 auto;}
+  .hero-visual svg{position:relative;z-index:1;width:100%;max-width:360px;}
+
+  /* BRAND STATEMENT (dark band) */
+  .statement{background:var(--band);color:#fff;}
+  .statement-inner{display:flex;align-items:center;gap:40px;justify-content:center;flex-wrap:wrap;text-align:left;}
+  .statement-inner .mark{
+    flex:none;width:76px;height:76px;border-radius:50%;
+    background:linear-gradient(135deg,var(--gold),var(--rose));
+    display:flex;align-items:center;justify-content:center;font-size:2rem;
+  }
+  .statement h2{font-size:clamp(1.4rem,2.8vw,2rem);max-width:560px;margin:0 0 .3em;}
+  .statement p{color:rgba(255,255,255,.6);max-width:520px;margin:0;}
+
+  /* FEATURED / PRESS ROW (placeholder — see README before publishing) */
+  .press-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+  .press-chip{
+    background:var(--cream);border:1px solid var(--border);border-radius:10px;
+    padding:12px 20px;font-weight:700;font-size:.85rem;color:var(--muted);letter-spacing:.02em;
+  }
 
   /* WHY UNIQUE */
   .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:36px;}
@@ -156,13 +165,13 @@
   }
   .why-item .ico{
     flex:none;width:40px;height:40px;border-radius:10px;
-    background:rgba(193,68,104,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+    background:var(--rose-tint);display:flex;align-items:center;justify-content:center;font-size:1.2rem;
   }
   .why-item h3{font-size:1.02rem;margin:0 0 4px;}
   .why-item p{margin:0;font-size:.92rem;color:var(--muted);}
 
-  /* STATS */
-  .stats-band{background:var(--bg-dark);color:#fff;}
+  /* STATS (dark band) */
+  .stats-band{background:var(--band);color:#fff;}
   .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;}
   .stat-num{font-size:clamp(2.2rem,5vw,3rem);font-weight:800;color:var(--gold);}
   .stat-label{font-size:.9rem;color:rgba(255,255,255,.65);margin-top:6px;}
@@ -171,12 +180,12 @@
   /* COMPARISON */
   .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
   .compare-card{border-radius:16px;padding:28px;}
-  .compare-card.without{background:#f3ecec;border:1px solid var(--border);}
-  .compare-card.with{background:linear-gradient(135deg,#2a1a2d,#160f18);color:#fff;}
+  .compare-card.without{background:var(--cream);border:1px solid var(--border);}
+  .compare-card.with{background:#fff;border:1.5px solid var(--gold);}
   .compare-card h3{font-size:1.05rem;}
   .compare-card li{display:flex;gap:10px;padding:8px 0;font-size:.94rem;align-items:flex-start;}
-  .compare-card.without li{color:#5c5257;}
-  .compare-card.with li{color:rgba(255,255,255,.85);}
+  .compare-card.without li{color:#6b6570;}
+  .compare-card.with li{color:var(--ink);}
 
   /* PROGRAM CONTENTS */
   .program-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center;}
@@ -194,7 +203,7 @@
     background:linear-gradient(135deg,var(--rose),var(--gold));
     display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.2rem;
   }
-  .quote-stars{color:var(--gold);margin-bottom:10px;letter-spacing:2px;}
+  .quote-stars{color:var(--gold-dark);margin-bottom:10px;letter-spacing:2px;}
   .quote-text{font-size:1.02rem;font-style:italic;color:var(--ink);}
   .quote-name{margin-top:14px;font-weight:700;font-size:.92rem;}
   .quote-name span{font-weight:400;color:var(--muted);}
@@ -217,51 +226,49 @@
   .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
   .faq-a p{margin:0 4px 20px;color:var(--muted);font-size:.94rem;}
 
-  /* PRICING */
-  .pricing{background:var(--bg-dark);color:#fff;}
+  /* PRICING (light — bordered plan cards, like the reference) */
   .guarantee-pill{
-    display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:8px 18px;
-    font-size:.85rem;margin-bottom:30px;
+    display:inline-flex;align-items:center;gap:8px;background:var(--cream);
+    border:1px solid var(--border);border-radius:99px;padding:8px 18px;
+    font-size:.85rem;margin-bottom:30px;color:var(--ink);
   }
   .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;}
   .plan-card{
-    background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.14);
+    background:#fff;border:1.5px solid var(--border);
     border-radius:18px;padding:26px 20px;text-align:center;position:relative;
     display:flex;flex-direction:column;
   }
-  .plan-card.popular{border-color:var(--gold);background:rgba(207,157,81,.1);}
+  .plan-card.popular{border-color:var(--gold);box-shadow:0 16px 32px -18px rgba(201,143,30,.4);}
   .plan-badge{
     position:absolute;top:-13px;left:50%;transform:translateX(-50%);
     background:var(--gold);color:#241505;font-size:.72rem;font-weight:800;
     padding:4px 14px;border-radius:99px;letter-spacing:.03em;
   }
   .plan-len{font-weight:700;font-size:1.05rem;margin-bottom:6px;}
-  .plan-old{font-size:.85rem;color:rgba(255,255,255,.45);text-decoration:line-through;}
+  .plan-old{font-size:.85rem;color:var(--muted);text-decoration:line-through;}
   .plan-price{font-size:2rem;font-weight:800;margin:2px 0;}
-  .plan-per{font-size:.78rem;color:rgba(255,255,255,.55);margin-bottom:18px;}
+  .plan-per{font-size:.78rem;color:var(--muted);margin-bottom:18px;}
   .plan-card .btn{margin-top:auto;}
 
   /* SEAL */
   .seal-row{display:flex;justify-content:center;margin-top:40px;}
   .seal{
-    display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 26px;
+    display:flex;align-items:center;gap:14px;background:var(--cream);
+    border:1px solid var(--border);border-radius:16px;padding:16px 26px;
   }
   .seal .ico{font-size:1.8rem;}
-  .seal b{display:block;font-size:.95rem;}
-  .seal span{font-size:.8rem;color:rgba(255,255,255,.6);}
+  .seal b{display:block;font-size:.95rem;color:var(--ink);}
+  .seal span{font-size:.8rem;color:var(--muted);}
 
   /* FINAL CTA */
   .final-cta{
-    background:linear-gradient(135deg,var(--rose),var(--rose-dark));
-    color:#fff;text-align:center;border-radius:28px;padding:56px 30px;
+    background:linear-gradient(135deg,var(--rose-tint),#fbf1e2);
+    color:var(--ink);text-align:center;border-radius:28px;padding:56px 30px;border:1px solid var(--border);
   }
   .final-cta h2{font-size:clamp(1.5rem,3.2vw,2.2rem);}
-  .final-cta .btn-primary{background:#fff;color:var(--rose-dark);box-shadow:0 14px 30px -10px rgba(0,0,0,.35);}
 
   /* FOOTER */
-  footer{background:var(--bg-dark-2);color:rgba(255,255,255,.6);padding:52px 0 110px;font-size:.85rem;}
+  footer{background:var(--band);color:rgba(255,255,255,.6);padding:52px 0 110px;font-size:.85rem;}
   .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;margin-bottom:24px;}
   .footer-brand{max-width:320px;}
   .footer-brand .logo{color:#fff;margin-bottom:10px;}
@@ -276,13 +283,18 @@
   .mobile-bar{
     display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;
     background:#fff;border-top:1px solid var(--border);
-    padding:12px 16px;box-shadow:0 -10px 30px -14px rgba(0,0,0,.25);
+    padding:12px 16px;box-shadow:0 -10px 30px -14px rgba(0,0,0,.15);
     align-items:center;justify-content:space-between;gap:12px;
   }
   .mobile-bar .price{font-weight:800;font-size:1.05rem;}
   .mobile-bar .price small{display:block;font-weight:400;font-size:.72rem;color:var(--muted);}
 
   @media (max-width: 860px){
+    .hero-grid{grid-template-columns:1fr;text-align:center;}
+    .hero p.lead{margin-left:auto;margin-right:auto;}
+    .goal-grid{margin-left:auto;margin-right:auto;}
+    .trust-row,.badge-row{justify-content:center;}
+    .hero-visual{order:-1;max-width:280px;margin:0 auto;}
     .why-grid,.compare-grid{grid-template-columns:1fr;}
     .program-grid{grid-template-columns:repeat(2,1fr);}
     .stats-grid{grid-template-columns:1fr;gap:36px;}
@@ -293,6 +305,7 @@
     .mobile-bar{display:flex;}
     section{padding:56px 0;}
     body{padding-bottom:70px;}
+    .statement-inner{text-align:center;flex-direction:column;}
   }
 </style>
 </head>
@@ -317,38 +330,56 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-inner">
-    <span class="age-tag">18+ · For adults</span>
-    <h1>Get Your Personal Pleasure Plan</h1>
-    <p class="lead">A guided, step-by-step program to help you understand your body, build confidence, and experience stronger, more consistent orgasms — at your own pace.</p>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="age-tag">18+ · For adults</span>
+      <h1>Get Your Personal Pleasure Plan</h1>
+      <p class="lead">A guided, step-by-step program to help you understand your body, build confidence, and experience stronger, more consistent orgasms — at your own pace.</p>
 
-    <!-- Visual goal cards (illustrative only — not an interactive quiz on this simple LP) -->
-    <div class="goal-grid">
-      <div class="goal-card"><span class="emoji">🎯</span>More intense orgasms</div>
-      <div class="goal-card"><span class="emoji">💗</span>Better body confidence</div>
+      <!-- Visual goal cards (illustrative only — not an interactive quiz on this simple LP) -->
+      <div class="goal-grid">
+        <div class="goal-card"><span class="emoji">🎯</span>More intense orgasms</div>
+        <div class="goal-card"><span class="emoji">💗</span>Better body confidence</div>
+      </div>
+      <p class="goal-note">Millions of women started exactly where you are now.</p>
+
+      <a href="#plans" class="btn btn-primary">Get My Plan</a>
+
+      <div class="trust-row">
+        <span><span class="stars">★★★★★</span> 4.7 average rating*</span>
+        <span>·</span>
+        <span>1M+ downloads*</span>
+      </div>
+      <!-- Placeholder store badges (decorative) — Velvet ships as a private web app today, not a store listing. Remove or update once real, so this claim stays true — see the app/ README. -->
+      <div class="badge-row">
+        <span class="store-badge">📱 App Store</span>
+        <span class="store-badge">▶ Google Play</span>
+      </div>
     </div>
-    <p class="goal-note">Millions of women started exactly where you are now.</p>
 
-    <a href="#plans" class="btn btn-primary btn-block">Get My Plan</a>
-
-    <div class="trust-row">
-      <span><span class="stars">★★★★★</span> 4.7 average rating*</span>
-      <span>·</span>
-      <span>30-day money-back guarantee</span>
-    </div>
-    <div class="badge-row">
-      <!-- Velvet ships as a private web app (no App Store/Google Play listing) — see the app/ README for why. -->
-      <span class="store-badge">📲 Instant access, no app store</span>
-      <span class="store-badge">🔒 Private &amp; discreet</span>
+    <!-- Illustration standing in for a real product/lifestyle photo (none provided yet) -->
+    <div class="hero-visual">
+      <div class="blob"></div>
+      <svg viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="160" cy="330" rx="90" ry="14" fill="#efe3d2"/>
+        <path d="M160 60c-24 0-42 19-42 44 0 17 8 31 20 39-30 12-52 40-58 96-2 16 10 30 26 30h108c16 0 28-14 26-30-6-56-28-84-58-96 12-8 20-22 20-39 0-25-18-44-42-44z" fill="#f6e4e9"/>
+        <circle cx="160" cy="104" r="40" fill="#f2c6ce"/>
+        <path d="M120 100c0-24 18-42 40-42s40 18 40 42" stroke="#c14468" stroke-width="6" stroke-linecap="round"/>
+        <path d="M96 230c14-34 38-52 64-52s50 18 64 52" stroke="#e9b26b" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <circle cx="90" cy="240" r="10" fill="#f0b83c" opacity=".85"/>
+        <circle cx="238" cy="200" r="7" fill="#c14468" opacity=".7"/>
+        <circle cx="250" cy="270" r="5" fill="#f0b83c" opacity=".7"/>
+      </svg>
     </div>
   </div>
 </section>
 
 <!-- BRAND STATEMENT -->
 <section class="statement">
-  <div class="wrap">
-    <div class="statement-box">
-      <h2>Your personal pleasure coach.<br>Backed by science, guided step by step.</h2>
+  <div class="wrap statement-inner">
+    <div class="mark">🦋</div>
+    <div>
+      <h2>It's pleasure training — backed by science, guided step by step.</h2>
       <p>No guesswork, no generic advice — just a structured practice built around how arousal actually works.</p>
     </div>
   </div>
@@ -391,11 +422,27 @@
   </div>
 </section>
 
+<!-- FEATURED / PRESS (placeholder — swap these generic labels for real coverage before publishing, or remove the section) -->
+<section class="on-cream">
+  <div class="wrap">
+    <div class="section-head center" style="margin-bottom:28px;">
+      <span class="eyebrow">As featured in</span>
+      <h2 style="font-size:1.1rem;color:var(--muted);font-weight:600;">Placeholder — swap for real press logos once you have coverage</h2>
+    </div>
+    <div class="press-row">
+      <span class="press-chip">Wellness Weekly</span>
+      <span class="press-chip">The Daily Balance</span>
+      <span class="press-chip">Modern Intimacy</span>
+      <span class="press-chip">HerHealth Journal</span>
+    </div>
+  </div>
+</section>
+
 <!-- STATS -->
 <section class="stats-band">
   <div class="wrap">
     <div class="section-head center" style="margin-bottom:36px;">
-      <span class="eyebrow" style="background:rgba(207,157,81,.15);color:var(--gold);">Real results</span>
+      <span class="eyebrow" style="background:rgba(240,184,60,.15);color:var(--gold);">Real results</span>
       <h2>Real changes after 4 weeks*</h2>
     </div>
     <div class="stats-grid">
@@ -438,7 +485,7 @@
 </section>
 
 <!-- PROGRAM CONTENTS -->
-<section>
+<section class="on-cream">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Inside your program</span>
@@ -466,7 +513,7 @@
 </section>
 
 <!-- MORE TESTIMONIALS (placeholders) -->
-<section>
+<section class="on-cream">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Real stories</span>
@@ -525,10 +572,10 @@
 </section>
 
 <!-- PRICING -->
-<section class="pricing" id="plans">
+<section class="on-cream" id="plans">
   <div class="wrap center">
     <div class="section-head center">
-      <span class="eyebrow" style="background:rgba(207,157,81,.15);color:var(--gold);">Get started today</span>
+      <span class="eyebrow">Get started today</span>
       <h2>Get noticeable results in 4 weeks</h2>
     </div>
     <div class="guarantee-pill">🛡️ 30-day money-back guarantee</div>
@@ -573,7 +620,7 @@
   <div class="wrap">
     <div class="final-cta">
       <h2>Ready to feel the difference?</h2>
-      <p style="opacity:.85;max-width:480px;margin:0 auto 26px;">Start your personal plan today — risk-free, for 30 days.</p>
+      <p style="color:var(--muted);max-width:480px;margin:0 auto 26px;">Start your personal plan today — risk-free, for 30 days.</p>
       <a href="#plans" class="btn btn-primary">Get My Plan</a>
     </div>
   </div>
@@ -646,7 +693,7 @@
     toggle.addEventListener('click', function(){
       var isShown = links.style.display === 'flex';
       links.style.display = isShown ? 'none' : 'flex';
-      links.style.cssText += isShown ? '' : 'position:absolute;top:64px;left:0;right:0;background:#160f18;flex-direction:column;padding:16px 24px;gap:16px;';
+      links.style.cssText += isShown ? '' : 'position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;gap:16px;border-bottom:1px solid #ece7e2;';
     });
   }
 </script>

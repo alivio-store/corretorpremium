@@ -4,7 +4,9 @@ LP em inglês para um app de coaching de prazer feminino ("Velvet"), no
 mesmo estilo "quiz funnel" da oferta de referência (spy), mas em formato de
 página única de rolagem (sem lógica de quiz interativo). Arquivo único
 (`index.html`), sem dependências externas, sem build — mesma lógica das
-outras LPs deste repositório.
+outras LPs deste repositório. Visual em fundo branco com ilustração no
+hero e faixas escuras de destaque, para ficar mais próximo da oferta de
+referência (a v1 era em tema escuro/dark mode, foi trocada a pedido).
 
 ## Sobre a URL/domínio (a dúvida original)
 
@@ -47,12 +49,17 @@ diferente. O domínio final depende de onde você faz o deploy deste
    placeholders de exemplo. Substitua por depoimentos reais de clientes
    (com autorização deles) antes de publicar.
 
-5. **App Store / Google Play** — de propósito, a LP **não promete mais**
-   presença nas lojas (removi o "1M+ downloads" e os selos de loja): o
-   produto (`app/`) é um **PWA** (web app instalável), não um app nativo —
-   veja `app/README.md` para o motivo. O selo "4.7 average rating" na hero
-   também é placeholder — some junto com os depoimentos reais, ou remova
-   se ainda não tiver avaliações reais.
+5. **App Store / Google Play / "1M+ downloads"** — voltaram como elementos
+   visuais (a pedido, pra ficar mais parecido com a oferta de referência),
+   mas são **decorativos** — não têm link, e o produto (`app/`) é hoje um
+   **PWA** (web app instalável), não está nas lojas de verdade. Veja
+   `app/README.md` para o motivo de ser PWA. Antes de rodar tráfego pago:
+   ou o app já está mesmo nas lojas (aí é só ligar os links de verdade),
+   ou remova esses selos — declarar presença de loja/volume de downloads
+   falso é propaganda enganosa (FTC nos EUA é rígida nisso). O mesmo vale
+   pro "4.7 average rating" e pela seção "As featured in" (logos de
+   imprensa fictícios, claramente marcados como placeholder no próprio
+   código) — troque por dados reais ou remova antes de publicar de verdade.
 
 6. **Rodapé / conformidade** — troque `[insert legal entity name and
    address]` e `support@[insert-domain].com` pelos dados reais da empresa
@@ -68,9 +75,19 @@ diferente. O domínio final depende de onde você faz o deploy deste
    inteira em risco. Crie uma conta de anúncios e um Pixel/GA4 **dedicados**
    a esta oferta.
 
-8. **Fotos/ilustrações** — a página hoje não usa nenhuma foto (só ícones/
-   emojis como placeholder visual, já que ainda não há mídia real). Quando
-   tiver fotos/vídeos aprovados para uso, adicione em `img/`.
+8. **Fotos/ilustrações** — a página usa uma ilustração vetorial (SVG,
+   inline no próprio `index.html`, dentro de `.hero-visual`) no lugar de
+   uma foto real do produto, já que ainda não há mídia real aprovada.
+   Quando tiver fotos/vídeos reais, troque esse bloco `<svg>` por
+   `<img src="img/...">` — crie a pasta `img/` pra isso.
+
+9. **Sobre a copy** — a estrutura, o tom e os títulos foram inspirados de
+   perto na oferta de referência que você mandou (headline, "why unique",
+   antes/depois, seções de prova social, garantia), mas o texto foi
+   reescrito com palavras próprias em vez de copiado literalmente —
+   reaproveitar copy publicitária palavra-por-palavra de outro negócio é
+   risco de direitos autorais desnecessário, sem ganho real (o ângulo e a
+   estrutura, que é o que converte, foram mantidos).
 
 ## O produto em si (`app/`)
 
@@ -99,3 +116,16 @@ mobile.
 ## Rodando localmente
 
 Basta abrir `index.html` no navegador — não precisa de servidor nem build.
+
+## Atualizando o site já publicado na Netlify (drag-and-drop)
+
+Se você publicou via `app.netlify.com/drop` (arrastando a pasta), **não**
+arraste a pasta de novo naquela mesma página — isso cria um site novo e
+separado, com outra URL. Pra atualizar o site que já existe (`velveet.
+netlify.app`) mantendo a mesma URL:
+
+1. Entre em `app.netlify.com` → abra o site **velveet**
+2. Vá na aba **"Deploys"**
+3. Lá dentro tem uma área de arrastar-e-soltar própria desse site —
+   arraste a pasta `velvet-coach-usa` atualizada ali
+4. Aguarde o novo deploy terminar — a URL continua a mesma
