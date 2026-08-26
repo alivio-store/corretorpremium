@@ -32,10 +32,11 @@ fotos no final da página.
 
 ## O que fazer antes de publicar
 
-1. **Preço e link de checkout** — os valores em `.pdp-total-box`
-   (de **R$ 297,90** por **R$ 137,90**, 12x sem juros de R$ 11,49, ou
-   R$ 131,00 no Pix) são **EXEMPLO**. Edite para os valores reais. O botão
-   de compra (`#pdp-buy-btn`) e o botão da barra fixa mobile (`.mobile-bar`)
+1. **Preço e link de checkout** — o preço de venda já é o valor real
+   informado: **R$ 169,90** (12x sem juros de R$ 14,16, ou R$ 161,40 no
+   Pix). O "de **R$ 297,90**" (preço "antes do desconto") ainda é
+   **EXEMPLO** — confirme o valor real antes de publicar. O botão de
+   compra (`#pdp-buy-btn`) e o botão da barra fixa mobile (`.mobile-bar`)
    estão com `href="#"` — troque pelo link real do seu checkout (Yampi,
    Shopify, Kiwify, WhatsApp etc.) nos dois lugares.
 
@@ -81,7 +82,7 @@ fotos no final da página.
 ## Estrutura da página
 
 Topbar promocional → Header fixo → Breadcrumb → PDP (galeria de fotos +
-preço + botão de compra) → Descrição do produto → Diferencial (aquecimento
+preço + botão de compra) → Diferencial (aquecimento
 42°C/45°C) → prova social (mini) → Dores (agitação) → Benefícios → Como
 usar (3 passos) → Seção educativa → Galeria → Sem alívio x com alívio →
 Garantia de 30 dias → Especificações técnicas → FAQ → CTA final →
