@@ -7,28 +7,26 @@ produto de e-commerce) usado em `/medidor-pressao/`. Arquivo único
 
 ## Imagens
 
-As fotos reais do produto que você mostrou no chat (a ficha técnica com o
-produto verde-musgo em formato de mão, a foto do aquecimento no pescoço
-com 42°C/45°C, a foto de uso no ombro com a correia de couro, e a miniatura
-do produto) **não estavam disponíveis como arquivo** para eu incluir no
-repositório — só apareceram como imagens na conversa. Por isso, a pasta
-`img/` tem 4 ilustrações em SVG como placeholder, no mesmo estilo visual
-do produto (verde-musgo, dedos de silicone, aquecimento):
+A página já usa as 6 fotos reais do produto que você enviou, em `img/`,
+com nomes descritivos:
 
-- `img/hero.svg` — ilustração do produto (foto principal da PDP, descrição,
-  seção "Como usar" passo 2, galeria)
-- `img/calor.svg` — ilustração do aquecimento nos dois lados do pescoço,
+- `img/produto-hero.jpg` — foto isolada do produto (foto principal da PDP,
+  "Como usar" passo 2, seção galeria)
+- `img/produto-calor.webp` — foto do aquecimento nos dois lados do pescoço,
   com "42°C" / "45°C" (seção de diferencial, "Como usar" passo 3, galeria)
-- `img/uso.svg` — ilustração do produto encaixado no pescoço/ombros
-  ("Como usar" passo 1, galeria)
-- `img/detalhe.svg` — ilustração de detalhe do silicone (galeria)
+- `img/produto-uso.webp` — foto de uso no sofá, com a correia no
+  pescoço/ombro ("Como usar" passo 1, galeria)
+- `img/produto-detalhe.webp` — foto de perto do silicone grau alimentício
+  (galeria)
+- `img/produto-beneficios.webp` — foto de uso com os 3 selos de benefício
+  (simulação de massagem manual, suave ao toque, leve e fácil de
+  transportar) — seção educativa "Entenda o problema"
+- `img/produto-especificacoes.webp` — infográfico oficial com a ficha
+  técnica do fornecedor — seção "Especificações do produto", acima da
+  tabela
 
-**Para trocar pelas fotos reais:** salve os arquivos em `img/` (ex.:
-`produto-hero.jpg`, `produto-calor.jpg`, `produto-uso.jpg`,
-`produto-detalhe.jpg`) e troque cada `src="img/xxx.svg"` correspondente no
-`index.html` — são usados em 4 lugares: galeria da PDP (com miniaturas
-clicáveis), seção de diferencial (aquecimento), "Como usar" e galeria de
-fotos no final da página.
+As 4 ilustrações SVG placeholder que existiam antes (`hero.svg`,
+`calor.svg`, `uso.svg`, `detalhe.svg`) foram removidas do repositório.
 
 ## O que fazer antes de publicar
 

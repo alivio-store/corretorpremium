@@ -6,9 +6,12 @@
 <title>Massageador de Pescoço e Ombros 8 Pontos: Aquecimento até 45°C</title>
 <meta name="description" content="Massageador de pescoço e ombros em formato de mão, com 8 pontos de massagem e aquecimento em 2 níveis (42°C/45°C). Silicone grau alimentício, bateria recarregável e correia ajustável. Frete grátis e garantia de 30 dias.">
 
-<!-- OPEN GRAPH (edite a URL da imagem de compartilhamento quando tiver a foto final do produto) -->
+<!-- OPEN GRAPH (troque "img/produto-hero.jpg" pela URL completa/hospedada da
+     imagem quando publicar — a maioria das redes exige URL absoluta, não
+     caminho relativo, para exibir a foto no compartilhamento) -->
 <meta property="og:title" content="Massageador de Pescoço e Ombros 8 Pontos: Aquecimento até 45°C">
 <meta property="og:description" content="Alívio para tensão no pescoço, ombros e mãos: 8 pontos de massagem, aquecimento em 2 níveis e silicone grau alimentício. Garantia de 30 dias.">
+<meta property="og:image" content="img/produto-hero.jpg">
 <meta property="og:type" content="website">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%86%3C/text%3E%3C/svg%3E">
@@ -340,6 +343,10 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 
   /* SPECS TABLE */
   .specs{background:#fff;}
+  .specs-img{
+    max-width:640px;margin:0 auto 32px;border-radius:var(--radius);
+    box-shadow:var(--shadow);border:1px solid var(--border);
+  }
   .specs-table{
     max-width:760px;margin:0 auto;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
   }
@@ -500,13 +507,13 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   (página de produto de e-commerce), no mesmo molde de /medidor-pressao/.
 
   ANTES DE PUBLICAR, revise:
-  1) IMAGENS: esta página usa ilustrações em SVG (pasta img/) como placeholder,
-     porque as fotos reais do produto mostradas no chat não estavam
-     disponíveis como arquivo para incluir no repositório. Salve as fotos
-     reais em img/ (ex.: produto-hero.jpg, produto-calor.jpg,
-     produto-uso.jpg, produto-detalhe.jpg) e troque os `src="img/xxx.svg"`
-     por elas — são usadas na galeria da PDP, na seção de diferencial
-     (aquecimento), em "Como usar" e na galeria de fotos. Veja o README.md.
+  1) IMAGENS: já usa as fotos reais do produto, em img/ (produto-hero.jpg,
+     produto-calor.webp, produto-uso.webp, produto-detalhe.webp,
+     produto-beneficios.webp, produto-especificacoes.webp) — usadas na
+     galeria da PDP, na seção de diferencial (aquecimento), em "Como usar",
+     na seção educativa, na ficha técnica e na galeria de fotos. As 4
+     ilustrações SVG placeholder (hero/calor/uso/detalhe.svg) foram
+     removidas do repositório. Veja o README.md.
   2) PREÇO E LINK DE CHECKOUT: o preço de venda (R$ 169,90) já é o valor
      real informado pelo usuário. O "de R$ 297,90" (preço "antes") ainda é
      EXEMPLO — confirme o valor real de tabela antes de publicar. Troque
@@ -563,14 +570,14 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     <div class="pdp-gallery">
       <div class="pdp-main-img">
         <div id="pdp-main-media">
-          <img src="img/hero.svg" alt="Massageador de Pescoço e Ombros 8 Pontos com aquecimento">
+          <img src="img/produto-hero.jpg" alt="Massageador de Pescoço e Ombros 8 Pontos com aquecimento">
         </div>
       </div>
       <div class="pdp-thumbs">
-        <button type="button" class="pdp-thumb selected" data-img="img/hero.svg" aria-label="Ver foto do produto"><img src="img/hero.svg" alt=""></button>
-        <button type="button" class="pdp-thumb" data-img="img/calor.svg" aria-label="Ver aquecimento em ação"><img src="img/calor.svg" alt=""></button>
-        <button type="button" class="pdp-thumb" data-img="img/uso.svg" aria-label="Ver uso no pescoço e ombros"><img src="img/uso.svg" alt=""></button>
-        <button type="button" class="pdp-thumb" data-img="img/detalhe.svg" aria-label="Ver detalhe do silicone"><img src="img/detalhe.svg" alt=""></button>
+        <button type="button" class="pdp-thumb selected" data-img="img/produto-hero.jpg" aria-label="Ver foto do produto"><img src="img/produto-hero.jpg" alt=""></button>
+        <button type="button" class="pdp-thumb" data-img="img/produto-calor.webp" aria-label="Ver aquecimento em ação"><img src="img/produto-calor.webp" alt=""></button>
+        <button type="button" class="pdp-thumb" data-img="img/produto-uso.webp" aria-label="Ver uso no pescoço e ombros"><img src="img/produto-uso.webp" alt=""></button>
+        <button type="button" class="pdp-thumb" data-img="img/produto-detalhe.webp" aria-label="Ver detalhe do silicone"><img src="img/produto-detalhe.webp" alt=""></button>
       </div>
     </div>
 
@@ -615,7 +622,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 <section class="endorsement">
   <div class="wrap">
     <div class="endorsement-grid">
-      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/calor.svg" alt="Massageador de Pescoço 8 Pontos aquecendo os dois lados do pescoço, com indicação de 42°C e 45°C"></a>
+      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-calor.webp" alt="Massageador de Pescoço 8 Pontos aquecendo os dois lados do pescoço, com indicação de 42°C e 45°C"></a>
       <div>
         <span class="eyebrow" style="background:rgba(255,255,255,.1);color:#fff;">Diferencial</span>
         <h2>Aquecimento de verdade, em 2 níveis: 42°C ou 45°C</h2>
@@ -759,19 +766,19 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     </div>
     <div class="how-grid">
       <div class="how-step">
-        <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/uso.svg" alt="Encaixando o Massageador de Pescoço 8 Pontos com a correia ajustável" class="how-step-img"></a>
+        <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-uso.webp" alt="Encaixando o Massageador de Pescoço 8 Pontos com a correia ajustável" class="how-step-img"></a>
         <div class="num">1</div>
         <h3>Encaixe no pescoço</h3>
         <p>Posicione os dedos de silicone dos dois lados do pescoço e ajuste a correia de couro.</p>
       </div>
       <div class="how-step">
-        <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/hero.svg" alt="Botão de ligar e botão de aquecimento do Massageador de Pescoço 8 Pontos" class="how-step-img"></a>
+        <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-hero.jpg" alt="Botão de ligar e botão de aquecimento do Massageador de Pescoço 8 Pontos" class="how-step-img"></a>
         <div class="num">2</div>
         <h3>Ligue e escolha o calor</h3>
         <p>Pressione e segure o botão de energia por 3 segundos e escolha entre modo baixo (42°C) ou alto (45°C).</p>
       </div>
       <div class="how-step">
-        <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/calor.svg" alt="Massageador de Pescoço 8 Pontos em uso, aquecendo os pontos de tensão" class="how-step-img"></a>
+        <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-calor.webp" alt="Massageador de Pescoço 8 Pontos em uso, aquecendo os pontos de tensão" class="how-step-img"></a>
         <div class="num">3</div>
         <h3>Relaxe por alguns minutos</h3>
         <p>Deixe a massagem e o calor agirem nos pontos de tensão enquanto você relaxa.</p>
@@ -784,7 +791,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 <section class="expert">
   <div class="wrap">
     <div class="expert-box">
-      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/hero.svg" alt="Massageador de Pescoço e Ombros 8 Pontos"></a>
+      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-beneficios.webp" alt="Massageador de Pescoço e Ombros: simulação de massagem manual, suave ao toque, leve e fácil de transportar"></a>
       <div class="expert-box-body">
         <span class="eyebrow">Entenda o problema</span>
         <h2>Por que a tensão no pescoço e ombros não passa sozinha</h2>
@@ -805,10 +812,10 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
       <h2>Feito para usar todos os dias, em casa ou no trabalho</h2>
     </div>
     <div class="gallery-grid">
-      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/uso.svg" alt="Massageador de Pescoço 8 Pontos sendo usado no pescoço e ombros"></a>
-      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/calor.svg" alt="Aquecimento em ação do Massageador de Pescoço 8 Pontos"></a>
-      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/detalhe.svg" alt="Detalhe do silicone grau alimentício do Massageador de Pescoço 8 Pontos"></a>
-      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/hero.svg" alt="Massageador de Pescoço 8 Pontos, foto do produto"></a>
+      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-uso.webp" alt="Massageador de Pescoço 8 Pontos sendo usado no pescoço e ombros"></a>
+      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-calor.webp" alt="Aquecimento em ação do Massageador de Pescoço 8 Pontos"></a>
+      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-detalhe.webp" alt="Detalhe do silicone grau alimentício do Massageador de Pescoço 8 Pontos"></a>
+      <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-hero.jpg" alt="Massageador de Pescoço 8 Pontos, foto do produto"></a>
     </div>
   </div>
 </section>
@@ -872,6 +879,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
       <span class="eyebrow">Ficha técnica</span>
       <h2>Especificações do produto</h2>
     </div>
+    <img src="img/produto-especificacoes.webp" alt="Infográfico com as especificações do Massageador de Pescoço e Ombros 8 Pontos" class="specs-img">
     <div class="specs-table">
       <div><dt>Entrada</dt><dd>5V</dd></div>
       <div><dt>Material do produto</dt><dd>ABS + Silicone</dd></div>
@@ -1033,7 +1041,7 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 
 <!-- ORDER NOTIFICATION (desativada por padrão — ver ENABLE_ORDER_TOAST no script) -->
 <div class="order-toast" id="order-toast">
-  <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/hero.svg" alt="" class="order-toast-icon"></a>
+  <a href="#comprar" class="img-link" aria-label="Ver oferta"><img src="img/produto-hero.jpg" alt="" class="order-toast-icon"></a>
   <div><strong id="order-toast-name">Nome</strong><span id="order-toast-city"></span> acabou de fazer um pedido</div>
 </div>
 
