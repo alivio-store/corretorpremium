@@ -38,12 +38,12 @@ volta pra ele; as outras trocam para as fotos. O vídeo usa
 
 ## Status — revisado e aprovado pelo usuário
 
-1. **Preço e link de checkout** ✅ — preço de venda **R$ 169,90** (de
-   R$ 297,90, 12x sem juros de R$ 14,16, ou R$ 161,40 no Pix), botão de
-   compra apontando para `https://alivio3.pay.yampi.com.br/r/PEV090FERZ`.
-   Esse link aparece em 2 lugares — se mudar no futuro, atualize os dois:
-   o botão da PDP (`#pdp-buy-btn`) e o botão da barra fixa mobile
-   (`.mobile-bar`).
+1. **Preço e link de checkout** ✅ — preço em destaque na PDP é o do Pix,
+   **R$ 161,40** (de R$ 297,90, -46%), com a opção de R$ 169,90 em até 12x
+   sem juros de R$ 14,16 no cartão logo abaixo. Botão de compra apontando
+   para `https://alivio3.pay.yampi.com.br/r/PEV090FERZ`. Esse link aparece
+   em 2 lugares — se mudar no futuro, atualize os dois: o botão da PDP
+   (`#pdp-buy-btn`) e o botão da barra fixa mobile (`.mobile-bar`).
 
 2. **Depoimentos** — os depoimentos em `#depoimentos`, a prova social logo
    após a seção de aquecimento, e a contagem de clientes satisfeitos são
@@ -93,7 +93,7 @@ Topbar promocional → Header fixo → Breadcrumb → PDP (galeria de fotos +
 preço + botão de compra) → Diferencial (aquecimento
 42°C/45°C) → prova social (mini) → Dores (agitação) → Benefícios → Como
 usar (3 passos) → Seção educativa → Galeria → Sem alívio x com alívio →
-Garantia de 30 dias → Especificações técnicas → FAQ → CTA final →
+Garantia de 90 dias → Especificações técnicas → FAQ → CTA final →
 Depoimentos (completo, com paginação) → Rodapé → barra fixa de compra no
 mobile → notificação de pedido (desativada).
 
