@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>FitS36 — Consulta rápida (IMC)</title>
+<meta name="description" content="Responda 2 perguntas rápidas e receba sua consulta personalizada de IMC, com recomendação FitS36.">
+<meta name="robots" content="noindex">
+
+<!-- Google tag (gtag.js) — mesmo ID dos demais produtos da Alívio -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7SRPE880LX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7SRPE880LX');
+</script>
+
+<!-- Meta Pixel Code — mesmo Pixel dos demais produtos da Alívio -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1734988077420170');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+*{box-sizing:border-box}
+:root{--a:#ff7a1a;--a2:#ff9a4d;--ink:#111827;--muted:#6d7b91;--bg:#fff6ef;--ok:#16a34a;--warn:#d97706;--bad:#dc2626}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+.screen{display:none;align-items:center;justify-content:center;padding:24px;min-height:100vh}
+.screen.on{display:flex}
+.card{width:min(440px,100%);background:#fff;border-radius:28px;padding:38px 28px;box-shadow:0 18px 55px rgba(15,23,42,.09)}
+.brandRow{text-align:center;margin-bottom:6px}
+.brandRow span{font-size:28px;font-weight:950;color:var(--ink);letter-spacing:-.02em}
+.brandRow .a{color:var(--a)}
+.stepDots{display:flex;justify-content:center;gap:6px;margin-bottom:18px}
+.stepDots i{width:22px;height:5px;border-radius:3px;background:#eee0d4}
+.stepDots i.on{background:var(--a)}
+.sub{text-align:center;color:var(--muted);margin-bottom:28px}
+.label{display:block;text-align:left;color:#64748b;font-weight:800;margin-bottom:8px;font-size:13px;letter-spacing:.04em}
+.field{width:100%;height:56px;border:1px solid #eadfd3;border-radius:16px;padding:0 16px;font-size:16px;outline:none;box-sizing:border-box;margin-bottom:16px;background:#fffdfb}
+.row2{display:flex;gap:12px}
+.row2 .field{flex:1}
+.err{display:none;text-align:left;color:#dc2626;font-weight:800;margin:-6px 0 14px;font-size:13.5px}
+.btn{width:100%;border:0;border-radius:16px;background:var(--a);color:#fff;padding:16px;font-size:16px;font-weight:900;cursor:pointer;text-align:center;text-decoration:none;display:block}
+.btn.ghost{background:none;color:var(--muted);font-weight:800;margin-top:12px;padding:8px}
+.secure{text-align:center;color:#a08a78;margin-top:18px;font-size:12.5px}
+
+/* tela de progresso */
+.ring{width:220px;height:220px;border-radius:50%;background:conic-gradient(var(--a) var(--p,8%),#f3e6d8 0);position:relative;display:grid;place-items:center;margin:0 auto 22px;transition:background .2s linear}
+.ring:after{content:"";position:absolute;inset:16px;border-radius:50%;background:#fff}
+.ring .inner{position:relative;z-index:1;text-align:center}
+.ring .pct{font-size:38px;font-weight:950;color:var(--a)}
+.ring .ico{font-size:30px}
+.progLabel{text-align:center;color:var(--muted);font-weight:800;letter-spacing:.05em;margin-bottom:6px;font-size:13px}
+
+/* tela de resultado (consulta) */
+.reportHead{background:linear-gradient(135deg,#ff8a3d,#ff6a1a);color:#fff;border-radius:20px;padding:20px;margin-bottom:18px;text-align:center}
+.reportHead b{font-size:19px;display:block}
+.reportHead small{opacity:.9}
+.imcBox{text-align:center;margin:22px 0}
+.imcBox .num{font-size:52px;font-weight:950;line-height:1}
+.imcBox .lbl{color:var(--muted);font-weight:800;font-size:12.5px;letter-spacing:.08em;margin-top:2px}
+.badge{display:inline-block;margin-top:12px;padding:8px 18px;border-radius:999px;font-weight:900;font-size:14px}
+.badge.abaixo{background:#e0f2fe;color:#0369a1}
+.badge.normal{background:#dcfce7;color:#15803d}
+.badge.sobrepeso{background:#fef3c7;color:#b45309}
+.badge.obesidade{background:#fee2e2;color:#b91c1c}
+.statGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.statTile{background:#fbf3ec;border-radius:16px;padding:14px;text-align:center}
+.statTile b{display:block;font-size:18px}
+.statTile span{color:var(--muted);font-size:12.5px}
+.recoBox{background:#fff6ef;border:1px solid #f4dcc4;border-radius:16px;padding:16px;margin:18px 0}
+.recoBox b{display:block;margin-bottom:6px;font-size:15px}
+.recoBox p{margin:0;color:#5b4a3d;font-size:14px;line-height:1.5}
+.disclaimer{color:#9aa4b2;font-size:11.5px;line-height:1.5;margin-top:16px;text-align:center}
+</style>
+</head>
+<body>
+
+<!-- Tela 1: nome + idade -->
+<section id="s0" class="screen on">
+<div class="card">
+  <div class="brandRow"><span>Fit<span class="a">S36</span></span></div>
+  <div class="stepDots"><i class="on"></i><i></i><i></i></div>
+  <div class="sub">Vamos começar sua consulta rápida e gratuita</div>
+  <label class="label">👤 SEU NOME</label>
+  <input id="qName" type="text" class="field" placeholder="Nome completo">
+  <label class="label">🎂 SUA IDADE</label>
+  <input id="qAge" type="number" inputmode="numeric" min="12" max="100" class="field" placeholder="Ex: 34">
+  <div id="err0" class="err">Preencha seu nome e uma idade válida</div>
+  <button type="button" class="btn" onclick="goStep1()">CONTINUAR →</button>
+  <div class="secure">🔒 Seus dados ficam só neste navegador</div>
+</div>
+</section>
+
+<!-- Tela 2: peso + altura -->
+<section id="s1" class="screen">
+<div class="card">
+  <div class="brandRow"><span>Fit<span class="a">S36</span></span></div>
+  <div class="stepDots"><i class="on"></i><i class="on"></i><i></i></div>
+  <div class="sub">Agora seus dados corporais</div>
+  <div class="row2">
+    <div style="flex:1">
+      <label class="label">⚖️ PESO (KG)</label>
+      <input id="qWeight" type="number" inputmode="decimal" step="0.1" min="30" max="300" class="field" placeholder="Ex: 78">
+    </div>
+    <div style="flex:1">
+      <label class="label">📏 ALTURA (CM)</label>
+      <input id="qHeight" type="number" inputmode="numeric" min="120" max="230" class="field" placeholder="Ex: 170">
+    </div>
+  </div>
+  <div id="err1" class="err">Preencha peso e altura válidos</div>
+  <button type="button" class="btn" onclick="startCalc()">👁 VER MINHA CONSULTA</button>
+  <button type="button" class="btn ghost" onclick="show('s0')">← Voltar</button>
+</div>
+</section>
+
+<!-- Tela 3: calculando -->
+<section id="s2" class="screen">
+<div class="card">
+  <div class="progLabel">MONTANDO SUA CONSULTA</div>
+  <div class="ring" id="ring"><div class="inner"><div class="ico">🩺</div><div class="pct" id="pct">8%</div></div></div>
+  <div id="progStatus" style="text-align:center;color:var(--muted);font-weight:700">Analisando seus dados...</div>
+</div>
+</section>
+
+<!-- Tela 4: resultado -->
+<section id="s3" class="screen">
+<div class="card">
+  <div class="reportHead">
+    <b id="greet">Olá!</b>
+    <small id="reportStamp">Consulta gerada agora</small>
+  </div>
+
+  <div class="imcBox">
+    <div class="num" id="imcNum">--</div>
+    <div class="lbl">SEU ÍNDICE DE MASSA CORPORAL (IMC)</div>
+    <div class="badge" id="imcBadge">--</div>
+  </div>
+
+  <div class="statGrid">
+    <div class="statTile"><b id="statAge">--</b><span>Idade</span></div>
+    <div class="statTile"><b id="statWH">--</b><span>Peso / Altura</span></div>
+  </div>
+
+  <div class="recoBox">
+    <b id="recoTitle">Recomendação para você</b>
+    <p id="recoText">—</p>
+  </div>
+
+  <a class="btn" id="ctaBtn" href="#comprar">CONHECER O FITS36 →</a>
+
+  <div class="disclaimer">
+    O IMC é um indicador geral de referência (peso ÷ altura²) e não substitui
+    avaliação de um profissional de saúde. FitS36 não é um produto medicinal
+    e não tem finalidade de diagnosticar, tratar ou curar doenças.
+  </div>
+</div>
+</section>
+
+<script>
+const $=id=>document.getElementById(id);
+
+// Todos os dados ficam só na memória do navegador, usados apenas para
+// personalizar as telas seguintes desta consulta — nunca são enviados
+// ou guardados em nenhum servidor.
+let data={name:'',age:0,weight:0,height:0};
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(x=>x.classList.remove('on'));
+  $(id).classList.add('on');
+  try{ window.scrollTo({top:0,left:0,behavior:'auto'}); }catch(e){ window.scrollTo(0,0); }
+}
+
+function goStep1(){
+  const name=$('qName').value.trim();
+  const age=parseInt($('qAge').value,10);
+  if(!name || !age || age<12 || age>100){
+    $('err0').style.display='block';
+    return;
+  }
+  $('err0').style.display='none';
+  data.name=name;
+  data.age=age;
+  show('s1');
+}
+
+function startCalc(){
+  const weight=parseFloat($('qWeight').value);
+  const height=parseInt($('qHeight').value,10);
+  if(!weight || weight<30 || weight>300 || !height || height<120 || height>230){
+    $('err1').style.display='block';
+    return;
+  }
+  $('err1').style.display='none';
+  data.weight=weight;
+  data.height=height;
+  show('s2');
+  runCalc();
+}
+
+function runCalc(){
+  let p=8;
+  const duration=3800, startedAt=Date.now();
+  const ring=$('ring'), pct=$('pct'), status=$('progStatus');
+  const timer=setInterval(()=>{
+    const elapsed=Math.min(Date.now()-startedAt,duration);
+    p=Math.min(100, Math.floor(8 + 92*(elapsed/duration)));
+    pct.textContent=p+'%';
+    ring.style.setProperty('--p',p+'%');
+    if(p<35) status.textContent='Analisando seus dados...';
+    else if(p<70) status.textContent='Calculando seu IMC...';
+    else status.textContent='Montando sua recomendação FitS36...';
+    if(elapsed>=duration){
+      clearInterval(timer);
+      setTimeout(()=>{
+        fillResult();
+        show('s3');
+      },400);
+    }
+  },120);
+}
+
+function classify(imc){
+  if(imc<18.5) return {key:'abaixo',label:'Abaixo do peso'};
+  if(imc<25) return {key:'normal',label:'Peso normal'};
+  if(imc<30) return {key:'sobrepeso',label:'Sobrepeso'};
+  return {key:'obesidade',label:'Obesidade'};
+}
+
+const RECO={
+  abaixo:{
+    title:'Foco em ganhar energia e força',
+    text:'Seu peso está abaixo da faixa de referência para sua altura. O FitS36 foi pensado para apoiar sua rotina com mais disposição no dia a dia — combine com uma alimentação equilibrada e, se possível, acompanhamento profissional.'
+  },
+  normal:{
+    title:'Foco em manter o equilíbrio',
+    text:'Seu IMC está dentro da faixa de referência. O FitS36 pode ajudar você a manter energia e constância na sua rotina de bem-estar, sem depender só de força de vontade.'
+  },
+  sobrepeso:{
+    title:'Foco em retomar o equilíbrio',
+    text:'Seu IMC está um pouco acima da faixa de referência. O FitS36 foi criado para apoiar quem quer dar os primeiros passos rumo a uma rotina mais leve, junto com alimentação equilibrada e atividade física regular.'
+  },
+  obesidade:{
+    title:'Foco em uma rotina mais leve',
+    text:'Seu IMC está acima da faixa de referência. O FitS36 pode ser um apoio na sua rotina, mas o ideal é buscar também orientação de um profissional de saúde para um acompanhamento completo.'
+  }
+};
+
+function fillResult(){
+  const heightM=data.height/100;
+  const imc=data.weight/(heightM*heightM);
+  const imcRounded=imc.toFixed(1).replace('.',',');
+  const cls=classify(imc);
+  const reco=RECO[cls.key];
+
+  $('greet').textContent='Olá, '+data.name+'!';
+  const now=new Date();
+  const pad2=n=>String(n).padStart(2,'0');
+  $('reportStamp').textContent='Consulta gerada em '+pad2(now.getDate())+'/'+pad2(now.getMonth()+1)+'/'+now.getFullYear();
+
+  $('imcNum').textContent=imcRounded;
+  const badge=$('imcBadge');
+  badge.textContent=cls.label;
+  badge.className='badge '+cls.key;
+
+  $('statAge').textContent=data.age+' anos';
+  $('statWH').textContent=data.weight+'kg / '+data.height+'cm';
+
+  $('recoTitle').textContent=reco.title;
+  $('recoText').textContent=reco.text;
+}
+</script>
+
+</body></html>
