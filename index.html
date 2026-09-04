@@ -121,7 +121,6 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
   }
   .topbar strong{color:var(--navy);font-weight:800;}
   .topbar-mobile{display:none;}
-  .region-banner{text-transform:uppercase;font-weight:800;}
 
   /* HEADER */
   header.site{
@@ -801,8 +800,8 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
 <body>
 
 <div class="topbar">
-  <span class="topbar-full">🔥 <strong>70% OFF no Agosto de Ofertas</strong> &nbsp;•&nbsp; <span id="region-banner" class="region-banner">Entrega express em até 2 dias para todo o Brasil</span> &nbsp;•&nbsp; Compre hoje e receba até <span id="topbar-delivery">carregando…</span></span>
-  <span class="topbar-mobile"><strong>70% DE DESCONTO HOJE</strong> - VOCÊ QUE ESTÁ EM <span id="region-banner-m" class="region-banner">SEU ESTADO</span>, RECEBA <span id="topbar-delivery-m">carregando…</span></span>
+  <span class="topbar-full">🔥 <strong>70% OFF no Agosto de Ofertas</strong> &nbsp;•&nbsp; Entrega express em até 2 dias para todo o Brasil &nbsp;•&nbsp; Compre hoje e receba até <span id="topbar-delivery">carregando…</span></span>
+  <span class="topbar-mobile"><strong>70% DE DESCONTO HOJE</strong> - RECEBA ATÉ <span id="topbar-delivery-m">carregando…</span></span>
 </div>
 
 <header class="site">
@@ -1506,36 +1505,6 @@ src="https://www.facebook.com/tr?id=1734988077420170&ev=PageView&noscript=1"
     } else {
       animate();
     }
-  })();
-
-  // Banner de região no topbar: detecta o Estado do visitante por IP (geolocalização)
-  // Se não conseguir detectar (bloqueador, erro, fora do Brasil), mantém o texto genérico
-  (function(){
-    var el = document.getElementById('region-banner');
-    var elM = document.getElementById('region-banner-m');
-    if(!el) return;
-    var fallback = el.textContent;
-    var fallbackM = elM ? elM.textContent : '';
-    var done = false;
-    var timeout = setTimeout(function(){ done = true; }, 2500);
-    fetch('https://get.geojs.io/v1/ip/geo.json')
-      .then(function(r){ return r.json(); })
-      .then(function(data){
-        if(done) return;
-        clearTimeout(timeout);
-        if(data && data.region && data.country_code === 'BR'){
-          el.textContent = 'Você que está em ' + data.region + ', recebe em até 2 dias';
-          if(elM) elM.textContent = data.region;
-        } else {
-          el.textContent = fallback;
-          if(elM) elM.textContent = fallbackM;
-        }
-      })
-      .catch(function(){
-        clearTimeout(timeout);
-        el.textContent = fallback;
-        if(elM) elM.textContent = fallbackM;
-      });
   })();
 
   // Nota média calculada a partir das estrelas realmente exibidas em cada avaliação
